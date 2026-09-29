@@ -2024,3 +2024,41 @@ The user asked: "a more readable md file everyone can read with proofs … for a
 2. Prove the amplitude law as a modular-symbol identity: the Eichler integral of the χ₋₄ Eisenstein series between the dominant cusp and T = ½.
 3. The CM discount (τ ≈ 1) is the only arithmetic saving seen. G's Eisenstein series has none, so any real gain for G must come from the geometry (r).
 
+# Case E exactly: G/2 is G times the Ramanujan value of ±1, and the obstruction is the quarter turn (2026-09-29; caseE_exact.py). The user: "It's not pure 6 though. It's more like ramanujan summation like before and -1 plus1 like everything else. We can't book keep our way to a better bound than cdt. We have to be analytically correct. Exact thru modular linear algebra like everything else."
+**Correction of reading.** "3G/6 or 6G/12" meant G/2 = G × ½ with ½ = 3·⅙ = 6·(1/12), a Ramanujan-summation value. It did not mean the modular level 6 or 12. The previous section's "level 6 cannot hold G" answered a question that was not asked. Its gate scores are bookkeeping and are not a route past CDT.
+
+**Setting (exact).** Take a weight-1 form f and a Hauptmodul t (t(∞) = 0), with the ODE p(t)θ²y + ⋯ = 0 and p(0) = 1.
+- Apéry's second solution v (v₀ = 0, v₁ = 1) solves L y = t.
+- So y = f·g with D²g = W := (Dt)²/(t·p(t)·f), a weight-3 form, and g = Σ w_n n⁻² qⁿ (D = q d/dq).
+
+**Lemma (derived).** Let the cusp be a/c = γ∞, with γ = (a b; c d) ∈ SL₂(ℤ), and let W vanish there. Put τ = γτ′. Then
+    g(γτ′) = L(W, e(a/c·), 2) − 2πi·L(W, e(a/c·), 1)/(c(cτ′ + d)) + g_γ(τ′)/(cτ′ + d),
+where L(W, e(x·), s) = Σ w_n e(nx) n⁻ˢ (continued) and g_γ is the Eichler integral of W|γ. So
+    F = f·(g − L) = (f|γ)(τ′)·[c·(L(W, e(a/c·), 2) − L)·τ′ + analytic].
+- The dominant cusp fixes L: at the cusp 0, L = L(W, 2).
+- Every other cusp carries the log amplitude c·[L(W, e(a/c·), 2) − L]; in terms of t it is this divided by 2πi.
+- The s = 1 values (the −1/12 rung) cancel out of every amplitude.
+
+**Ramanujan summation evaluates it.** For E_G(τ) = Σ_n (Σ_{d|n} χ₋₄(n/d)d²) qⁿ (L-function L(s,χ₋₄)ζ(s−2)):
+    L(E_G, e(x·), 2) = Σ_m χ₋₄(m) m⁻² · Σ_{d≥1} e(mdx),   Σ_{d≥1} e(dy) = e(y)/(1 − e(y)) = −½ + (i/2)cot πy,
+with ζ(0) = −½ when y ∈ ℤ.
+- The −½ is the same for every twist, so it carries −G/2 at every cusp and cancels between cusps.
+- What is left is (i/2)Σ_m χ₋₄(m)cot(πmx)/m².
+  - A half turn (x ∈ ½ + ℤ, twist ±1) gives zero, because −1 + 1 − 1 + ⋯ = 1 + 1 + 1 + ⋯ = −½.
+  - A quarter turn (twist ±i) gives cot(πm/4) = χ₋₄(m), hence iπ²/16.
+- E_G(dτ) sees the cusp a/c through the twist d·a/c.
+
+**Case E, exact.**
+- Data: t = η(τ)⁴η(2τ)⁻¹⁰η(4τ)²η(8τ)⁴ (pole at the cusp ½, t(0) = ⅛ dominant, t(¼) = ¼), f = θ₃², p = (1 − 4t)(1 − 8t).
+- W = E_G(τ) − 8E_G(2τ) = −E_G(τ + ½), by exact rational linear algebra on q-expansions (coefficients 1, −4, 8, −16, 26, −32, 48, −64, 73, …). Case E's weight-3 form is G's Eisenstein series with q ↦ −q.
+- Limit: L(W, 2) = −Σ_m χ₋₄(m)m⁻² · [Σ_d (−1)^{md}] = −Σ_m χ₋₄(m)m⁻² · (−½) = G/2. This is exactly case E's limit: G times the Ramanujan value of the ±1 sum.
+- Obstruction at t = ¼ (cusp ¼, c = 4): the E_G(τ) part sees a quarter turn and gives iπ²/16. The −8E_G(2τ) part sees 2·¼ = ½, a half turn, and gives 0.
+  - So F = (π/8)·log(1 − 4t) + analytic, i.e. nF_n/4ⁿ → −π/8.
+  - Check of the formula (not a scan): −0.38883, −0.39075, −0.39140, −0.39158 at n = 100, 200, 300, 350, against −π/8 = −0.39270, approaching like 0.39/n.
+- In words: the quarter turn i adds (i/2)χ₋₄(m) to the ±1 sum, and that turns G's series into the odd part of ζ(2), π²/8.
+
+**Consequence.** A G-component E_G(dτ) is invisible at a cusp exactly when it sees a half turn there (2da ≡ c mod 2c).
+- So a G-family can be analytic at a cusp only if every G-component meets that cusp at a half turn, and no other component spoils it.
+- This is an exact linear-algebra problem over these Ramanujan values: no PSLQ and no measured gates.
+- The Γ₁(8) amplitude law (the G part pays π/2 at T = ½) should follow from the same Lemma. Not yet derived.
+

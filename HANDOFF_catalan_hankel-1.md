@@ -37,6 +37,12 @@
 - CM periods get τ ≈ 1 (lacunary coefficients): L(η(4τ)⁶, 2) = Γ(1/4)⁴/(64π) at level 16 (S = +0.81), L(g, 2) on Γ₁(8) (S = +1.05). Neither is G. G's Eisenstein series has no such discount.
 - Open: other forms/curves (Γ₁(12), Γ₁(16), θ₃(q)θ₃(q²)); a proof of the amplitude law as a modular-symbol identity.
 
+**Correction and the exact mode** (2026-09-29; the user: "It's not pure 6 … ramanujan summation … −1 plus 1 … We can't book keep our way to a better bound than cdt … Exact thru modular linear algebra"; results log "Case E exactly"):
+- "3G/6 or 6G/12" = G × ½ with ½ a Ramanujan value (3·⅙ = 6·1/12). It was never the level. Gate scores are bookkeeping and are dropped as a target.
+- Lemma (derived): F = f(g − L) has log amplitude c·[L(W, e(a/c·), 2) − L] at a cusp a/c, and the s = 1 (−1/12) values cancel. Ramanujan summation Σ_{d≥1} e(dy) = −½ + (i/2)cot πy evaluates it.
+- Case E exactly: W = −E_G(τ + ½) (G's Eisenstein series with q ↦ −q). The limit is G·(−1 + 1 − 1 + ⋯) = G/2. The obstruction at t = ¼ is the quarter turn: (π/8)log(1 − 4t), checked to 1/n.
+- Rule: a G-component is invisible at a cusp iff it meets it at a half turn. The next step is exact linear algebra over these values (no scans, no PSLQ).
+
 **Also settled.**
 - The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.
 - Sun's claim (2609.04176) is critiqued by Wachs (2609.22339), who finds an unaccounted prime-2 contribution.
