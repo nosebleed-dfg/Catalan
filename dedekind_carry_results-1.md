@@ -2226,3 +2226,19 @@ In every case R* sits just under the λ-bound. The threshold lies between widths
 - Checked: symmetrizing F(τ) + F(τ + ½) brings back a log² singularity at t = ⅛. W = E_G(2τ) (the only τ+½-invariant G-form) is the Γ₀(4) survivor in the variable 2τ, with the same square root. Both are circular.
 - So the factor 2 is not available inside congruence Beukers families. It needs a new ingredient: a non-congruence structure, an adelic contribution (a place where the forms converge beyond radius 1), or a genuine arithmetic saving of 37% (1.2% once the factor 2 is found).
 
+## Rational at infinity, irrational at every prime? (2026-09-29; the user: "Could it be rational at infinity. Irrational for every prime?")
+**Logically, yes.**
+- The real G = L(2,χ₋₄) and the p-adic Catalan constants (values of Kubota–Leopoldt p-adic L-functions at s = 2) are different numbers, not one number seen in different completions.
+- Both are built from the same Ramanujan values β(−2k) = E_{2k}/2. At infinity they are continued through the functional equation, which brings in π: G = (π/2)·β′(−1). At p they are interpolated p-adically, with Euler factors and no π.
+- No theorem links the rationality of the one to the other.
+- Status:
+  - The 2-adic value is proven irrational (Calegari 2005, IMRN no. 20; Beukers 2008 by Stieltjes continued fractions; our C).
+  - A few small primes and characters are proven; general p is open. The p-adic methods also stop at a gate: overconvergence radius against denominators, which fails for large p.
+  - The real G is open.
+
+**Consequence for the adelic "prime factor".** The product formula couples the places only through one and the same rational.
+- If G = 2r/q were rational, the integers N_n = q·d_n²·(v_n − r·u_n) would be small at ∞.
+- At p = 2 their size is set by |r − L₂|₂, where L₂ is the 2-adic limit of v_n/u_n. That is a fixed nonzero distance if L₂ is irrational, so there is no extra 2-adic decay.
+- "Rational at infinity, irrational at every prime" is therefore exactly the scenario that a p-adic factor cannot exclude.
+- The missing factor 2 has to come from structure the forms carry at every place independently of the value: their true denominators (the arithmetic side, where 113/120 would live), or a larger archimedean domain.
+
