@@ -61,6 +61,12 @@
   - Width invariant w of the group ⟨T, (1 0; w 1)⟩: w = 5 (Apéry) gives log R* ≈ 5.1; w = 6 (case C, CDT) 2.68; w = 7 1.73; w = 8 (G) 1.23; against τ ≈ 1.95.
   - G is forced to w = 8: θ₃'s square root doubles Γ₀(4)'s width-4 cusp.
   - Next: G-forms with a second fat harmless parabolic. S has to rise from 0.062 to about 0.099.
+- The half measure (results log section of that name):
+  - log R*(G) = 1.2323 (S = 0.062427; not π²/8). Deficit 0.716 = log 2 + 0.023, so R* is exactly half of e^τ, up to 2.5%.
+  - The two-parabolic groups are Hecke groups H(√w) (5 Apéry, 6 CDT, 8 G; H(2) = θ₃'s theta group has radius ∞).
+  - The lost factor 2 is θ₃²'s forced half-order zero (valence formula) at Γ₀(4)'s irregular half-turn cusp: invariant 4 → 8.
+  - Congruence G-forms cannot beat H(√8) (every harmless invariant is ≥ N).
+  - The factor 2 needs a new ingredient: non-congruence, adelic, or a 37% arithmetic saving. Only 1.2% (well inside 113/120) is needed once the factor 2 is found.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.

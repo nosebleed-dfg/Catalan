@@ -2202,3 +2202,27 @@ In every case R* sits just under the λ-bound. The threshold lies between widths
 - A G-form whose harmless group has a second fat parabolic. S must rise from 0.0624 to about 0.099: one more invariant-8 parabolic adds 0.051 at first order.
 - Γ₀(N) larger than 8 makes the widths larger. The layer-theorem candidates on N ≤ 48 should be scanned exactly for their harmless groups.
 
+# The half measure and the missing factor 2 (2026-09-29). The user: "G will be found at a half measure. 1/2G. What truly breaks this is a prime factor over infinity. This gives us the offset needed. Anyways. Continue … Maybe something like 113/120 or something"
+**The constant, sharpened.**
+- S(8) = 0.062046, 0.062226, 0.062320 at X = 6400, 25600, 102400. The tail ratio is 0.529 per ×4, so S(8) = 0.062427.
+- Hence log R* = 1.2323 and R* = 3.429. This is close to π²/8 = 1.2337 (S = 1/16), but not equal: the gap 0.00007 in S is outside the tail estimate.
+
+**The deficit is one factor of the prime 2.**
+- τ − log R* = 1.948 − 1.232 = 0.716, i.e. R* is 1/2.05 of e^τ. G is found at a half measure, literally.
+- log 2 = 0.693 accounts for all but 0.023, which is 1.2% of τ.
+- Consequence: if the radius were doubled (log R* → 1.925), a denominator saving of 113/120 (τ → 1.834) would pass with margin 0.09. A saving of 1.2% would already suffice.
+
+**Where the factor 2 is lost (exact).**
+- The two-parabolic groups are Hecke groups in disguise. ⟨T, (1 0; w 1)⟩ is normalized by the Fricke involution (0, −1/√w; √w, 0), and the two together are conjugate (τ ↦ √w·τ) to the Hecke group H(√w).
+  - Apéry ζ(2) ↔ H(√5); case C, L(2,χ₋₃) ↔ H(√6); G ↔ H(√8).
+  - The boundary case H(2) is θ₃'s theta group, of finite covolume (radius ∞).
+- The only level-4 G-configuration is Γ₀(4), W = E_G, pole at 0. Its harmless pair (∞, ½) has invariant 4, which would be H(2).
+- By the valence formula, the only weight-1 form with character χ₋₄ on Γ₀(4) (θ₃², total zero order 6/12 = ½) must put a zero of order ½ at the one irregular cusp, ½. The forms therefore carry a square root there and are invariant only under p_½², which doubles the invariant 4 → 8: H(2) → H(√8).
+- On Γ₀(8) the cusp ½ is regular, but its width is 2, so the invariant is 8 again. Coordinate changes (Γ₁(8), or the double cover σ = (√(1 + 16t) − 1)/8, where F becomes analytic at t = −1/16) leave R* unchanged, since R* is intrinsic.
+- Larger levels only raise the invariants: every parabolic in Γ₀(N) has lower-left entry ≡ 0 (mod N), so each harmless pair has invariant ≥ N.
+- So among congruence Beukers G-forms, case E's H(√8) is optimal, and the missing factor 2 is exactly the half-order zero of θ₃² at the half-turn cusp.
+
+**What would break it.** A G-form invariant under p_½ itself: a weight-1 χ₋₄ form with no half-order zero at a half-turn cusp of width 1, or the half-translation τ ↦ τ + ½ in the harmless group, which halves the invariant 8 → 4.
+- Checked: symmetrizing F(τ) + F(τ + ½) brings back a log² singularity at t = ⅛. W = E_G(2τ) (the only τ+½-invariant G-form) is the Γ₀(4) survivor in the variable 2τ, with the same square root. Both are circular.
+- So the factor 2 is not available inside congruence Beukers families. It needs a new ingredient: a non-congruence structure, an adelic contribution (a place where the forms converge beyond radius 1), or a genuine arithmetic saving of 37% (1.2% once the factor 2 is found).
+
