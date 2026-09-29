@@ -83,6 +83,12 @@
   - Riley: W = ⟨T, (1 0; u 1)⟩ with u = −1 ± i, the same family as our harmless groups (real u = w). The Whitehead group contains a ℚ(i)-conjugate of Γ₀(4), the forbidden w = 4 lattice, as its thrice-punctured sphere.
   - Kashaev invariant (MMOTY formula, Table 1 reproduced): C² = (−1+i)/8, a₁ = (39 − 14i)/96, a₂ = (965 − 1452i)/(2·96²). Norms of J_N(ζ_N) are integers with N | J_N (N ≤ 12).
   - Verdict: this side carries G/π through growth rates and resurgent series, never a linear form in 1 and G.
+- The arithmetic side, exactly (results log section "The arithmetic side, exactly"; arithmetic_saving.py):
+  - The cumulative denominators of F are those of g = Σc(m)m⁻²qᵐ in any integral frame. So W alone sets τ.
+  - New pure-G families on Γ₁(8): W*± = W_E ± 2Z, with Z = E_ζ(τ) + 8E_ζ(2τ) − (3/2)E^{1,χ₋₈}. The limit is G/2 (80 digits at n = 300). The split (resp. inert) primes in (n/2, n] drop out entirely, so τ = 3/2 (exact: 0.7499 of lcm² to 200000).
+  - This is optimal for pure G on the 7-dimensional weight-3 space of Γ₁(8). Digit 1 saves at most one class mod 4. Digit 2 is always paid (11α, from case E's half-turn −4).
+  - With π²: τ = 4/3 (W_B, limit G/2 − 11π²/240).
+  - Gate: log R* = 1.232 against τ = 3/2 gives −0.27 (was −0.77); with π², −0.10. The 37% target is not reachable within Beukers families.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.

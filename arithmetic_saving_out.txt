@@ -1,0 +1,45 @@
+﻿0. Checks of the forms (exact rationals)
+   Z: constant term 0, pi^2-coefficient of L(Z,2) 0;   W_B: constant term 0, pi^2-coefficient -11/240
+   p =  5 (chi_-4 = +1, chi_-8 = -1):  W*+(p) = 150 = 6 p^2,  W*+(2p) mod p = 1
+   p = 13 (chi_-4 = +1, chi_-8 = -1):  W*+(p) = 1014 = 6 p^2,  W*+(2p) mod p = 11
+   p = 17 (chi_-4 = +1, chi_-8 = +1):  W*+(p) = 0 = 0 p^2,  W*+(2p) mod p = 11
+   p = 29 (chi_-4 = +1, chi_-8 = -1):  W*+(p) = 5046 = 6 p^2,  W*+(2p) mod p = 11
+   p =  3 (chi_-4 = -1, chi_-8 = +1):  W*+(p) = -38 = -38/9 p^2,  W*+(2p) mod p = 1
+   p =  7 (chi_-4 = -1, chi_-8 = -1):  W*+(p) = 96 = 96/49 p^2,  W*+(2p) mod p = 5
+   p = 11 (chi_-4 = -1, chi_-8 = +1):  W*+(p) = -486 = -486/121 p^2,  W*+(2p) mod p = 8
+   p = 19 (chi_-4 = -1, chi_-8 = +1):  W*+(p) = -1446 = -1446/361 p^2,  W*+(2p) mod p = 0
+
+1. Cumulative denominators of g = sum c(m) m^-2 q^m for m <= 200000
+   W_E (case E)               log D / M = 2.0002   log D / log lcm^2 = 0.9999   first digit k_p (50 < p < M/4): p=1 mod 4 {1: 2543}, p=3 mod 4 {1: 2575}
+   W*+ = W_E + 2Z             log D / M = 1.5000   log D / log lcm^2 = 0.7499   first digit k_p (50 < p < M/4): p=1 mod 4 {2: 2543}, p=3 mod 4 {1: 2575}
+   W*- = W_E - 2Z             log D / M = 1.5008   log D / log lcm^2 = 0.7503   first digit k_p (50 < p < M/4): p=1 mod 4 {1: 2543}, p=3 mod 4 {2: 2575}
+   W_E - Wz (G/2 - pi^2/16)   log D / M = 1.4998   log D / log lcm^2 = 0.7498   first digit k_p (50 < p < M/4): p=1 mod 4 {2: 2543}, p=3 mod 4 {1: 2575}
+   W_E + Wz (G/2 + pi^2/16)   log D / M = 1.5007   log D / log lcm^2 = 0.7503   first digit k_p (50 < p < M/4): p=1 mod 4 {1: 2543}, p=3 mod 4 {2: 2575}
+   5 W_B (G/2 - 11pi^2/240)   log D / M = 1.3326   log D / log lcm^2 = 0.6662   first digit k_p (50 < p < M/4): p=1 mod 4 {3: 2543}, p=3 mod 4 {1: 2575}
+
+2. The Gamma_1(8) family: T = (1 - th3(q^2)/th3(q))/2, f = th3(q)^2, n <= 300
+   T = [1, -3, 6, -11, 20, -34] ...
+   W_E (case E)     v_n/u_n at n = 300: 0.4579827970886095075273018 ;  minus G/2: -5.2711e-82 (n-10: -5.2711e-82)
+      n =  60: log denom(v_n)/n = 1.5943  (lcm^2: 1.9178);  exponents of primes in (n/2, n]: split [2, 1, 1] | inert [2, 2, 2, 2]
+      n = 100: log denom(v_n)/n = 1.6985  (lcm^2: 1.8809);  exponents of primes in (n/2, n]: split [1, 2, 2, 2, 2] | inert [2, 2, 2, 2, 2]
+      n = 150: log denom(v_n)/n = 1.8584  (lcm^2: 1.9555);  exponents of primes in (n/2, n]: split [2, 2, 2, 2, 2, 2, 2] | inert [2, 2, 2, 2, 2, 2, 2]
+      n = 200: log denom(v_n)/n = 1.9848  (lcm^2: 2.0615);  exponents of primes in (n/2, n]: split [2, 2, 2, 2, 2, 2, 2, 2, 2, 2] | inert [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+      n = 250: log denom(v_n)/n = 1.9018  (lcm^2: 1.9622);  exponents of primes in (n/2, n]: split [2, 2, 2, 2, 2, 2, 2, 2, 2, 2] | inert [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+      n = 300: log denom(v_n)/n = 1.9207  (lcm^2: 1.9949);  exponents of primes in (n/2, n]: split [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] | inert [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+      mean exponent by x = n/p (n in [280,300]): x in [1,1.5) split 2.00; x in [1,1.5) inert 1.98; x in [1.5,2) split 1.99; x in [1.5,2) inert 1.99; x in [2,3) split 1.99; x in [2,3) inert 2.00; x in [3,4) split 1.98; x in [3,4) inert 1.98; x in [4,6) split 2.00; x in [4,6) inert 1.97; x in [6,10) split 1.96; x in [6,10) inert 1.95
+   W*+ = W_E + 2Z   v_n/u_n at n = 300: 0.4579827970886095075273018 ;  minus G/2: -5.2711e-82 (n-10: -5.2711e-82)
+      n =  60: log denom(v_n)/n = 1.3294  (lcm^2: 1.9178);  exponents of primes in (n/2, n]: split [0, 0, 0] | inert [2, 2, 2, 2]
+      n = 100: log denom(v_n)/n = 1.3699  (lcm^2: 1.8809);  exponents of primes in (n/2, n]: split [0, 0, 0, 0, 0] | inert [2, 2, 2, 2, 2]
+      n = 150: log denom(v_n)/n = 1.3517  (lcm^2: 1.9555);  exponents of primes in (n/2, n]: split [0, 0, 0, 0, 0, 0, 0] | inert [2, 2, 2, 2, 2, 2, 2]
+      n = 200: log denom(v_n)/n = 1.4327  (lcm^2: 2.0615);  exponents of primes in (n/2, n]: split [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | inert [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+      n = 250: log denom(v_n)/n = 1.4931  (lcm^2: 1.9622);  exponents of primes in (n/2, n]: split [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | inert [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+      n = 300: log denom(v_n)/n = 1.4518  (lcm^2: 1.9949);  exponents of primes in (n/2, n]: split [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | inert [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
+      mean exponent by x = n/p (n in [280,300]): x in [1,1.5) split 0.00; x in [1,1.5) inert 1.98; x in [1.5,2) split 0.00; x in [1.5,2) inert 1.99; x in [2,3) split 1.98; x in [2,3) inert 2.00; x in [3,4) split 1.98; x in [3,4) inert 1.91; x in [4,6) split 1.98; x in [4,6) inert 1.93; x in [6,10) split 1.96; x in [6,10) inert 1.97
+   W*- = W_E - 2Z   v_n/u_n at n = 300: 0.4579827970886095075273018 ;  minus G/2: -5.2711e-82 (n-10: 0.0)
+      n =  60: log denom(v_n)/n = 1.1259  (lcm^2: 1.9178);  exponents of primes in (n/2, n]: split [2, 1, 1] | inert [0, 0, 0, 0]
+      n = 100: log denom(v_n)/n = 1.3799  (lcm^2: 1.8809);  exponents of primes in (n/2, n]: split [1, 2, 2, 2, 2] | inert [0, 0, 0, 0, 0]
+      n = 150: log denom(v_n)/n = 1.4634  (lcm^2: 1.9555);  exponents of primes in (n/2, n]: split [2, 2, 2, 2, 2, 2, 2] | inert [0, 0, 0, 0, 0, 0, 0]
+      n = 200: log denom(v_n)/n = 1.4371  (lcm^2: 2.0615);  exponents of primes in (n/2, n]: split [2, 2, 2, 2, 2, 2, 2, 2, 2, 2] | inert [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      n = 250: log denom(v_n)/n = 1.3627  (lcm^2: 1.9622);  exponents of primes in (n/2, n]: split [2, 2, 2, 2, 2, 2, 2, 2, 2, 2] | inert [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      n = 300: log denom(v_n)/n = 1.4358  (lcm^2: 1.9949);  exponents of primes in (n/2, n]: split [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2] | inert [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      mean exponent by x = n/p (n in [280,300]): x in [1,1.5) split 2.00; x in [1,1.5) inert 0.00; x in [1.5,2) split 1.99; x in [1.5,2) inert 0.00; x in [2,3) split 2.00; x in [2,3) inert 1.99; x in [3,4) split 2.00; x in [3,4) inert 1.98; x in [4,6) split 1.98; x in [4,6) inert 1.95; x in [6,10) split 1.92; x in [6,10) inert 1.93

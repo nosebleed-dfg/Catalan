@@ -2412,3 +2412,66 @@ In every case R* sits just under the λ-bound. The threshold lies between widths
   - the series at the roots of unity m = 2, 4, 8, and GSWZ's Frobenius gluing with D_p(i) (the Whitehead link is not among their examples);
   - the Stokes constants.
 
+# The arithmetic side, exactly: a pure-G family with ¾ of the denominators, and why ¾ is the floor (2026-09-29; arithmetic_saving.py, arithmetic_saving_out.txt). The user: "2" (the arithmetic lever, the 37% saving)
+**The reduction (exact).**
+- Take any integral coordinate T = q + O(q²) with integral inverse, and f integral with f(0) = 1. Then the cumulative denominators of F = f(g − Λ) are exactly those of the Eichler integral g = Σc(m)m⁻²qᵐ.
+- So W alone sets the arithmetic. The frame and f do not matter.
+- A prime p > √n first enters at the least multiple kp with v_p(c(kp)) < 2.
+- For Eisenstein series multiplicative at p, c(kp) ≡ Σᵢ coefᵢ·Aᵢ(p)·Aᵢ(k) mod p, and each Aᵢ(p) is a unit:
+  - E_G: p² + χ₋₄(p) ≡ χ₋₄(p);
+  - E^{1,χ₋₄}: 1 + χ₋₄(p)p² ≡ 1;
+  - E^{1,χ₋₈}: ≡ 1.
+- So the p-digit at the k-th multiple is a class function R_k(χ₋₄(p)).
+
+**The admissible space (Γ₁(8), harmless group ⟨T, L₈⟩).**
+- Weight 3 on Γ₁(8) is 7-dimensional: E_G(τ), E_G(2τ), E_ζ(τ), E_ζ(2τ), E^{χ₋₈,1}, E^{1,χ₋₈}, and the CM cusp form g.
+- Two are excluded:
+  - E^{χ₋₈,1}: it has an ∞ at the cusp 0 that nothing can cancel (the √2 square class);
+  - g: it brings in L(g,2).
+- The G-part must be W_E = E_G(τ) − 8E_G(2τ) (layer theorem).
+- The constant terms −¼, −¼, −3/2 must cancel.
+- L-values at s = 2: W_E → G/2; E_ζ(dτ) → π²/(12d²); E^{1,χ₋₈} → π²/6.
+- Pure G leaves span{W_E, Z}, with Z = E_ζ(τ) + 8E_ζ(2τ) − (3/2)E^{1,χ₋₈}. Z has constant term 0 and π²-part 0 (exact).
+
+**The digits.** For W = αW_E + γZ: R₁(ε) = αε − γ/2 and R₂(ε) = −4αε + (15/2)γ.
+- At most one class is saved at digit 1, since R₁(+1) − R₁(−1) = 2α ≠ 0.
+- γ = 2α saves the split class. Then R₂(+1) = 11α ≠ 0, so digit 2 is always paid. Its −4 is case E's half turn (τ + ½).
+- So τ = 1 (the unsaved class, from digit 1) + ½ (the saved class, from digit 2) = 3/2. This is the floor for pure G.
+- With π² allowed there is one more parameter, which clears digit 2 for one class: τ = 1 + ⅓ = 4/3.
+  - W_B = W_E − E_ζ(τ)/5 + 5E_ζ(2τ) − (4/5)E^{1,χ₋₈}, limit G/2 − 11π²/240.
+  - Digit 3 is paid (8/5).
+
+**The new family, built and checked.**
+- W*₊ = W_E + 2Z saves the split class; W*₋ = W_E − 2Z saves the inert class.
+- Both live on Γ₁(8), with T = (1 − θ₃(q²)/θ₃(q))/2 and f = θ₃(q)².
+- Exact values: W*₊(p) = 3p²(1 − χ₋₈(p)) for split p (that is, 0 or 6p²), and W*₊(2p) ≡ 11 mod p.
+- v_n/u_n → G/2 for both, to 80 digits at n = 300 (the working precision). This is the same limit as case E.
+- Denominators of v_n (exact, n ≤ 300):
+  - every split (resp. inert) prime in (n/2, n] has exponent 0, and everything else is ≈ 2;
+  - log denom(v_n)/n = 1.45 at n = 300, against 1.995 for lcm² and 1.92 for case E.
+- Cumulative, to 200000 (exact per prime): log D / log lcm² is
+  - 0.9999 for case E;
+  - 0.7499 for W*₊ and 0.7503 for W*₋;
+  - 0.6662 for W_B.
+- The first-digit rule holds for all 5118 primes in (50, 50000), with no exceptions.
+- At n ≈ 300 the per-n bucket averages show no further digit savings (≈ 2 outside the saved class).
+
+**Gate.**
+
+| family | limit | τ | log R* | log R* − τ |
+|---|---|---|---|---|
+| case E | G/2 | 2 | 1.232 | −0.77 |
+| W*₊, W*₋ (new) | G/2 | 3/2 | 1.232 | −0.27 |
+| W_B | G/2 − 11π²/240 | 4/3 | 1.232 | −0.10 |
+
+- The needed 37% (τ ≤ 1.232) is out of reach for Beukers G-families. The floor is a 25% saving for pure G and 33% with π².
+- Higher levels break the harmless group: every invariant is ≥ N, and log R* ≈ 65/N² loses more than any extra digit saves.
+- In carry language: the saving is a first-digit cancellation on one class of primes mod 4.
+  - G's digit is χ₋₄(p) and the companions' digit is 1, so only one class cancels.
+  - The second digit carries case E's half-turn weight −4, which the admissible companions cannot match for pure G.
+
+**What this closes and what it opens.**
+- Beukers G-families are now pinned at both ends: analytically by H(√8) (log R* = 1.232), and arithmetically by τ ≥ 3/2. The pure-G deficit is 0.27, down from 0.77.
+- The mechanism is general. A companion Eisenstein series whose p-digit is 1 cancels G's digit χ₋₄(p) on one class, and a third character (χ₋₈) removes the companion's π².
+- It can be tried wherever G's linear forms have Eisenstein-like rational parts, for example the hypergeometric forms.
+
