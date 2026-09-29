@@ -2367,3 +2367,48 @@ In every case R* sits just under the λ-bound. The threshold lies between widths
   - a construction outside the Beukers shape (the Bianchi/Habiro side);
   - or a proof that none exists.
 
+# The ℚ(i) side, pushed exactly: the Whitehead link in the same two-parabolic family, and what it can carry (2026-09-29; qi_whitehead.py, qi_whitehead_out.txt). The user: "I've worked this angle a lot. But let's push it anyways."
+**A. Volumes are derivatives at the trivial zero (exact).**
+- Humbert gives covol PSL₂(O_K) = |D|^{3/2}ζ_K(2)/(4π²).
+- For odd χ_D the functional equation gives L′(−1,χ_D) = |D|^{3/2}L(2,χ_D)/(4π). So covol = −2π·ζ(−1)·L′(−1,χ_D).
+- The figure-eight group and the Whitehead link group both have index 12 = −1/ζ(−1) in their Bianchi groups. Hence vol/(2π) = L′(−1,χ_D):
+  - 4₁: 0.323065947219451 = L′(−1,χ₋₃);
+  - W: 0.583121808061638 = β′(−1) = 2G/π (15 digits).
+- So Ramanujan's −1/12 is the index, and the Kashaev growth rate is the derivative of β at its trivial zero s = −1.
+
+**B. Riley: the same two-parabolic family.**
+- b(5,3) = 4₁ is ⟨T, (1 0; u 1)⟩ with u² − u + 1 = 0.
+- b(8,3) = W is the same group shape with u² + 2u + 2 = 0, i.e. u = −1 ± i.
+- (Riley's word needs q odd; b(5,2) gives nothing in this convention.)
+- Our harmless groups are the real points u = w of this family: 5 (ζ(2)), 6 (χ₋₃), 8 (G). The constants' 3D homes are complex points of it.
+
+**C. The forbidden lattice sits inside the Whitehead group (exact).**
+- Take P₁ = y and P₂ = g·y·g⁻¹ with g = xyx. Then tr(P₁P₂) = −2.
+- Conjugating over ℚ(i) (send 0 ↦ ∞ and g(0) ↦ 0, then scale by λ = (1+i)/2, λ² = i/2) gives (1 −2i; 0 1) and (1 0; −2i 1), with invariant −4.
+- That is ⟨T, L₄⁻¹⟩ = Γ₀(4). So the thrice-punctured sphere in the Whitehead link complement is exactly the w = 4 lattice that the Eichler–Shimura principle forbids for a holomorphic F.
+- Case E's harmless group ⟨T, L₈⟩ is ⟨P₁, P₂²⟩ after that conjugation, so it is a thin subgroup of the Whitehead group.
+
+**D. q → 1: the Kashaev invariant.**
+- The formula is Murakami–Murakami–Okamoto–Takata–Yokota's (Exp. Math. 11, 2002); it becomes O(N²) because the i- and j-sums factor for fixed k.
+- Their Table 1 is reproduced to all printed digits at N = 40 and 50 (the printed prefactor (−1)^{N−1} dropped).
+- A 13-point Richardson fit over N = 160…400 gives J_N = C·N^{3/2}·e^{N(4G + iπ²/4)/(2π)}·(1 + a₁h + a₂h² + a₃h³ + ⋯), h = 2πi/N, with:
+  - C² = (−1 + i)/8 (C⁴ = −i/32 to 10⁻²²);
+  - a₁ = (39 − 14i)/96;
+  - a₂ = (965 − 1452i)/(2·96²);
+  - a₃ = (−26505 − 325922i)/(30·96³) (10 digits).
+- The denominators are 96^k·(1, 2, 30): the pattern of Garoufalidis–Zagier's 4₁ series with 72√−3 replaced by 96. Only the primes 2, 3, 5 occur.
+
+**E. Integrality at roots of unity.**
+- The norms of J_N(ζ_N) over ℚ are rational integers for N = 3…12. Examples: 981 = 3²·109; 3200 = 2⁷·5²; 196075625 = 5⁴·313721; 5461721005027301 = 7⁶·71·653857219.
+- Their p-parts give N | J_N(ζ_N) every time: p^{p−1} ∥ Norm for N = p = 3, 5, 7; 3¹² for N = 9; extra powers of 2.
+
+**Verdict: what this angle can carry.**
+- Everything is integral and exact, and G enters only as β′(−1) = 2G/π: as a growth rate e^{N·β′(−1)}, a volume, or the exponent of the completion e^{V/h}.
+- The natural series are resurgent (factorially growing, as for 4₁). They are not G-functions, so no arithmetic holonomy bound applies to them.
+- They carry G/π, never a linear form in 1 and G.
+- The one exact contact with our construction is geometric. The w = 4 lattice Γ₀(4), forbidden in 2D, is the totally geodesic thrice-punctured sphere of G's 3D home. G's volume is its thickening, and its holomorphic shadow is exactly the lattice we cannot use.
+- This matches the user's own experience of the angle.
+- Possible continuations (none aimed at a proof):
+  - the series at the roots of unity m = 2, 4, 8, and GSWZ's Frobenius gluing with D_p(i) (the Whitehead link is not among their examples);
+  - the Stokes constants.
+

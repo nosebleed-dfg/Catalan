@@ -78,6 +78,11 @@
   - The factor 2 is 8/4: conductor 4 sits on Hecke's λ = 2.
   - At that threshold the forced half-order zero is χ₋₄(−1) = (−1)^k, i.e. χ₂(−1) = χ_∞(−1): the real place's sign carried by 2. The same sign makes G non-critical.
   - Leaving congruence costs denominators (Calegari–Dimitrov–Tang, arXiv 2109.09040).
+- The ℚ(i) side pushed exactly (results log section of that name; qi_whitehead.py):
+  - vol/(2π) = L′(−1,χ_D) for 4₁ and W, with index 12 = −1/ζ(−1). So the Kashaev growth rate of W is β′(−1) = 2G/π.
+  - Riley: W = ⟨T, (1 0; u 1)⟩ with u = −1 ± i, the same family as our harmless groups (real u = w). The Whitehead group contains a ℚ(i)-conjugate of Γ₀(4), the forbidden w = 4 lattice, as its thrice-punctured sphere.
+  - Kashaev invariant (MMOTY formula, Table 1 reproduced): C² = (−1+i)/8, a₁ = (39 − 14i)/96, a₂ = (965 − 1452i)/(2·96²). Norms of J_N(ζ_N) are integers with N | J_N (N ≤ 12).
+  - Verdict: this side carries G/π through growth rates and resurgent series, never a linear form in 1 and G.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.
