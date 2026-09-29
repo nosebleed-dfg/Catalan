@@ -2117,3 +2117,39 @@ with ζ(0) = −½ when y ∈ ℤ.
 - In each case the ∞-cancellation at the dominant cusp (weights d⁻³) collides with the cancellations needed at the other cusps.
 - Next: the full classification, allowing E_ζ (1, χ₋₄) components and cusp forms that cancel among themselves, on the Γ₀(4k) and Γ₁(N) curves. It either finds a family that blows up only at infinity, or it explains exactly why G always keeps one ∞ or one quarter turn.
 
+# The widened linear algebra: the layer theorem, the one survivor, and why it is "infinity minus 1" (2026-09-29). The user: "Ok"
+**A missing ingredient: the weight-1 form f.** F = f·(g − Λ) also inherits f's behaviour at each finite cusp.
+- At a regular cusp where f ≠ 0, the dictionary above is complete.
+- Where f vanishes (a square-root zero at an irregular cusp), write F(γτ′) = (f|γ)·[c(L₂ − Λ)τ′ − 2πiL₁/c + …]. The s = 1 term −2πiL₁/c, which only shifted the analytic part at a regular cusp, now multiplies (t − t_c)^{1/2}.
+- So at such a cusp the s = 1 value (the −1/12 rung) is the blow-up.
+- Realizability: every weight-3 E that vanishes at ∞ and at the finite cusps comes from a polynomial inhomogeneity h = t·E/W₀, provided f has no zeros at finite cusps.
+
+**Decoupling (exact, given the standard independence of π² from the L(2, odd ψ) Clausen values).**
+- At the representative x = a/c, E_G's ∞ is real and E_ζ's is imaginary: μ_{χ₋₄}(r/4) = (i/2)χ₋₄(r), and the residue is 2^{−3(v−2)}(i/2)χ₋₄(r)L(3,χ₋₄) for E_ζ(2^f τ) at a cusp r/2^v with v ≥ f + 2.
+- E_G's blow-ups are i·π²·(algebraic), while E_ζ's values are π²·(rational) plus i·(Clausen values).
+- So the G-type part must satisfy the conditions by itself.
+- On Γ₁(N), the other odd quadratic characters decouple by square class: L(3,χ₋₈) = 3√2π³/128 and L(3,χ₋₃) ∈ √3·ℚπ³, against L(3,χ₋₄) = π³/32; the cot sums follow the same pattern. With rational coefficients, χ₋₄ stands alone again, on more cusps.
+
+**Layer theorem (Γ₀(N), N = 2^a M, M odd; G-components E_G(2^f d′τ), 0 ≤ f ≤ a − 2, d′ | M).** Sort the cusps by layer v = v₂(c), with c = 2^v c′.
+- **∞'s.** In layer v the components with f ≥ v carry an ∞. The condition matrix T_{c′,d′} = d′⁻³χ₋₄(c′_{d′})c′_{d′}⁻³ (c′_{d′} = c′/gcd(c′,d′)) factors over the primes of M. After scaling column j by p^{3j}, each prime block has 1 on and above the diagonal and ρ^{i−j} below it (ρ = χ₋₄(p)p⁻³), so its determinant is (1 − ρ)^e ≠ 0.
+  - Hence B^{(v)} := (Σ_{f≥v} α_{f,d′} 8^{−f})_{d′} = 0 in every layer v ≤ a − 2 that holds no pole.
+  - The pole can remove a row only where a cusp stands alone, i.e. layers v₀ ∈ {0, 1}.
+  - That forces W = Σ_{d′} β*_{d′}(8^{v₀}E_G(2^{v₀}d′τ) − 8^{v₀−1}E_G(2^{v₀−1}d′τ)), with β* = T⁻¹e_{pole}. For v₀ = 1, d′ = 1 this is exactly case E's form.
+- **Blow-up.** In both cases (for v₀ = 0 when N ≠ 4) the cusp ¼ is finite and meets the lower component at a quarter turn. Its condition is Σ_{d′} β*_{d′}χ₋₄(d′)d′⁻² = (R·T⁻¹)_{pole} = 0.
+  - That fails for every pole choice: M = 1 gives 1 ≠ 0; M = p gives 1 − p⁻² or 1 ∓ p; general M by multiplicativity.
+- **The one survivor** is N = 4, pole at cusp 0, W = E_G. Its only finite cusp is ½, a half turn: no ∞ and no s = 2 blow-up.
+  - But ½ is irregular, and the only weight-1 form, θ₃², vanishes there: θ₃(τ + ½) = θ₄(τ), and Σ_{n∈ℤ}(−1)ⁿ = 1 + 2·(−½) = 0.
+  - So ½ pays through the s = 1 value: L(1,χ₋₄)·Σ_d d(−1)^d = (π/4)(−¼), the alternating cousin of −1/12 (η(−1) = (1 − 2²)ζ(−1) = ¼).
+  - The same ±1 sum that frees G at the half turn (Σ(−1)^d = −½) makes θ₃ vanish there.
+- **Check of the survivor (numbers only to test the derived statement).** h = t + 16t² gives W = (1 + 16t)W₀ = E_G exactly (80 coefficients). y_n/u_n → −G/2, as predicted (L(E_G, e(½·), 2) = −G/2), but only logarithmically: (y_n/u_n + G/2)·log n = 1.22, 1.39, 1.49, 1.57, 1.60 at n = 10², 10³, 10⁴, 10⁵, 4·10⁵. That is the square-root branch at t = −1/16.
+
+**Conclusion: "infinity minus 1" is exactly the shape.**
+- Every pure-G Beukers family (Γ₀(N); Γ₁(N) with quadratic characters) blows up at at least one finite cusp. Blowing up only at infinity is impossible, and one paying cusp class is the best possible. Case E already achieves it (the cusp ¼).
+- The bound then runs out to that one cusp, and its distance decides everything:
+  - The x = 1/t values of the cusps are algebraic integers (8, 4 / 6, 4, 3, 2 / 4 ± 2√2, 2, 1 / 2 ± 2i on the curves computed).
+  - Galois-conjugate cusps share the twist type (a quarter turn stays a quarter turn), so a paying cusp's whole orbit pays.
+  - The norm is ≥ 1, so the nearest paying cusp has |t| ≤ 1 in the integral frame.
+- Apéry's direct criterion needs |t| > e^τ ≈ e² ≈ 7.4. The deficit is at least e² per step, and it is structural.
+- CDT's λ-uniformization is worth at most a factor 16. So the whole question is R ≥ e²/16 ≈ 0.46 for the single paying orbit: case E has R = ¼ (fails), Γ₁(8) has R = ½ (the naive margin +0.1).
+- Not yet covered: Atkin–Lehner quotients (their elliptic fixed points bring square-root branches) and non-quadratic character orbits on Γ₁(N).
+

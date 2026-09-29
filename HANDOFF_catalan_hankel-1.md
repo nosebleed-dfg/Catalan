@@ -49,6 +49,12 @@
   - TARGET: a pure-G weight-3 form with no ∞ and no blow-up at any finite cusp. Then F blows up only at t = ∞, F is entire, and G is irrational.
   - Pure-G Eisenstein combinations fail on Γ₀(8), Γ₀(12), Γ₀(16): the dominant ∞-cancellation collides with the other cusps.
   - Next: allow E_ζ and cusp-form components, and go to Γ₁(N) and Atkin–Lehner quotients.
+- The widened linear algebra, done (results log "The widened linear algebra: the layer theorem …"):
+  - E_ζ and the other quadratic characters decouple (real vs imaginary ∞'s; square classes √2, √3 of L(3,·)), so G's part stands alone.
+  - Layer theorem: the ∞-matrix is invertible (det ∏(1 − χ₋₄(p)p⁻³)^e). This forces the case-E pattern 8^{v₀}E_G(2^{v₀}·) − 8^{v₀−1}E_G(2^{v₀−1}·), with the pole in layer 0 or 1. The cusp ¼ then pays a quarter turn for every N ≠ 4.
+  - N = 4 (pole 0, W = E_G) is free at s = 2, but θ₃² vanishes at ½ (Σ(−1)ⁿ = 1 + 2(−½) = 0). So ½ pays at s = 1 through a square root; checked: y_n/u_n → −G/2 like 1.6/log n.
+  - So "infinity minus 1" is exactly the best possible: one paying cusp class. Its orbit has norm ≥ 1, so R ≤ 1, against e^τ ≈ 7.4 for Apéry's criterion. With CDT's λ-factor 16 the question is R ≥ 0.46: case E has R = ¼, Γ₁(8) has R = ½.
+  - Open: Atkin–Lehner quotients, and non-quadratic character orbits.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.
