@@ -2475,3 +2475,43 @@ In every case R* sits just under the λ-bound. The threshold lies between widths
 - The mechanism is general. A companion Eisenstein series whose p-digit is 1 cancels G's digit χ₋₄(p) on one class, and a third character (χ₋₈) removes the companion's π².
 - It can be tried wherever G's linear forms have Eisenstein-like rational parts, for example the hypergeometric forms.
 
+# Pushing the companion mechanism hard: the exact modular floor, and why it does not transfer (2026-09-29; companion_k2.py). The user: "Push this hard."
+**1. The modular floor.** For every congruence Beukers family whose limit is pure G, τ − log R* ≥ 3/2 − 1.2323 = 0.268. This assumes the standard independence of π², G and the Clausen values already used in the layer theorem.
+- The group side:
+  - the G-part is case E's pattern (layer theorem);
+  - by decoupling, the harmless set lies inside the G-part's harmless set;
+  - T must be in the group.
+  - So the harmless group lies in ⟨T, L₈⟩ (or in its level-raised copies ⟨T, L_{8d′}⟩, which are worse).
+- With L₈ in the harmless group, log R* = 1.2323 and every component must be L₈-invariant, i.e. of level 8. That is the 7-dimensional weight-3 space of Γ₁(8), whose optimum is τ = 3/2 (previous section).
+- Without L₈, the single-syllable term 2ζ(2)/64 = 0.051 of S = 0.062 is lost, so log R* < 1. Yet τ ≥ 1 still holds, because one class always pays at digit 1: G's digit χ₋₄(p) is odd under the class swap, and every pure-G companion's digit is class-independent.
+- So the minimum is 0.268, attained by W*±. With π² allowed it is 4/3 − 1.232 = 0.101 (W_B).
+
+**2. Why the mechanism is free only here.** It needs a companion with three properties:
+- (a) first digit 1 at every prime;
+- (b) a constant in ℚ·π²;
+- (c) the same homogeneous part and singular set, so the decay is unchanged.
+
+In GL₂/ℚ these are exactly the Eisenstein series E^{1,ψ}. The divisor d = 1 gives the p-coefficient 1 + ψ(p)p² ≡ 1, while the L-value ζ(2)L(0,ψ) is rational × π². Only Hecke eigenforms have this "trivial first digit with a character-flavoured constant".
+
+**3. The transfers, checked.**
+- **K¹, Zudilin's G-recurrence.** It has order 2 and no singular index (A(n) = (2n+1)²(2n+2)²p(n) ≠ 0). So every sequence obeying it from some index on is a ℚ-combination of u and v, and every inhomogeneous companion has its limit in ℚ + ℚG. A π² companion does not exist.
+- **K², Catalan's Hankel machine (exact, companion_k2.py).** The kernel is Catalan + c·plain, in both the pole values and the moments; the plain unknown is set to 0, since only the content is tested.
+  - At a pole b > p the 1/p² coefficient is −(b/4)(2χ₋₄(b)χ₋₄(p) + c). So c = −2 cancels it exactly for the poles b ≡ p (mod 4), half the poles of every prime.
+  - Content exponents for K < p < 2K at K = 30, as sums over the primes of each class (Catalan's law 3n + 1 gives 72 for p ≡ 1 mod 4 and 88 for p ≡ 3 mod 4):
+    - c = 0 (control): 72 / 88, Catalan's law exactly;
+    - c = −2: 75 / 88 (every p ≡ 1 mod 4 costs one more);
+    - c = +2: 72 / 92;
+    - c = −1, 1, −4, ½: 98 / 120 (the plain machine's cost).
+  - No weight gains. The ledger rule predicted this: per mirror pair,
+    - saved: 2 − 1 (Hermite, both members p-integral) + 1 (von Staudt from the Bernoulli moments) = 2;
+    - unsaved: 2 + 1 + 1 = 4;
+    - average 3, Catalan's own cost.
+  - The digit-1 companion is forced to be the plain residue pattern, whose Bernoulli moments bring the von Staudt prime back. It also puts π² into the pole values with pole-dependent weights, i.e. a second unknown.
+  - Companions with a nontrivial character are von Staudt-free, but their digit is ψ(p) and their constant is √d·π² (even ψ) or a new non-critical value (odd ψ).
+- Outside the modular world the balance law holds exactly: the saving and its cost are the same prime, counted twice.
+
+**4. The one door left on this route.** A holomorphic family carrying G with a harmless parabolic of invariant w ∈ {5, 6, 7}.
+- log R* would be 5.13, 2.68, 1.73. The first two pass even at τ = 2; w = 7 passes with the companion saving (1.73 > 3/2).
+- The conductor 4 forbids this for congruence forms.
+- A non-congruence family pays in denominators (Calegari–Dimitrov–Tang). Whether that payment can stay below the analytic gain is the only quantitative question left on the Beukers route.
+

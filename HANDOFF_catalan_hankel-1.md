@@ -89,6 +89,12 @@
   - This is optimal for pure G on the 7-dimensional weight-3 space of Γ₁(8). Digit 1 saves at most one class mod 4. Digit 2 is always paid (11α, from case E's half-turn −4).
   - With π²: τ = 4/3 (W_B, limit G/2 − 11π²/240).
   - Gate: log R* = 1.232 against τ = 3/2 gives −0.27 (was −0.77); with π², −0.10. The 37% target is not reachable within Beukers families.
+- Pushed hard (results log "Pushing the companion mechanism hard"; companion_k2.py):
+  - Modular floor: τ − log R* ≥ 0.268 for every congruence pure-G family (≥ 0.101 with π²). Either the harmless group is ⟨T, L₈⟩ with level-8 components (τ ≥ 3/2), or log R* < 1 ≤ τ.
+  - Free only for Hecke eigenforms: E^{1,ψ} has first digit 1 with a ℚπ² constant.
+  - Zudilin's order-2 recurrence has no π² companion (all limits in ℚ + ℚG).
+  - K² Catalan with a plain companion, exact at K = 30: every weight c loses (c = −2: 163 vs 160; generic c: 218). Per mirror pair it is 2 or 4, averaging Catalan's 3: the balance law, exactly.
+  - Remaining door: a non-congruence G-family with harmless invariant 5–7, paid for in denominators.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.
