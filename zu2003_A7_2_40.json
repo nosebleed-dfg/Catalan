@@ -1,0 +1,3793 @@
+[
+{
+"kind": "A",
+"n": 2,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 1.0,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 2,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.002011537551879883
+},
+{
+"kind": "A",
+"n": 3,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 1.5,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 2,
+"phi": false
+},
+{
+"p": 3,
+"x": 1.0,
+"true": 5,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 5,
+"zeta": 2,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.0020093917846679688
+},
+{
+"kind": "A",
+"n": 4,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 2.0,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 14,
+"a0": 13,
+"zeta": 6,
+"phi": false
+},
+{
+"p": 3,
+"x": 1.3333333333333333,
+"true": 5,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 5,
+"zeta": 2,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.004022359848022461
+},
+{
+"kind": "A",
+"n": 5,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 2.5,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 15,
+"a0": 13,
+"zeta": 6,
+"phi": false
+},
+{
+"p": 3,
+"x": 1.6666666666666667,
+"true": 5,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 5,
+"zeta": 2,
+"phi": true
+},
+{
+"p": 5,
+"x": 1.0,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.0077250003814697266
+},
+{
+"kind": "A",
+"n": 6,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 3.0,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 14,
+"a0": 13,
+"zeta": 6,
+"phi": false
+},
+{
+"p": 3,
+"x": 2.0,
+"true": 5,
+"proved": 8,
+"observed": 7,
+"refined": 6,
+"a0": 5,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 5,
+"x": 1.2,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.007947206497192383
+},
+{
+"kind": "A",
+"n": 7,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 3.5,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 14,
+"a0": 13,
+"zeta": 6,
+"phi": false
+},
+{
+"p": 3,
+"x": 2.3333333333333335,
+"true": 5,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 5,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 5,
+"x": 1.4,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 7,
+"x": 1.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.011823415756225586
+},
+{
+"kind": "A",
+"n": 8,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 4.0,
+"true": 20,
+"proved": 24,
+"observed": 21,
+"refined": 21,
+"a0": 20,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 3,
+"x": 2.6666666666666665,
+"true": 4,
+"proved": 7,
+"observed": 7,
+"refined": 6,
+"a0": 1,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 5,
+"x": 1.6,
+"true": 5,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 5,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 7,
+"x": 1.1428571428571428,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.01336050033569336
+},
+{
+"kind": "A",
+"n": 9,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 4.5,
+"true": 20,
+"proved": 24,
+"observed": 21,
+"refined": 23,
+"a0": 20,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 3,
+"x": 3.0,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 14,
+"a0": 12,
+"zeta": 6,
+"phi": false
+},
+{
+"p": 5,
+"x": 1.8,
+"true": 6,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 7,
+"x": 1.2857142857142858,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.017593860626220703
+},
+{
+"kind": "A",
+"n": 10,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 5.0,
+"true": 20,
+"proved": 24,
+"observed": 21,
+"refined": 22,
+"a0": 20,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 3,
+"x": 3.3333333333333335,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 16,
+"a0": 12,
+"zeta": 6,
+"phi": false
+},
+{
+"p": 5,
+"x": 2.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 7,
+"x": 1.4285714285714286,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.02401447296142578
+},
+{
+"kind": "A",
+"n": 11,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 5.5,
+"true": 20,
+"proved": 24,
+"observed": 21,
+"refined": 22,
+"a0": 20,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 3,
+"x": 3.6666666666666665,
+"true": 12,
+"proved": 15,
+"observed": 14,
+"refined": 15,
+"a0": 12,
+"zeta": 6,
+"phi": true
+},
+{
+"p": 5,
+"x": 2.2,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 7,
+"x": 1.5714285714285714,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 11,
+"x": 1.0,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.03164243698120117
+},
+{
+"kind": "A",
+"n": 12,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 6.0,
+"true": 20,
+"proved": 24,
+"observed": 21,
+"refined": 21,
+"a0": 20,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 3,
+"x": 4.0,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 15,
+"a0": 12,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 5,
+"x": 2.4,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 7,
+"x": 1.7142857142857142,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 11,
+"x": 1.0909090909090908,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.0494081974029541
+},
+{
+"kind": "A",
+"n": 13,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 6.5,
+"true": 20,
+"proved": 24,
+"observed": 21,
+"refined": 22,
+"a0": 20,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 3,
+"x": 4.333333333333333,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 16,
+"a0": 12,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 5,
+"x": 2.6,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 7,
+"x": 1.8571428571428572,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 11,
+"x": 1.1818181818181819,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 1.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.05555248260498047
+},
+{
+"kind": "A",
+"n": 14,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 7.0,
+"true": 20,
+"proved": 24,
+"observed": 21,
+"refined": 21,
+"a0": 20,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 3,
+"x": 4.666666666666667,
+"true": 12,
+"proved": 15,
+"observed": 14,
+"refined": 15,
+"a0": 12,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 5,
+"x": 2.8,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 7,
+"x": 2.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 1.2727272727272727,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 1.0769230769230769,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 3,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.06933212280273438
+},
+{
+"kind": "A",
+"n": 15,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 7.5,
+"true": 20,
+"proved": 24,
+"observed": 21,
+"refined": 21,
+"a0": 20,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 3,
+"x": 5.0,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 14,
+"a0": 12,
+"zeta": 6,
+"phi": false
+},
+{
+"p": 5,
+"x": 3.0,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 6,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 7,
+"x": 2.142857142857143,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 1.3636363636363635,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 1.1538461538461537,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.08507585525512695
+},
+{
+"kind": "A",
+"n": 16,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 8.0,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 28,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 5.333333333333333,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 15,
+"a0": 12,
+"zeta": 6,
+"phi": false
+},
+{
+"p": 5,
+"x": 3.2,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 7,
+"x": 2.2857142857142856,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 1.4545454545454546,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 1.2307692307692308,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.10330414772033691
+},
+{
+"kind": "A",
+"n": 17,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 8.5,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 31,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 5.666666666666667,
+"true": 12,
+"proved": 15,
+"observed": 14,
+"refined": 14,
+"a0": 12,
+"zeta": 6,
+"phi": true
+},
+{
+"p": 5,
+"x": 3.4,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 7,
+"x": 2.4285714285714284,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 1.5454545454545454,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 1.3076923076923077,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.11283230781555176
+},
+{
+"kind": "A",
+"n": 18,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 9.0,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 30,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 6.0,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 13,
+"a0": 12,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 5,
+"x": 3.6,
+"true": 5,
+"proved": 8,
+"observed": 7,
+"refined": 6,
+"a0": 5,
+"zeta": 2,
+"phi": false
+},
+{
+"p": 7,
+"x": 2.5714285714285716,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 1.6363636363636365,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 1.3846153846153846,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.0588235294117647,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.1383817195892334
+},
+{
+"kind": "A",
+"n": 19,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 9.5,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 30,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 6.333333333333333,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 15,
+"a0": 12,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 5,
+"x": 3.8,
+"true": 6,
+"proved": 7,
+"observed": 7,
+"refined": 6,
+"a0": 6,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 7,
+"x": 2.7142857142857144,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 11,
+"x": 1.7272727272727273,
+"true": 6,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 13,
+"x": 1.4615384615384615,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.1176470588235294,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.15010809898376465
+},
+{
+"kind": "A",
+"n": 20,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 10.0,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 29,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 6.666666666666667,
+"true": 12,
+"proved": 15,
+"observed": 14,
+"refined": 14,
+"a0": 12,
+"zeta": 8,
+"phi": true
+},
+{
+"p": 5,
+"x": 4.0,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 6,
+"a0": 6,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 7,
+"x": 2.857142857142857,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 11,
+"x": 1.8181818181818181,
+"true": 6,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 13,
+"x": 1.5384615384615385,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.1764705882352942,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.0526315789473684,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.16167712211608887
+},
+{
+"kind": "A",
+"n": 21,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 10.5,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 30,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 7.0,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 14,
+"a0": 12,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 5,
+"x": 4.2,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 7,
+"x": 3.0,
+"true": 5,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 5,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 1.9090909090909092,
+"true": 6,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 13,
+"x": 1.6153846153846154,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.2352941176470589,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.105263157894737,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.19707059860229492
+},
+{
+"kind": "A",
+"n": 22,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 11.0,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 29,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 7.333333333333333,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 15,
+"a0": 12,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 5,
+"x": 4.4,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 7,
+"x": 3.142857142857143,
+"true": 4,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 4,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 2.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 1.6923076923076923,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 17,
+"x": 1.2941176470588236,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.1578947368421053,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.21735739707946777
+},
+{
+"kind": "A",
+"n": 23,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 11.5,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 29,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 7.666666666666667,
+"true": 12,
+"proved": 15,
+"observed": 14,
+"refined": 14,
+"a0": 12,
+"zeta": 8,
+"phi": true
+},
+{
+"p": 5,
+"x": 4.6,
+"true": 5,
+"proved": 8,
+"observed": 7,
+"refined": 6,
+"a0": 5,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 7,
+"x": 3.2857142857142856,
+"true": 5,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 5,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 2.090909090909091,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 1.7692307692307692,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 17,
+"x": 1.3529411764705883,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.2105263157894737,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.24514365196228027
+},
+{
+"kind": "A",
+"n": 24,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 12.0,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 28,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 8.0,
+"true": 9,
+"proved": 16,
+"observed": 14,
+"refined": 13,
+"a0": 9,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 5,
+"x": 4.8,
+"true": 6,
+"proved": 7,
+"observed": 7,
+"refined": 6,
+"a0": 6,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 7,
+"x": 3.4285714285714284,
+"true": 4,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 4,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 2.1818181818181817,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 1.8461538461538463,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 17,
+"x": 1.411764705882353,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.263157894736842,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.0434782608695652,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.27550363540649414
+},
+{
+"kind": "A",
+"n": 25,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 12.5,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 30,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 8.333333333333334,
+"true": 9,
+"proved": 16,
+"observed": 14,
+"refined": 14,
+"a0": 9,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 5,
+"x": 5.0,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 14,
+"a0": 13,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 7,
+"x": 3.5714285714285716,
+"true": 5,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 5,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 2.272727272727273,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 1.9230769230769231,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 17,
+"x": 1.4705882352941178,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.3157894736842106,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.0869565217391304,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.25592970848083496
+},
+{
+"kind": "A",
+"n": 26,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 13.0,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 29,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 8.666666666666666,
+"true": 8,
+"proved": 15,
+"observed": 14,
+"refined": 13,
+"a0": 8,
+"zeta": 8,
+"phi": true
+},
+{
+"p": 5,
+"x": 5.2,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 16,
+"a0": 13,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 7,
+"x": 3.7142857142857144,
+"true": 5,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 5,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 11,
+"x": 2.3636363636363638,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 2.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.5294117647058822,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.368421052631579,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.1304347826086956,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.33049559593200684
+},
+{
+"kind": "A",
+"n": 27,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 13.5,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 29,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 9.0,
+"true": 19,
+"proved": 24,
+"observed": 21,
+"refined": 21,
+"a0": 19,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 5,
+"x": 5.4,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 16,
+"a0": 13,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 7,
+"x": 3.857142857142857,
+"true": 5,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 5,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 11,
+"x": 2.4545454545454546,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 2.076923076923077,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.588235294117647,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 2,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.4210526315789473,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.173913043478261,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.3457767963409424
+},
+{
+"kind": "A",
+"n": 28,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 14.0,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 28,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 9.333333333333334,
+"true": 19,
+"proved": 24,
+"observed": 21,
+"refined": 24,
+"a0": 19,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 5,
+"x": 5.6,
+"true": 11,
+"proved": 16,
+"observed": 14,
+"refined": 15,
+"a0": 11,
+"zeta": 6,
+"phi": false
+},
+{
+"p": 7,
+"x": 4.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 2.5454545454545454,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 2.1538461538461537,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.6470588235294117,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.4736842105263157,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.2173913043478262,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.35526132583618164
+},
+{
+"kind": "A",
+"n": 29,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 14.5,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 29,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 9.666666666666666,
+"true": 19,
+"proved": 23,
+"observed": 21,
+"refined": 23,
+"a0": 19,
+"zeta": 10,
+"phi": true
+},
+{
+"p": 5,
+"x": 5.8,
+"true": 13,
+"proved": 15,
+"observed": 14,
+"refined": 15,
+"a0": 13,
+"zeta": 8,
+"phi": true
+},
+{
+"p": 7,
+"x": 4.142857142857143,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 2.6363636363636362,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 13,
+"x": 2.230769230769231,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.7058823529411764,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 19,
+"x": 1.5263157894736843,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.2608695652173914,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 29,
+"x": 1.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.41398000717163086
+},
+{
+"kind": "A",
+"n": 30,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 15.0,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 28,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 10.0,
+"true": 19,
+"proved": 24,
+"observed": 21,
+"refined": 23,
+"a0": 19,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 5,
+"x": 6.0,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 15,
+"a0": 13,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 7,
+"x": 4.285714285714286,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 2.727272727272727,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 13,
+"x": 2.3076923076923075,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.7647058823529411,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 19,
+"x": 1.5789473684210527,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.3043478260869565,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 29,
+"x": 1.0344827586206897,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.4182417392730713
+},
+{
+"kind": "A",
+"n": 31,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 15.5,
+"true": 27,
+"proved": 32,
+"observed": 28,
+"refined": 28,
+"a0": 27,
+"zeta": 14,
+"phi": false
+},
+{
+"p": 3,
+"x": 10.333333333333334,
+"true": 19,
+"proved": 24,
+"observed": 21,
+"refined": 24,
+"a0": 19,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 5,
+"x": 6.2,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 16,
+"a0": 13,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 7,
+"x": 4.428571428571429,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 2.8181818181818183,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 13,
+"x": 2.3846153846153846,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.8235294117647058,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 19,
+"x": 1.631578947368421,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.3478260869565217,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 29,
+"x": 1.0689655172413792,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 31,
+"x": 1.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.4839515686035156
+},
+{
+"kind": "A",
+"n": 32,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 16.0,
+"true": 34,
+"proved": 40,
+"observed": 35,
+"refined": 35,
+"a0": 34,
+"zeta": 18,
+"phi": false
+},
+{
+"p": 3,
+"x": 10.666666666666666,
+"true": 19,
+"proved": 23,
+"observed": 21,
+"refined": 23,
+"a0": 19,
+"zeta": 10,
+"phi": true
+},
+{
+"p": 5,
+"x": 6.4,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 16,
+"a0": 13,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 7,
+"x": 4.571428571428571,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 2.909090909090909,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 13,
+"x": 2.4615384615384617,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.8823529411764706,
+"true": 6,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 2,
+"phi": true
+},
+{
+"p": 19,
+"x": 1.6842105263157894,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 23,
+"x": 1.391304347826087,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 29,
+"x": 1.103448275862069,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 31,
+"x": 1.032258064516129,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.5104491710662842
+},
+{
+"kind": "A",
+"n": 33,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 16.5,
+"true": 34,
+"proved": 40,
+"observed": 35,
+"refined": 39,
+"a0": 34,
+"zeta": 18,
+"phi": false
+},
+{
+"p": 3,
+"x": 11.0,
+"true": 19,
+"proved": 24,
+"observed": 21,
+"refined": 22,
+"a0": 19,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 5,
+"x": 6.6,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 15,
+"a0": 12,
+"zeta": 7,
+"phi": false
+},
+{
+"p": 7,
+"x": 4.714285714285714,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 6,
+"a0": 7,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 11,
+"x": 3.0,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 13,
+"x": 2.5384615384615383,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 1.9411764705882353,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 19,
+"x": 1.736842105263158,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 23,
+"x": 1.434782608695652,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 29,
+"x": 1.1379310344827587,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 31,
+"x": 1.064516129032258,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.5176548957824707
+},
+{
+"kind": "A",
+"n": 34,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 17.0,
+"true": 34,
+"proved": 40,
+"observed": 35,
+"refined": 38,
+"a0": 34,
+"zeta": 18,
+"phi": false
+},
+{
+"p": 3,
+"x": 11.333333333333334,
+"true": 19,
+"proved": 24,
+"observed": 21,
+"refined": 23,
+"a0": 19,
+"zeta": 10,
+"phi": false
+},
+{
+"p": 5,
+"x": 6.8,
+"true": 13,
+"proved": 15,
+"observed": 14,
+"refined": 15,
+"a0": 13,
+"zeta": 8,
+"phi": true
+},
+{
+"p": 7,
+"x": 4.857142857142857,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 6,
+"a0": 7,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 11,
+"x": 3.090909090909091,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 13,
+"x": 2.6153846153846154,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 2.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.7894736842105263,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 23,
+"x": 1.4782608695652173,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 29,
+"x": 1.1724137931034482,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 31,
+"x": 1.096774193548387,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.5408945083618164
+},
+{
+"kind": "A",
+"n": 35,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 17.5,
+"true": 34,
+"proved": 40,
+"observed": 35,
+"refined": 38,
+"a0": 34,
+"zeta": 18,
+"phi": false
+},
+{
+"p": 3,
+"x": 11.666666666666666,
+"true": 19,
+"proved": 23,
+"observed": 21,
+"refined": 22,
+"a0": 19,
+"zeta": 10,
+"phi": true
+},
+{
+"p": 5,
+"x": 7.0,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 15,
+"a0": 13,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 7,
+"x": 5.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 6,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 3.1818181818181817,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 13,
+"x": 2.6923076923076925,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 17,
+"x": 2.0588235294117645,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.8421052631578947,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 23,
+"x": 1.5217391304347827,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 29,
+"x": 1.206896551724138,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 31,
+"x": 1.1290322580645162,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.5580356121063232
+},
+{
+"kind": "A",
+"n": 36,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 18.0,
+"true": 34,
+"proved": 40,
+"observed": 35,
+"refined": 37,
+"a0": 34,
+"zeta": 18,
+"phi": false
+},
+{
+"p": 3,
+"x": 12.0,
+"true": 19,
+"proved": 24,
+"observed": 21,
+"refined": 22,
+"a0": 19,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 5,
+"x": 7.2,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 16,
+"a0": 13,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 7,
+"x": 5.142857142857143,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 3.272727272727273,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 13,
+"x": 2.769230769230769,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 17,
+"x": 2.1176470588235294,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.894736842105263,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 23,
+"x": 1.565217391304348,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 29,
+"x": 1.2413793103448276,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 31,
+"x": 1.1612903225806452,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.6270809173583984
+},
+{
+"kind": "A",
+"n": 37,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 18.5,
+"true": 34,
+"proved": 40,
+"observed": 35,
+"refined": 38,
+"a0": 34,
+"zeta": 18,
+"phi": false
+},
+{
+"p": 3,
+"x": 12.333333333333334,
+"true": 19,
+"proved": 24,
+"observed": 21,
+"refined": 24,
+"a0": 19,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 5,
+"x": 7.4,
+"true": 13,
+"proved": 16,
+"observed": 14,
+"refined": 16,
+"a0": 13,
+"zeta": 8,
+"phi": false
+},
+{
+"p": 7,
+"x": 5.285714285714286,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 3.3636363636363638,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 13,
+"x": 2.8461538461538463,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 17,
+"x": 2.176470588235294,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 19,
+"x": 1.9473684210526316,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 23,
+"x": 1.608695652173913,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 29,
+"x": 1.2758620689655173,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 31,
+"x": 1.1935483870967742,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 37,
+"x": 1.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.6331841945648193
+},
+{
+"kind": "A",
+"n": 38,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 19.0,
+"true": 34,
+"proved": 40,
+"observed": 35,
+"refined": 37,
+"a0": 34,
+"zeta": 18,
+"phi": false
+},
+{
+"p": 3,
+"x": 12.666666666666666,
+"true": 19,
+"proved": 23,
+"observed": 21,
+"refined": 23,
+"a0": 19,
+"zeta": 8,
+"phi": true
+},
+{
+"p": 5,
+"x": 7.6,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 15,
+"a0": 12,
+"zeta": 7,
+"phi": false
+},
+{
+"p": 7,
+"x": 5.428571428571429,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 3.4545454545454546,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 13,
+"x": 2.923076923076923,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 17,
+"x": 2.235294117647059,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 19,
+"x": 2.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.6521739130434783,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 29,
+"x": 1.3103448275862069,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 31,
+"x": 1.2258064516129032,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 37,
+"x": 1.027027027027027,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.616898775100708
+},
+{
+"kind": "A",
+"n": 39,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 19.5,
+"true": 34,
+"proved": 40,
+"observed": 35,
+"refined": 37,
+"a0": 34,
+"zeta": 18,
+"phi": false
+},
+{
+"p": 3,
+"x": 13.0,
+"true": 19,
+"proved": 24,
+"observed": 21,
+"refined": 23,
+"a0": 19,
+"zeta": 7,
+"phi": false
+},
+{
+"p": 5,
+"x": 7.8,
+"true": 13,
+"proved": 15,
+"observed": 14,
+"refined": 15,
+"a0": 13,
+"zeta": 8,
+"phi": true
+},
+{
+"p": 7,
+"x": 5.571428571428571,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 6,
+"a0": 7,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 11,
+"x": 3.5454545454545454,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 13,
+"x": 3.0,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 17,
+"x": 2.2941176470588234,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 19,
+"x": 2.0526315789473686,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.6956521739130435,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 29,
+"x": 1.3448275862068966,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 31,
+"x": 1.2580645161290323,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 37,
+"x": 1.054054054054054,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.6689596176147461
+},
+{
+"kind": "A",
+"n": 40,
+"k": 7,
+"rows": [
+{
+"p": 2,
+"x": 20.0,
+"true": 34,
+"proved": 40,
+"observed": 35,
+"refined": 36,
+"a0": 34,
+"zeta": 18,
+"phi": false
+},
+{
+"p": 3,
+"x": 13.333333333333334,
+"true": 19,
+"proved": 24,
+"observed": 21,
+"refined": 24,
+"a0": 19,
+"zeta": 7,
+"phi": false
+},
+{
+"p": 5,
+"x": 8.0,
+"true": 12,
+"proved": 16,
+"observed": 14,
+"refined": 14,
+"a0": 12,
+"zeta": 7,
+"phi": false
+},
+{
+"p": 7,
+"x": 5.714285714285714,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 6,
+"a0": 7,
+"zeta": 3,
+"phi": true
+},
+{
+"p": 11,
+"x": 3.6363636363636362,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 7,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 13,
+"x": 3.076923076923077,
+"true": 6,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 6,
+"zeta": 3,
+"phi": false
+},
+{
+"p": 17,
+"x": 2.3529411764705883,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 19,
+"x": 2.1052631578947367,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 23,
+"x": 1.7391304347826086,
+"true": 7,
+"proved": 7,
+"observed": 7,
+"refined": 7,
+"a0": 7,
+"zeta": 4,
+"phi": true
+},
+{
+"p": 29,
+"x": 1.3793103448275863,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 31,
+"x": 1.2903225806451613,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+},
+{
+"p": 37,
+"x": 1.0810810810810811,
+"true": 7,
+"proved": 8,
+"observed": 7,
+"refined": 8,
+"a0": 7,
+"zeta": 4,
+"phi": false
+}
+],
+"extra": {},
+"slots": [
+3,
+5,
+7
+],
+"secs": 0.698838472366333
+}
+]
