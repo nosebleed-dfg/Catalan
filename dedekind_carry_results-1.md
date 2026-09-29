@@ -2275,3 +2275,31 @@ In every case R* sits just under the λ-bound. The threshold lies between widths
 - Check its q → 1 growth, 4G/(2π), and its integrality at roots of unity.
 - Compare it with our case-E forms.
 
+## Langlands dual groups and automorphic forms (the user, same day: "Langland dual groups and automotphic forms")
+**The adelic reading of the user's hints.**
+- An automorphic representation is π = ⊗_v π_v over all places, and L(s,π) = L(s,π_∞)·∏_p L(s,π_p).
+- "π baked in at infinity" is the archimedean factor, a Γ-factor carrying π.
+- The "prime factors" are the Euler factors, i.e. the Satake parameters in the dual group at each p.
+
+**G's automorphic homes.**
+- GL₁: χ₋₄ (dual group ℂ^×).
+- GL₂ over ℚ, by automorphic induction from ℚ(i): θ₃² = E₁(1, χ₋₄), with L-function ζ_{ℚ(i)}(s) = ζ(s)L(s,χ₋₄).
+- The weight-3 E_G is the Borel Eisenstein series of (χ₋₄, |·|²) (dual: the diagonal torus of GL₂(ℂ)).
+- GL₂ over ℚ(i): the Picard group, of covolume G/3.
+
+**Our cusp dictionary is Langlands' constant-term theory.**
+- The ∞ at a cusp is the Langlands–Shahidi constant term, carrying L(3,χ₋₄) = π³/32. That is a critical value, rational times π³: "rational at infinity".
+- The finite part carrying G is L(2,χ₋₄), a non-critical value.
+- The quarter-turn blow-up is π²·(rational), from critical data again.
+
+**Why G is hard, in this language.**
+- s = 2 is non-critical for the odd character χ₋₄ (the Γ-factor has the wrong parity). The functional equation pairs L(2,χ₋₄) with the trivial zero at s = −1, so G is the derivative there: β′(−1) = 2G/π.
+- That is Beilinson's regulator (the K₃ class [i]). Borel gives nonvanishing only.
+- Criticality is intrinsic to the χ₋₄-piece. So no functoriality (Rankin–Selberg, adjoint, base change) can make G a critical value, which would be π^k × algebraic.
+- Every automorphic L-function containing χ₋₄ sees G at a non-critical point.
+
+**What this means for the proof.**
+- The critical data (the ∞'s, the π² blow-ups) are exactly the parts we can control rationally.
+- G is the one non-critical piece, located at the half measure between the critical points s = 1 and 3.
+- Any factor-2 gain must come from structure attached to the regulator itself: the K₃ class [i], which is what the Habiro-module element packages at every place.
+
