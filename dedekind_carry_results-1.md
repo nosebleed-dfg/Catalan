@@ -2261,7 +2261,9 @@ In every case R* sits just under the λ-bound. The threshold lies between widths
 
 **The Langlands side.**
 - The Picard/Bianchi group PSL₂(ℤ[i]) (GL₂ over ℚ(i)). Scholze (Annals 2015) attaches Galois representations to torsion classes in the cohomology of such groups.
-- Bergeron–Venkatesh: log|H₁(Γ_n)_tors| ~ vol(Γ_n)/(6π). For congruence towers over ℚ(i) (exponential growth proved for Bianchi towers, arXiv 1302.3079), the logarithms of the torsion primes add up to index·G/(18π).
+- Bergeron–Venkatesh (arXiv 1004.1083) conjecture log|H₁(Γ_n)_tors| ~ vol(Γ_n)/(6π) for trivial coefficients. For congruence towers over ℚ(i) that would make the logarithms of the torsion primes add up to index·G/(18π).
+  - Proved: exponential growth for strongly acyclic coefficient systems (Bergeron–Venkatesh), and for Bianchi congruence towers with symmetric-power coefficients (Pfaff, arXiv 1302.3079).
+  - CORRECTION (2026-09-29, later): this line first called the trivial-coefficient law proved. It is a conjecture.
 - The exact finite form is Cheeger–Müller: Reidemeister torsion (primes) = analytic torsion (the archimedean place). This is the most literal "prime factor over infinity" in existing mathematics, with G on the archimedean side.
 
 **What none of this does.**
