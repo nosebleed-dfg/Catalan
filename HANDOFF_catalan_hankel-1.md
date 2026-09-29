@@ -9,6 +9,29 @@
 - `.gitignore` drops the Python caches.
 - Never put credentials or keys in this folder.
 
+## REAL G: the irrationality frontier, scored (2026-09-29; the user: "The obvious place to push is an irrationality proof" / "Go ahead and work on real G")
+**The method.** Calegari–Dimitrov–Tang (arXiv 2408.15403) proved L(2,χ₋₃) irrational with arithmetic holonomy bounds.
+- It applies to holonomic families (a linear recurrence in n, geometric denominators e^{τn}).
+- Its necessary GATE: S = ln(16r) − τ > 0, where r is the radius of Σ F_n xⁿ. The 16 is Carathéodory's bound, with λ′(0) = 16.
+- Equivalently, net = τ − ln r < ln 16 = 2.773, in this program's own net language.
+- Their L(2,χ₋₃) proof had S = 0.77, and even that passed "by the narrowest of margins" (13.994 < 14 functions, App. A.5).
+
+**The scores** (caseE_denominators.py, apery_like_survey.py, recurrences.md):
+- Zagier E: G/2; true denominators are the full lcm(1..n)² (98% of the bound at n = 600, no savings); S = −0.56…−0.61.
+- Zudilin / Rivoal / Nesterenko: S = −1.59.
+- Among Zagier's recurrences, only E touches G. C gives L(2,χ₋₃) (S = +0.77); A and D give ζ(2).
+- This program's gtwist forms (net ≈ 1.3) do not qualify: factorial denominators, not holonomic.
+- CDT's own verdict (Remark 11.1.17): "a completely new idea" is needed.
+
+**Structural obstacle.** Killing π, ln 2 and π² to get pure G forces half-integer exponents (lcm(1..2n)², 16ⁿ) or case E's geometry (singularity at 1/4). Both break the gate.
+
+**Target.** A holonomic G-family with S > 0 (realistically ≳ 0.8). Also worth pursuing: a no-go explaining why χ₋₄ families cannot reach it.
+
+**Also settled.**
+- The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.
+- Sun's claim (2609.04176) is critiqued by Wachs (2609.22339), who finds an unaccounted prime-2 contribution.
+- Eskandari (2609.26354) improves an explicit G-approximation exponent from 0.52 to 0.62.
+
 ## PRIORITY (2026-09-29): a claimed proof in this program's arena
 Zhi-Wei Sun, "Catalan's constant is irrational", arXiv 2609.04176 (3 Sep 2026, math.GM, 20 pp; text extracted at C:\Users\PC\.claude\jobs\52a755fd\tmp\sun.txt while that job exists — re-download otherwise). It is a K²-type weighted-tail determinant: u_m = T_m/(2m+1) with the Catalan tails T_m (a Stieltjes moment sequence), pole factors ∏_{h≤B}(2(h+i)+1)², binomial differences of order a+2B (an external field (1−z)^{2B} in the Heine picture), S = B/20 rows, Cauchy–Binet = Vandermonde × Cauchy, per-prime ledger in the ranges Q ≤ S, S < p < B, p > B, claimed net −0.00966 B² (raw archimedean 39/200 vs p-adic gains 0.20466: a 5% cancellation). AI-generated numerics and AI "verification" are acknowledged in the paper. The K² theory here (Heine + equilibrium measure for the size; exact per-prime exponent laws for the height; the "thinning always loses" and "numerator field" results) is the right instrument to audit it: express his scalar as a Heine gas of S particles with field (1−z)^{2B}·dσ, dσ = Π(z∂_z)^*dν, compute the energy at field ratio 2B/S = 40 (equilibrium.py / gapgas.py), and recompute the three-range ledger with ledger.py-style exact exponents at small B against his formulas (5.7), (7.3), (8.1). Outcome either reproduces his 39/200 and 0.2047 or locates the error. STATUS (2026-09-29, from the user): the user had already read the paper and found one or two undefined quantities (e.g. the parameter D of Section 3 is never defined) and one major omission ("a problem in forgetting"); it is not to be treated as established. The audit is therefore optional, not blocking; the program continues.
 

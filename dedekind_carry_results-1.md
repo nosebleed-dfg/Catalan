@@ -1904,6 +1904,34 @@ The user asked: "a more readable md file everyone can read with proofs … for a
 - So the 2-adic analogue of "is G irrational?" is settled; the real G is open.
 - Sun's claim (arXiv 2609.04176) has a critique: D. Wachs, arXiv 2609.22339 (15 Sept 2026), "the proof of the main theorem is incomplete". Its main quantitative gap is an unaccounted prime-2 contribution (≈ (2·ln 2)B²).
 
+**Real-G push, step 1: the frontier, and Zagier's case E measured (caseE_denominators.py).**
+- **The frontier.** Calegari–Dimitrov–Tang (arXiv 2408.15403) state it in Remark 11.1.17 (p. 165), for the two known holonomic families of rational approximations to G:
+  - Zudilin/Rivoal/Nesterenko: the integrand peak is φ⁻⁵, the same geometry as Apéry's ζ(2), but the half-integral exponents give denominators 16ⁿ[1..2n]².
+  - Zagier's case E: ODE singularities {0, 1/8; 1/4, ∞}, denominators [1..n]².
+  - "Since e² > 16·(1/4) and e⁴ > ((1+√5)/2)⁵ (by a wide margin!), this definitely precludes an approach to the irrationality of the Catalan constant by our method using either of these particular families … unless some completely new idea is discovered."
+- **In this program's net language** (net = log(denominator growth) − log(radius of the linear forms' generating function)), both comparisons read "net < ln 16 = 2.773":
+  - Zudilin net = ln 16 + 4 − 5 ln φ = +4.367 (the +4.37 recorded here), which fails by 1.594;
+  - case E net = 2 + ln 4 = 3.386, which fails by 0.614;
+  - their successful L(2, χ₋₃) case (Zagier case C, r = 1) has net 2, a margin of 0.773.
+  - To be confirmed against their holonomy theorem; a background reading of §2/§11–15 is running.
+- **Case E measured.** (n+1)²u_{n+1} = (12n² + 12n + 4)u_n − 32n²u_{n−1}, with u₀ = 1, u₁ = 4 (integers) and v₀ = 0, v₁ = 1.
+  - v_n/u_n → G/2 exactly: PSLQ gives [−2, 0, 1] against (1, G).
+  - The true denominators ARE the full [1..n]². ln(den v_n)/n = 1.94 at n = 600, 98.2% of 2·ln lcm(1..n).
+  - By class at n = 600: primes ≡ 1 mod 4 carry 98.4% of their bound; primes ≡ 3 mod 4 carry 100%.
+  - The prime 2 never divides den(v_n): v_n is 2-integral. That is irrelevant to the growth.
+  - Only sporadic primes fall short (61 and 137 at n = 600, with exponent 1 instead of 2).
+  - No hidden savings, so the case-E gap of 0.614 per step is genuine.
+- **Consequence for this program's best G-forms.** The gtwist designs (net +1.3 at n = 160, asymptote +1.4…2.0) are below ln 16. But their decay and height both drift like log n (factorial-type denominators), and their free parts are solved per n. So they are not G-function or holonomic families, and the CDT criterion does not apply as it stands.
+- **The target** is therefore a HOLONOMIC family for G with geometric denominators and net < ln 16.
+- **Survey of Zagier's second-order recurrences** (apery_like_survey.py, n = 400).
+  - Setup: (n+1)²u_{n+1} = (an² + an + b)u_n − cn²u_{n−1}, with lim v_n/u_n identified by PSLQ, and net = τ(measured) − ln(1/|β|).
+  - A: π²/24, net 1.95 (ln16 − net = +0.82).
+  - C: L(2,χ₋₃)/2, net 1.95 (+0.83), CDT's successful case.
+  - D: π²/30 (Apéry), net −0.45 (classical Apéry works).
+  - E: G/2, net 3.33 (−0.56).
+  - B (complex roots of equal modulus: v/u does not converge) and F (roots 9, 8): no relation with 1, G, π², π ln 2, ln²2, L(2,χ₋₃), … at height 10⁵.
+  - So E is the only G-family among them, and it is the only failing case with an L-value limit. The rule "net < ln 16" separates C from E exactly as CDT's remark says.
+
 **Checks.** proof_checks/th_paper_checks.py:
 - W1: Lemma 3′;
 - W2: Appendix A integrals to 40 digits;

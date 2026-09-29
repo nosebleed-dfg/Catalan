@@ -580,7 +580,28 @@ A positive net means the denominators win. **This family of determinants cannot 
 
 The real-world question is the open one.
 
-**What a proof of the irrationality of G would need.** A construction whose arithmetic cost, summed over all primes, is less than its analytic gain. The closest known success is the 2024 proof that the sister constant L(2, χ₋₃) is irrational, by Calegari, Dimitrov and Tang, using "arithmetic holonomy bounds". G = L(2, χ₋₄) remains open. The tools in this paper give exact prime-by-prime bookkeeping, and they extend to other primes (Pascal's triangle mod p is again unitriangular with corner determinants 1, by Lucas's theorem). They are the instruments with which such a construction would have to be measured.
+**What a proof of the irrationality of G would need, stated precisely.** The strongest method available is the "arithmetic holonomy bounds" of Calegari, Dimitrov and Tang. It proved the sister constant L(2, χ₋₃) irrational in 2024. It applies to a *holonomic* family: linear forms F_n = a_n·G − b_n whose terms satisfy a linear recurrence in n and whose denominators grow geometrically, like e^{τn}. Let r be the radius of convergence of Σ F_n xⁿ.
+
+Their method has a hard ceiling. By a theorem of Carathéodory, a map from the disc that omits the point r has derivative at most 16r at 0, and equality holds only for the modular λ-function. So a family can only work if its **gate**
+
+  S := ln(16·r) − τ
+
+is positive. Their own success cleared it only narrowly: S = 0.77, which, after contour and auxiliary-function costs, passed "only by the narrowest of margins". Scored with this gate:
+
+| family (a holonomic sequence of approximations) | limit | τ (denominators) | r | S = ln(16r) − τ |
+|---|---|---:|---:|---:|
+| Apéry for ζ(2) (Zagier D) | ζ(2) | 2 | 11.09 | +3.18 |
+| Zagier C, used for L(2, χ₋₃) | L(2, χ₋₃) | 2 | 1 | +0.77 |
+| **Zagier E** (true denominators checked to n = 600: the full lcm(1..n)², no hidden savings) | **G/2** | 1.94–2 | 1/4 | **−0.56 to −0.61** |
+| **Zudilin / Rivoal / Nesterenko** (integers Uₙ = 16ⁿuₙ, denominators lcm(1..2n)²) | **G** | 4 | 0.69 (= φ⁵/16) | **−1.59** |
+
+Every known holonomic family for G fails the gate. This is the precise content of their remark that a "completely new idea" is needed.
+- Among Zagier's second-order recurrences, only case E converges to a multiple of G; this was checked by PSLQ.
+- This program's best non-holonomic G-forms reach a "net" of about +1.3. But their denominators grow factorially, so the gate does not apply to them.
+
+A proof along these lines would need a new holonomic family for G with S > 0, and realistically S ≳ 0.8. The obstacle is structural. Making a form "pure G", i.e. killing π, ln 2 and π², forces either half-integer exponents, which cost lcm(1..2n)² and 16ⁿ, or case E's geometry, which puts the singularity at 1/4. Both cost more than the gate allows.
+
+The tools in this paper give exact prime-by-prime bookkeeping, and they extend to odd primes: Pascal's triangle mod p is again unitriangular with corner determinants 1, by Lucas's theorem. They are the instruments with which such a family would have to be measured, in particular to detect denominators smaller than the naive bound, which Calegari–Dimitrov–Tang note can happen.
 
 ---
 
@@ -675,7 +696,9 @@ It passes for K = 6, 8, 12, 16, 20, 24. The companion file `twoadic_law_proof.md
 - F. Beukers, *Irrationality of some p-adic L-values*, Acta Math. Sinica (Engl. Ser.) 24 (2008), 663–686; arXiv:math/0603277.
 - J. M. Borwein, N. J. Calkin, D. Manna, *Euler–Boole summation revisited*, Amer. Math. Monthly 116 (2009), 387–412.
 - F. Calegari, *Irrationality of certain p-adic periods for small p*, Int. Math. Res. Not. 2005, no. 20, 1235–1249; arXiv:math/0408214.
-- F. Calegari, V. Dimitrov, Y. Tang, *The linear independence of 1, ζ(2), and L(2, χ₋₃)*, arXiv:2408.15403 (2024).
+- F. Calegari, V. Dimitrov, Y. Tang, *The linear independence of 1, ζ(2), and L(2, χ₋₃)*, arXiv:2408.15403 (2024). Remark 11.1.17 and p. 24 are the source of the gate in §12.
+- W. Zudilin, *An Apéry-like difference equation for Catalan's constant*, Electron. J. Combin. 10 (2003), R14.
+- D. Zagier, *Integral solutions of Apéry-like recurrence equations*, in: Groups and Symmetries, CRM Proc. Lecture Notes 47 (2009), 349–366.
 - H. Delange, *Sur la fonction sommatoire de la fonction « somme des chiffres »*, L'Enseignement Math. 21 (1975), 31–47.
 - P. W. Kasteleyn, *The statistics of dimers on a lattice*, Physica 27 (1961), 1209–1225; H. N. V. Temperley, M. E. Fisher, *Dimer problem in statistical mechanics — an exact result*, Phil. Mag. 6 (1961), 1061–1063.
 - R. Koekoek, P. A. Lesky, R. F. Swarttouw, *Hypergeometric Orthogonal Polynomials and Their q-Analogues*, Springer, 2010 (§9.3 continuous dual Hahn, §9.11 Krawtchouk).
