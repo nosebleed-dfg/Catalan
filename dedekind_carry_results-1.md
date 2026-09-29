@@ -2242,3 +2242,36 @@ In every case R* sits just under the λ-bound. The threshold lies between widths
 - "Rational at infinity, irrational at every prime" is therefore exactly the scenario that a p-adic factor cannot exclude.
 - The missing factor 2 has to come from structure the forms carry at every place independently of the value: their true denominators (the arithmetic side, where 113/120 would live), or a larger archimedean domain.
 
+# Scholze and the Langlands groups: G at every place in one object (2026-09-29; the user: "Scholze and langlands groups")
+**What G is, at every place.**
+- G = D(i), the Bloch–Wigner dilogarithm at i. That is the Borel regulator of the class [i] generating K₃(ℚ(i)) ⊗ ℚ, which has rank 1.
+- Geometry:
+  - G = ¼·vol(Whitehead link complement). The regular ideal octahedron is 4 tetrahedra of shape i.
+  - G = 3·covol(PSL₂(ℤ[i])), by Humbert: |d|^{3/2}ζ_{ℚ(i)}(2)/(4π²) = G/3.
+  - The Whitehead link group has index 12 in the Picard group: 12·G/3 = 4G.
+- p-adically: Coleman's p-adic dilogarithm D_p(i) is the p-adic regulator of the same class (Besser–de Jeu).
+  - Garoufalidis–Scholze–Wheeler–Zagier (arXiv 2412.04241) Lemma 3.1: D_p(ζ) ∈ p²ℤ_p[ζ] for roots of unity.
+  - Their Prop. 3.2: p⁻²D_p(ζ^p) ≡ (ζ − 1)^{−p}·Σ_{k<p} ζ^k/k² (mod p), Kontsevich's finite polylogarithm. So the p-adic Catalan values mod p are finite, π-free sums over residues.
+
+**The one object (GSWZ, "The Habiro ring of a number field", v2 Aug 2025).**
+- Modules over the Habiro ring of K, graded by K₃(K). Their elements are power series at every root of unity that are integral and glue p-adically after a Frobenius twist, after dividing at each prime by a series depending only on the Bloch element.
+- The main theorems involve the Borel, p-adic and étale regulators together.
+- The perturbative Chern–Simons series of hyperbolic 3-manifolds are elements. For the Whitehead link this packages 4G at infinity and D_p(i) at each p in one integral object.
+- It is built, like our cusp dictionary, from data at roots of unity.
+
+**The Langlands side.**
+- The Picard/Bianchi group PSL₂(ℤ[i]) (GL₂ over ℚ(i)). Scholze (Annals 2015) attaches Galois representations to torsion classes in the cohomology of such groups.
+- Bergeron–Venkatesh: log|H₁(Γ_n)_tors| ~ vol(Γ_n)/(6π). For congruence towers over ℚ(i) (exponential growth proved for Bianchi towers, arXiv 1302.3079), the logarithms of the torsion primes add up to index·G/(18π).
+- The exact finite form is Cheeger–Müller: Reidemeister torsion (primes) = analytic torsion (the archimedean place). This is the most literal "prime factor over infinity" in existing mathematics, with G on the archimedean side.
+
+**What none of this does.**
+- None of it transfers (ir)rationality between places. Borel's theorem (the regulators vanish only on torsion; GSWZ §1.7) is nonvanishing, not irrationality.
+- "Rational at ∞, irrational at every p" stays in the territory of the period conjecture.
+
+**Why it matters here.** The missing factor 2 must be structural at every place. A Habiro-module element for [i] is exactly such a structure: integral at every root of unity and glued across primes by Frobenius. An adelic holonomy argument on that object, rather than on one power series at one cusp, is where the factor could live.
+
+**Next.**
+- Write the Whitehead-link / [i] element in Nahm form (shapes among i, 1 + i, (1 + i)/2; the Neumann–Zagier data in GSWZ's (A, z) form).
+- Check its q → 1 growth, 4G/(2π), and its integrality at roots of unity.
+- Compare it with our case-E forms.
+
