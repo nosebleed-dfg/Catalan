@@ -2303,3 +2303,65 @@ In every case R* sits just under the λ-bound. The threshold lies between widths
 - G is the one non-critical piece, located at the half measure between the critical points s = 1 and 3.
 - Any factor-2 gain must come from structure attached to the regulator itself: the K₃ class [i], which is what the Habiro-module element packages at every place.
 
+# The harmless group is never a lattice: why G's width is 8, and the sign of ∞ at the prime 2 (2026-09-29; lattice_principle.py, lattice_principle_out.txt). The user: "Langland dual groups and automotphic forms."
+**The automorphic statement.** Let Γ be the group of the forms (f and W modular on it). Take χ(d) = 1 on Γ, e.g. Γ₁(N).
+- For γ ∈ Γ, F∘γ = F + f·p_γ, with p_γ a polynomial of degree ≤ 1. The reason: y∘γ − y solves the homogeneous equation, whose solutions on H are f and τf.
+- p is a 1-cocycle with values in V₁. Its class is the Eichler–Shimura class of W; Λ only adds a coboundary.
+- The harmless group Γ′ is exactly the stabilizer {γ : p_γ = 0}, which is a subgroup. On the parabolic at x, p vanishes iff x is harmless. So the cusp dictionary is this cocycle evaluated on parabolics.
+- **Lattice principle: Γ′ always has infinite index in Γ (it is thin).**
+  - Proof 1 (Eichler–Shimura). If p vanished on a finite-index Γ″, the class of W would be a coboundary on Γ″. But W ↦ [p_W] is injective on M₃(Γ″).
+  - Proof 2 (Liouville). F would be Γ″-invariant, and invariance under each cusp's parabolic kills every τ′-growing term in the Lemma, so F is bounded at every cusp. Then F is a bounded holomorphic function on a compact curve, hence constant. But F ≡ c is impossible:
+    - c = 0 gives g ≡ Λ, but W ≠ 0.
+    - c ≠ 0 gives W = c·D²(1/f), and by Bol's identity that has a pole wherever f vanishes. A weight-1 form always vanishes somewhere: its total order is [PSL₂(ℤ) : Γ̄]/12 > 0.
+- This is "∞ − 1" at the level of groups. On a genus-0 curve without elliptic points, Γ/±1 is free on the parabolics of all cusps but one. So if every finite cusp were harmless, the product relation would force p = 0 at the pole as well.
+  - The pole (the ∞) therefore needs at least one paying finite cusp (the −1).
+  - The earlier TARGET, a W with no ∞ and no blow-up at any finite cusp, was impossible for this reason, for every L-value and not only for G.
+
+**Two-parabolic consequence (exact; part 1 of the script).** Up to a real translation, a harmless pair (∞, x) of invariant w generates ⟨T, L_w⟩ with L_w = (1 0; w 1).
+- T·L_w⁻¹ = (1−w 1; −w 1) has trace 2 − w. It is elliptic for w ≤ 3, −(parabolic) at w = 4, and hyperbolic for w ≥ 5.
+- With the Fricke involution this is Hecke's H(√w), a lattice exactly when w ≤ 4.
+  - At w = 4: Sanov's free group ⟨(1 2; 0 1), (1 0; 2 1)⟩, conjugated by diag(2^{−1/2}, 2^{1/2}), gives ⟨T, L₄⟩ = Γ₀(4)/±1.
+- So w ≥ 5 always.
+- On Γ₀(N) and Γ₁(N) every invariant is a multiple of N (it is lcm(N, c²) at a/c), and the conductor divides N. So w_min is the least multiple of the conductor that is ≥ 5.
+
+| L-value | conductor | w_min | w_min/cond | log R*(w_min) | vs τ ≈ 1.95 |
+|---|---|---|---|---|---|
+| ζ(2), Apéry (Γ₁(5)) | 5 | 5 | 1 | 5.13 | passes (attained) |
+| L(2,χ₋₃), case C (CDT) | 3 | 6 | 2 | 2.68 | passes (attained) |
+| G = L(2,χ₋₄), case E | 4 | 8 | 2 | 1.232 | fails (attained) |
+| L(2,χ₋₇) | 7 | 7 | 1 | ≤ 1.73 | fails (bound only) |
+| L(2,χ₋₈) | 8 | 8 | 1 | ≤ 1.232 | fails (bound only) |
+
+- **The factor 2 is 8/4.** Conductor 4 sits exactly on Hecke's threshold λ = 2 (trace 2, the theta group). So the first allowed width is 2·4.
+- χ₋₃ is doubled too (3 → 6), but 6 still passes.
+- With two parabolics, χ₋₃ is the only odd quadratic character whose L(2,χ) reaches the gate.
+
+**What breaks at the threshold: the valence formula.** The lattice principle says something must break at w ≤ 4; this is what does.
+- **Γ₀(3), weight 1, χ₋₃.** The total zero order is 4/12 = ⅓.
+  - The product (−2 1; −3 1) fixes e = ½ + √−3/6. Its automorphy factor there is j = −3e + 1 = −½ − ½√−3, a primitive cube root of 1 (exact in ℚ(√−3)).
+  - So f(e) = j·f(e) forces the zero. In weight 3 it would not be forced, because j³ = 1.
+  - Check: |a(e)| = 1.05·10⁻⁵¹.
+- **Γ₀(4), weight 1, χ₋₄.** The total is ½.
+  - σ⁻¹(T·L₄⁻¹)σ = −T⁻¹ exactly, with σ = (1 0; 2 1). So f|σ picks up (−1)^k and has exponents in ½ + ℤ.
+  - Ligozat: θ has orders 0, ¼, 0 at 0, ½, ∞.
+  - Check: θ(½ + iy)·(2y)^{1/2}/(2|q′|^{1/4}) = 1.0 to 12 digits at y = 0.05, 0.02, 0.01.
+- For χ₋₃ the zero comes from a rotation of order 3 at a CM point; for χ₋₄ it comes from a sign at a cusp.
+
+**The sign, adelically.**
+- At ½ the sign is (−1)^k = χ₋₄(−1). The same element read as (3 −1; 4 −1) has d = −1.
+- As an idele-class character, χ₋₄ has χ_∞ = sgn and is unramified at odd p. The product formula on −1 then forces χ₂(−1) = χ_∞(−1) = −1.
+- So the forced half-order zero at the 2-adic cusp ½ is the sign of the real place, carried by the prime 2. That is the exact form of "a prime factor over infinity".
+- The same sign makes s = 2 non-critical: odd χ has the Γ-factor Γ_ℝ(s + 1), so G sits between the critical points 1 and 3.
+- It also makes the weight-1 parameter 1 ⊕ χ₋₄ odd, so no twist puts it in SL₂(ℂ): squares of characters are even.
+- So the lost factor 2 and G's non-criticality are one sign, seen at 2 and at ∞.
+
+**Consequences for the search.**
+- Congruence Beukers G-families (Γ₀(N), Γ₁(N)) cannot reach w ∈ {5, 6, 7}. With the layer theorem (no second harmless class), case E's H(√8) is final there.
+- Leaving congruence costs denominators: Calegari–Dimitrov–Tang (arXiv 2109.09040, JAMS 2025) prove that bounded denominators force congruence.
+- Over ℚ(i) the sign is gone: there is no real place, and χ₋₄ becomes trivial by base change. There G is a covolume (covol PSL₂(ℤ[i]) = G/3).
+  - But GL₂ over ℚ(i) has no holomorphic forms (Bianchi forms live on H³), so the Beukers shape does not transfer as it is.
+- What is left for the factor 2:
+  - an arithmetic saving of 37%;
+  - a construction outside the Beukers shape (the Bianchi/Habiro side);
+  - or a proof that none exists.
+

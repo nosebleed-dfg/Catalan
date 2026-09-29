@@ -1,0 +1,41 @@
+﻿1. The product of the two harmless parabolics, T * L_w^-1
+   w =  1   (0, 1, -1, 1)      trace   1   elliptic      H(sqrt 1): lattice
+   w =  2   (-1, 1, -2, 1)     trace   0   elliptic      H(sqrt 2): lattice
+   w =  3   (-2, 1, -3, 1)     trace  -1   elliptic      H(sqrt 3): lattice
+   w =  4   (-3, 1, -4, 1)     trace  -2   -(parabolic)  H(sqrt 4): lattice
+   w =  5   (-4, 1, -5, 1)     trace  -3   hyperbolic    H(sqrt 5): infinite covolume
+   w =  6   (-5, 1, -6, 1)     trace  -4   hyperbolic    H(sqrt 6): infinite covolume
+   w =  7   (-6, 1, -7, 1)     trace  -5   hyperbolic    H(sqrt 7): infinite covolume
+   w =  8   (-7, 1, -8, 1)     trace  -6   hyperbolic    H(sqrt 8): infinite covolume
+   w =  9   (-8, 1, -9, 1)     trace  -7   hyperbolic    H(sqrt 9): infinite covolume
+   w = 10   (-9, 1, -10, 1)    trace  -8   hyperbolic    H(sqrt 10): infinite covolume
+   Sanov conjugated (a^2 = 1/2): (1 2; 0 1) -> (1 1; 0 1),  (1 0; 2 1) -> (1 0; 4 1)
+
+2a. Gamma_0(3), weight 1, chi_-3
+   product element (-2, 1, -3, 1)   fixes e = 1/2 + sqrt(-3)/6: True
+   automorphy factor j = -3e + 1 = -1/2 -1/2*sqrt(-3);  j^3 = 1: True,  j != 1: True
+   chi_-3(d) = chi_-3(1) = 1, so f(e) = j^k f(e): weight 1 forces f(e) = 0; weight 3 does not (j^3 = 1)
+   valence: weight 1, index [PSL2(Z) : Gamma_0(3)] = 4, total zero order 1/3
+
+2b. Gamma_0(4), weight 1, chi_-4
+   product element (-3, 1, -4, 1) ; sigma^-1 * it * sigma = (-1, 1, 0, -1) = -T^-1: True
+   chi_-4(d) = chi_-4(1) = 1, so h = f|sigma satisfies h|(-T^-1) = h, i.e. h(tau+1) = (-1)^k h(tau)
+   same element as -(product) = (3, -1, 4, -1) with d = -1: the sign is chi_-4(-1) = -1 = (-1)^k
+   odd k: only exponents in 1/2 + Z at the cusp 1/2.  valence: index 6, total zero order 1/2
+
+3. theta = eta(2t)^5/(eta(t)^2 eta(4t)^2) on Gamma_0(4): orders at cusps 0 (d=1), 1/2 (d=2), oo (d=4): ['0', '1/4', '0']  -> theta^2 has order 1/2 at 1/2 and nowhere else
+   a(q) = sum q^(m^2+mn+n^2) at e: |a(e)| = 1.05e-51   (|q| = 0.163034)
+   theta(1/2 + i y) / (2 (2y)^-1/2 |q'|^(1/4)) at y = 0.05: 1.0
+   theta(1/2 + i y) / (2 (2y)^-1/2 |q'|^(1/4)) at y = 0.02: 1.0
+   theta(1/2 + i y) / (2 (2y)^-1/2 |q'|^(1/4)) at y = 0.01: 1.0
+
+4. Idele-class signs of chi_-4 on -1: chi_oo(-1) = sgn(-1) = -1, chi_p(-1) = 1 (p odd, unramified),
+   so the product formula forces chi_2(-1) = -1: the half turn at the 2-adic cusp 1/2 carries the sign of oo.
+
+5. Smallest allowed width w for Gamma_0(N)/Gamma_1(N) families (w a multiple of N, cond | N, w >= 5 by part 1)
+   log R*(w) from uniformize_radius.py; R* decreases in w, so it bounds the two-parabolic families of that conductor
+   zeta(2), Apery (Gamma_1(5))    conductor 5  ->  w >= 5  (w/cond = 1)   log R* <= 5.13   (attained)   vs tau = 1.95
+   L(2,chi_-3), case C (CDT)      conductor 3  ->  w >= 6  (w/cond = 2)   log R* <= 2.68   (attained)   vs tau = 1.95
+   G = L(2,chi_-4), case E        conductor 4  ->  w >= 8  (w/cond = 2)   log R* <= 1.232  (attained)   vs tau = 1.95
+   L(2,chi_-7)                    conductor 7  ->  w >= 7  (w/cond = 1)   log R* <= 1.73   (bound only)   vs tau = 1.95
+   L(2,chi_-8)                    conductor 8  ->  w >= 8  (w/cond = 1)   log R* <= 1.232  (bound only)   vs tau = 1.95

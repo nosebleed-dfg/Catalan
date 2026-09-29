@@ -67,6 +67,17 @@
   - The lost factor 2 is θ₃²'s forced half-order zero (valence formula) at Γ₀(4)'s irregular half-turn cusp: invariant 4 → 8.
   - Congruence G-forms cannot beat H(√8) (every harmless invariant is ≥ N).
   - The factor 2 needs a new ingredient: non-congruence, adelic, or a 37% arithmetic saving. Only 1.2% (well inside 113/120) is needed once the factor 2 is found.
+- Scholze and Langlands (results log sections "Scholze and the Langlands groups" and "Langlands dual groups and automorphic forms"):
+  - G = D(i), the Borel regulator of [i] ∈ K₃(ℚ(i)). G = ¼ vol(Whitehead link) = 3 covol PSL₂(ℤ[i]).
+  - The p-adic regulator is Coleman's D_p(i). GSWZ's Habiro ring (arXiv 2412.04241) packages every place in one integral object.
+  - G is the one non-critical value (β′(−1) = 2G/π). The cusp dictionary is Langlands' constant-term theory.
+  - None of this transfers irrationality.
+- The harmless group is never a lattice (results log section of that name; lattice_principle.py):
+  - F∘γ = F + f·p_γ, with p the Eichler–Shimura cocycle of W. The harmless group is its stabilizer, which is thin (Eichler–Shimura injectivity, or Liouville).
+  - So every harmless width is w ≥ 5. On Γ₀(N) and Γ₁(N), w is a multiple of the conductor: ζ(2) 5, χ₋₃ 6, G 8.
+  - The factor 2 is 8/4: conductor 4 sits on Hecke's λ = 2.
+  - At that threshold the forced half-order zero is χ₋₄(−1) = (−1)^k, i.e. χ₂(−1) = χ_∞(−1): the real place's sign carried by 2. The same sign makes G non-critical.
+  - Leaving congruence costs denominators (Calegari–Dimitrov–Tang, arXiv 2109.09040).
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.
