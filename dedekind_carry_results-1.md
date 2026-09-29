@@ -2232,7 +2232,7 @@ In every case R* sits just under the λ-bound. The threshold lies between widths
 - Both are built from the same Ramanujan values β(−2k) = E_{2k}/2. At infinity they are continued through the functional equation, which brings in π: G = (π/2)·β′(−1). At p they are interpolated p-adically, with Euler factors and no π.
 - No theorem links the rationality of the one to the other.
 - Status:
-  - The 2-adic value is proven irrational (Calegari 2005, IMRN no. 20; Beukers 2008 by Stieltjes continued fractions; our C).
+  - The 2-adic value is proven irrational (Calegari 2005, IMRN no. 20; our C). Beukers 2008 treats such p-adic values by Stieltjes continued fractions.
   - A few small primes and characters are proven; general p is open. The p-adic methods also stop at a gate: overconvergence radius against denominators, which fails for large p.
   - The real G is open.
 
