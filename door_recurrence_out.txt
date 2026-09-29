@@ -1,0 +1,43 @@
+﻿order 2 degree 2: kernel dimension 1 (from 43 equations)
+   c_0(n) = 1024*(4*n + 3)**2/729
+   c_1(n) = -4*(80*n**2 + 232*n + 173)/27
+   c_2(n) = (n + 2)**2
+   v_1: recurrence residual nonzero at n = [0]
+   v_2: recurrence residual nonzero at n = [1]
+   v_3: recurrence residual nonzero at n = [2]
+Lambda_1 = 0.0190568597202821465163513994623608870150249754754331853445047  (change over 50 steps: 9.43e-394)
+Lambda_2 = 0.00130112155480278217365588617674853184726200517328253949962826  (change over 50 steps: 2.96e-394)
+Lambda_3 = 0.000101553978049352652169539620236987923099908013382749955820252  (change over 50 steps: 1.03e-394)
+usable digits: 300
+relation Lambda_1, Lambda_2, Lambda_3, 1: [729, -13095, 30976, 0]
+   Lambda_1 over {1, G}: None
+   Lambda_1 over {1, pi^2}: None
+   Lambda_1 over {1, G, pi^2}: None
+   Lambda_1 over {1, Om}: None
+   Lambda_1 over {1, 1/Om}: None
+   Lambda_1 over {1, pi, pi^2}: None
+   Lambda_1 over {1, G, pi^2, pi log2, log2^2}: None
+   Lambda_1 over {1, L(2,chi-3), pi^2}: None
+   Lambda_1 over {1, L(2,chi-8), pi^2}: None
+   Lambda_1 over {1, G, pi^2, Om, 1/Om}: None
+   Lambda_1 over {1, zeta3, pi^2, G}: None
+   Lambda_1 over {1, log2, log3, pi*sqrt3}: None
+   Lambda_2 over {1, G}: None
+   Lambda_2 over {1, pi^2}: None
+   Lambda_2 over {1, G, pi^2}: None
+   Lambda_2 over {1, Om}: None
+   Lambda_2 over {1, 1/Om}: None
+   Lambda_2 over {1, pi, pi^2}: None
+   Lambda_2 over {1, G, pi^2, pi log2, log2^2}: None
+   Lambda_2 over {1, L(2,chi-3), pi^2}: None
+   Lambda_2 over {1, L(2,chi-8), pi^2}: None
+   Lambda_2 over {1, G, pi^2, Om, 1/Om}: None
+   Lambda_2 over {1, zeta3, pi^2, G}: None
+   Lambda_2 over {1, log2, log3, pi*sqrt3}: None
+the span of the limits: does a combination of Lambda_1, Lambda_2 reach G?
+   {Lambda_1, Lambda_2, 1, G}: [-440208, 1404928, 6561, 0]
+   {Lambda_1, Lambda_2, 1, pi^2}: [-440208, 1404928, 6561, 0]
+   {Lambda_1, Lambda_2, 1, G, pi^2}: [440208, -1404928, -6561, 0, 0]
+   {Lambda_1, Lambda_2, 1, G, pi^2, Om}: [440208, -1404928, -6561, 0, 0, 0]
+   {Lambda_1, Lambda_2, 1, G, pi^2, Om, 1/Om}: [440208, -1404928, -6561, 0, 0, 0, 0]
+w_n = (27/4)^n u_n, first terms: ['1', '21', '3057/4', '135469/4', '105970425/64', '5486997909/64', '1179577924681/256', '65070653431293/256']

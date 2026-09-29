@@ -95,6 +95,14 @@
   - Zudilin's order-2 recurrence has no π² companion (all limits in ℚ + ℚG).
   - K² Catalan with a plain companion, exact at K = 30: every weight c loses (c = −2: 163 vs 160; generic c: 218). Per mirror pair it is 2 or 4, averaging Catalan's 3: the balance law, exactly.
   - Remaining door: a non-congruence G-family with harmless invariant 5–7, paid for in denominators.
+- The door, gone through (results log "The non-congruence door"; door_groups.py, door_belyi.py, door_family.py, door_recurrence.py):
+  - In SL₂(ℤ/2^a), −I lies in ⟨T, L_w⟩ exactly when 4 ∤ w. So bounded-denominator (congruence) G-families need 4 | w, and widths 5–7 force unbounded denominators.
+  - Smallest non-congruence candidates: index 9 with widths (1,1,7), (1,2,6), (1,3,5); index 10 with (1,2,7), (1,4,5).
+  - The (1,2,6) group was built exactly. It is an index-3 subgroup of Γ₀(2), via y = t/(1 − 256t/27)³, with Belyi map over ℚ and f = E₄^{1/4}A(t)^{−1/4}.
+    - Its recurrence: (n+1)²w_{n+1} = (80n²+72n+21)w_n − 64(4n−1)²w_{n−1}.
+    - It carries one new constant Λ₁ = 0.019056859720…, and G is not in the span (300 digits).
+    - Its 3-adic cost is ≈ 3.2 per n, so τ ≈ 5.2 against log R* 2.68.
+  - The door is closed at its smallest instance. (1,3,5) is unbuilt and predicted the same.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.

@@ -2515,3 +2515,50 @@ In GL₂/ℚ these are exactly the Eisenstein series E^{1,ψ}. The divisor d = 1
 - The conductor 4 forbids this for congruence forms.
 - A non-congruence family pays in denominators (Calegari–Dimitrov–Tang). Whether that payment can stay below the analytic gain is the only quantitative question left on the Beukers route.
 
+# The non-congruence door, gone through at its smallest instance (2026-09-29; door_groups.py, door_belyi.py, door_family.py, door_recurrence.py). The user: "Go for it"
+**A. Bounded denominators cannot do it (exact).**
+- In SL₂(ℤ/2^a), −I lies in ⟨T, L_w⟩ exactly when 4 ∤ w. Checked for w ≤ 16 and a = 2…6.
+- G needs the χ₋₄ component at 2, on which −I acts by −1 (odd weight).
+- A multiplier that is trivial on T and L_w must therefore kill that component whenever 4 ∤ w.
+- A family with bounded denominators is congruence (Calegari–Dimitrov–Tang), so it carries G only when 4 | w, i.e. w ≥ 8 by the lattice principle. This is the sign of ∞ at the prime 2 once more.
+- So every family at widths 5, 6, 7 has unbounded denominators.
+
+**B. The smallest candidates** (genus 0, three cusps, width 1 at ∞, width w at 0 = S∞; all non-congruence by the order of the monodromy group):
+
+| index | elliptic points | widths | monodromy group |
+|---|---|---|---|
+| 9 | one of order 2 | (1, 1, 7) ×2 | order 504 |
+| 9 | one of order 2 | (1, 2, 6) | order 54 |
+| 9 | one of order 2 | (1, 3, 5) | A₉ |
+| 10 | one of order 3 | (1, 2, 7) | S₁₀ |
+| 10 | one of order 3 | (1, 4, 5) | S₁₀ |
+
+**C. The (1, 2, 6) group, built exactly.**
+- It is the index-3 subgroup of Γ₀(2) cut out by the non-Galois cubic cover y = t/(1 − 256t/27)³, with y = (η(2τ)/η(τ))^24 and j = (1 + 256y)³/y.
+- The Belyi map is over ℚ, and its passport 3³ / 2⁴1 / (1, 6, 2) is checked by factorisation:
+  - cusps at t = 0 (width 1), 27/256 (width 6, the cusp 0) and ∞ (width 2);
+  - the elliptic point at 27/64.
+- Weight 1: f = E₄^{1/4}(A(0)/A(t))^{1/4}, with A = 256t + (1 − 256t/27)³.
+  - f is nonzero at the harmless cusps.
+  - At the width-2 cusp it has order ¾, i.e. multiplier −i there: the quarter turn again.
+- The family u_n = [tⁿ]f obeys an exact Apéry-like recurrence (checked on 43 terms). With w_n = (27/4)ⁿu_n:
+  (n+1)² w_{n+1} = (80n² + 72n + 21) w_n − 64 (4n−1)² w_{n−1},   w = 1, 21, 3057/4, 135469/4, …
+  - The characteristic roots are 256/27 and 64/27, i.e. exactly the width-6 cusp and the elliptic point.
+  - The quarter shift (4n − 1)² is the −i multiplier.
+- The harmless pair (∞: 1, 0: 6) gives log R* ≥ 2.68.
+
+**D. What it carries.**
+- **Limits.** One new constant, Λ₁ = 0.019056859720282146516351399462360887015024975475…, computed to 390 digits (n = 700).
+  - The inhomogeneities t² and t³ give 440208Λ₁ − 1404928Λ₂ = 6561 and 729Λ₁ − 13095Λ₂ + 30976Λ₃ = 0.
+  - At 300 digits, no combination of Λ₁, Λ₂, 1 lies in the ℚ-span of G, π², Γ(¼)⁴/π² or its inverse. Singly, Λ₁ and Λ₂ also avoid L(2,χ₋₃), L(2,χ₋₈), ζ(3), π log 2, log² 2, log 3 and π√3.
+  - **G does not appear.**
+- **Denominators.**
+  - t(q), u_n and v_n carry 3-adic denominators ≈ 3^{2.93n}, from the cubic cover: about 3.2 per n. They are 2-adically integral.
+  - So τ ≈ 5.2 against log R* ≥ 2.68: a failure by about 2.5 even before G.
+
+**Reading.**
+- This family is non-congruence only at 3. At 2 it is bounded, so part A's 2-adic argument applies (−I ∈ ⟨T, L₆⟩ mod 2^a), and G is indeed absent.
+- A G-family at width 5–7 would have to be non-congruence at 2 itself. There is no mechanism that makes such a family's periods Tate, and the example's single constant is new.
+- The door is closed at its smallest instance on both counts: no G, and the arithmetic cost exceeds the analytic gain.
+- The remaining unbuilt candidate, (1, 3, 5) with monodromy A₉ and log R* ≥ 5.13, is predicted to behave the same way. It would need unbounded 2-adic denominators and G among its periods, and neither has a mechanism.
+
