@@ -85,7 +85,25 @@ F(a) = −4(−1)^a β_a with β_a = Σ_{k<a} (−1)^k/(2k+1)². For every r ≥
 Proof.
 - Put G(a) = (−1)^a β_a. Then G(a) + G(a+1) = −g(a) with g(a) = (2a+1)⁻², i.e. (Δ+2)G = −g.
 - For G_r(a) = G(a+r), g_r(a) = g(a+r), the Mahler coefficients M_n = ΔⁿG_r(0) satisfy M_{n+1} = −2M_n − Δⁿg_r(0), with M₀ = G(r). Hence M_n = (−2)ⁿG(r) − Σ_{k<n} (−2)^{n−1−k} Δ^k g_r(0).
-- Expanding g_r(a) = (2r+1)⁻²(1 + 2a/(2r+1))⁻² 2-adically and using Σ_i (−1)^{k−i}C(k,i) i^j = k!·S(j,k), one gets Δ^k g_r(0) = k! Σ_{j≥k} C(−2,j)(2/(2r+1))^j (2r+1)⁻² S(j,k). So v₂(Δ^k g_r(0)) ≥ v₂((k+1)!) + k ≥ k + 1 for k ≥ 1.
+- **The bound on the differences of g (corrected 2026-09-29).**
+  - The old text expanded g_r(a) = (2r+1)⁻²(1 + 2a/(2r+1))⁻² 2-adically and read off v₂(Δ^k g_r(0)) ≥ v₂((k+1)!) + k term by term. That termwise argument only gives k + v₂(k!); the terms j > k can have smaller valuation than the j = k term, so the extra v₂(k+1) was not justified.
+  - The sharp bound is nevertheless true. Here is a complete proof.
+  - **Lemma 3′.** For every y ∈ ℤ and k ≥ 0:
+    - Δ^k g(y) = (−2)^k·k!·[Σ_{i=0}^{k} (2y+2i+1)^{−1}] / Π_{i=0}^{k}(2y+2i+1);
+    - v₂(Σ_{i=0}^{k} (2y+2i+1)^{−1}) ≥ v₂(k+1);
+    - hence v₂(Δ^k g(y)) ≥ k + v₂((k+1)!).
+  - Proof.
+    - Put f(y) = (2y+1)^{−1}. By induction, Δ^k f(y) = (−2)^k·k!/Π_{i=0}^{k}(2y+2i+1).
+    - g = f² = −f′/2, and Δ commutes with d/dy. Differentiating the product gives the formula.
+    - For the sum: write k + 1 = 2^t·u with u odd, and split the k + 1 consecutive odd numbers into u blocks of 2^t consecutive odd numbers.
+      - For t ≥ 1, each block runs over all odd residues mod 2^{t+1}, and inversion permutes those residues.
+      - So each block's sum of inverses is ≡ Σ(odd residues) = 2^{2t} ≡ 0 (mod 2^{t+1}).
+      - For t = 0 there is nothing to prove.
+    - The product in the denominator is odd. ∎
+  - Checked for y ∈ [−12, 12] and k < 40 by proof_checks/th_paper_checks.py (W1). (Zero differences occur when the window is symmetric about −½; they satisfy every bound.)
+  - For this lemma only v₂(Δ^k g_r(0)) ≥ k + 1 (k ≥ 1) is needed:
+    - for k ≥ 2 it follows from either bound;
+    - for k = 1 it is direct: Δg_r(0) = −8(r+1)/((2r+1)²(2r+3)²).
 - In M_n, the k = 0 term −(−2)^{n−1}g_r(0) has v₂ exactly n − 1, while (−2)ⁿG(r) and every k ≥ 1 term have v₂ ≥ n.
 - So v₂(M_n) = n − 1, and v₂(ΔⁿF(r)) = n + 1. ∎
 
@@ -197,9 +215,11 @@ Notation:
 **Theorem 5 (the 2-adic Catalan constant; the split).**
 - Let g(y) = (2y+1)⁻² and G(y) = (−1)^y β_{|y|}. This is the even extension to ℤ; it satisfies G(y) + G(y+1) = −g(y) on all of ℤ, since g(−1−y) = g(y).
 - Define G₁ := −Σ_{n≥0} (−1)ⁿΔⁿg/2^{n+1}.
-  - It converges on ℤ₂ (Lemma 3 gives v₂(Δ^k g) ≥ v₂((k+1)!) + k).
-  - It is even, and it satisfies the same equation.
+  - It converges on ℤ₂, since Lemma 3′ gives v₂(Δ^k g) ≥ k + v₂((k+1)!), so the n-th term has v₂ ≥ v₂((n+1)!) − 1 → ∞.
+  - It is even, and it satisfies the same equation: (2 + Δ)G₁ = −g, by telescoping the series.
   - Its smoothness: v₂(Δ^m G₁(x)) ≥ m − 1 + v₂((m+1)!) for all x ∈ ℤ.
+    - Δ^m G₁ = −Σ_n (−1)ⁿΔ^{n+m}g/2^{n+1}. By Lemma 3′ each term has v₂ ≥ (n+m) + v₂((n+m+1)!) − n − 1 ≥ m − 1 + v₂((m+1)!).
+    - The weaker bound v₂(Δ^m G₁) ≥ m − 1 + v₂(m!), which follows from the termwise estimate alone, already suffices for sections 10–12. The sharp form is used in section 9.
 - Hence G = G₁ + C·(−1)^y with C := −G₁(0) = Σ_n (−1)ⁿΔⁿg(0)/2^{n+1} and v₂(C) = −1.
   - C is the 2-adic (Boole-regularised) value of Σ(−1)^k/(2k+1)², the 2-adic Catalan constant.
   - β_{2^N} → 0 is the statement G₁(2^N) → G₁(0) = −C.

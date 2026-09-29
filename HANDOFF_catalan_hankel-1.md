@@ -241,6 +241,10 @@ ZUDILIN'S 2003 QUESTION, ANSWERED FOR p > √(3n+2) (2026-09-28; zu2003.py; resu
       - Verified end to end: Catalan K = 6, 8, 12, 16, 20, 24; twisted K = 6, 8, 11, 12, 16 (ties included).
         - Commands: `python proof_checks/th_catalan_struct.py K` and `python proof_checks/th_twist_struct.py K`.
         - The default truncation depth is enough; relative precision only needs depth above max h_q ≈ 8K.
+      - PAPER (2026-09-29): catalan-2adic-paper.md, "The Price of the Prime 2 in Catalan's Constant". It is the readable, self-contained version for hobbyists (Catalan machine only), linked from README.
+        - The 2-adic C is Calegari's L₂(2, χ₋₄), proven irrational in 2005 (agreement to 2^{−35}).
+        - Lemma 3′ (sharp difference bound for g) fixes a gap in §4.
+        - NEXT (the user): work on the real G.
       - RIGOUR PASS (2026-09-29, the user's review): no square roots or extension fields remain; everything is over ℚ₂ with integral monic bases.
         - Theorem 7 uses the monic Jacobi matrix 𝒥 (φ₀(f·P_pP_q) = h_p·f(𝒥)_pq), rescaled by diag(4^{−n}) (resp. 2^{−n}) to an integral matrix ≡ 0 mod 4 (resp. 2), with elimination in ℤ₂. Result: L integral with v₂(L_pq) ≥ 3(p−q)+2 (resp. +1).
         - Section 9: Lemma 9.1 (determinant expansion) and balanced valuations v₂(M_ac) + ½(ν(a) − ν(c)).

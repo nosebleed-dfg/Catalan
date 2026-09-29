@@ -4,6 +4,8 @@ Research notebook on Catalan's constant G = Σ (−1)^k/(2k+1)² and related L-v
 
 **Status:** working research notes and code, not refereed.
 
+**Start here:** [The Price of the Prime 2 in Catalan's Constant](catalan-2adic-paper.md). It is a readable paper, for hobbyists, with the main theorem, its values and its complete proof. (It is not an irrationality proof; section 12 of the paper explains what it does and does not say.)
+
 ## Where to start
 - `HANDOFF_catalan_hankel-1.md`: the entry point. It gives the state of every route, the commands to reproduce results, and what is closed or open.
 - `dedekind_carry_results-1.md`: the dated results log, in order.

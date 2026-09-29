@@ -17,6 +17,7 @@
 | th_twist_struct.py `K [KM]` | the same chain for the twisted machine | 12 |
 | th_thm7_rigorous.py `catalan\|twist K [KM]` | Theorem 7 without square roots (2026-09-29):<br>• rescaled monic Jacobi matrix integral, divisible by ρ<br>• G = h_p ρ^{q−p} Π̃<br>• elimination in ℤ₂<br>• integral L with v₂(L_pq) ≥ 3(p−q)+2 (resp. +1)<br>• G = LΛLᵀ, v₂(Λ_p) = v₂(h_p) | 12, Lemma 12.1 / Thm 7 |
 | th_lemmaA_balanced.py `K1,..` | section 9 without square roots (2026-09-29):<br>• multiplication by x on the nodes = monic Jacobi matrix<br>• balanced-valuation bounds on C(𝒥, k)<br>• M^S = Σ s_k C(𝒥, k)<br>• margins ≥ 1 | 9, step 4 |
+| th_paper_checks.py | the paper's supporting checks (2026-09-29):<br>• Lemma 3′ (the finite-difference identity for g, and the sharp bound v₂(Δ^k g) ≥ k + v₂((k+1)!))<br>• Appendix A integrals (40 digits)<br>• the continuous dual Hahn recurrence and norms against the exact moments (n < 30)<br>• the tangent-number formula for C<br>• the Theorem 3 growth table | paper §4, §11, App. A–B; proof §4 |
 | th_kraw_recurrence.py `K1,..` | Theorem 4's explicit integer recurrences for the v-scale Krawtchouk polynomials, and the norm valuations | 8, Thm 4 |
 
 Run log (2026-09-28): th_catalan_struct.py K = 6, 8, 12, 16, 20, 24 and th_twist_struct.py K = 6, 8, 11, 12, 16. All checks pass, including the coefficient law for every M and the ties at Catalan K = 12 and twisted K = 11. The default depth KM (6K+60 Catalan, 10K+60 twisted) is enough: only relative precision matters, i.e. KM > max h_q.

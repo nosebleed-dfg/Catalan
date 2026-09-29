@@ -1872,6 +1872,44 @@ Rewritten, all over ℚ₂ with integral monic bases:
 
 **Checks.**
 - th_thm7_rigorous.py (Catalan and twisted, K = 8, 12): all the rescaled integrality claims, G = h·ρ^{q−p}·Π̃, the mod-ρ elimination, the v₂(L) bounds, G = LΛLᵀ and v₂(Λ) = v₂(h).
+
+# The readable paper; the 2-adic C is Calegari's L₂(2, χ₋₄); Lemma 3′ (2026-09-29)
+The user asked: "a more readable md file everyone can read with proofs … for a reddit specific crowd … more of a proof paper … a single proof of Catalan … if anything isn't worked or shown, show it. If more work needs done let's do it." Then: "The obvious place to push is an irrationality proof." Then: "Go ahead and work on real G after write up."
+
+**The paper.** catalan-2adic-paper.md, "The Price of the Prime 2 in Catalan's Constant".
+- It proves one theorem for the Catalan machine: e₂(K) = −(sum of the K smallest of the two lists) − [tie].
+  - band b_m = 4m − 2K + s₂(K−1−m) − s₂(m);
+  - moments h_q = 8q − 3s₂(q) − s₂(q+1).
+- It also gives the fingerprint (Smith form) and the growth K²/6 + (K/3)·log₂K + O(K).
+- It is self-contained except for four classical facts, all cited: the continuous dual Hahn recurrence (and checked exactly for n < 30), von Staudt–Clausen, Cauchy–Binet, and Delange.
+- It is explicitly NOT an irrationality proof. §12 gives the honest ledger (gain ln 9, odd-prime cost 8/3, prime-2 cost (1/6)·ln 2; net +0.585).
+- A 10-line Python version of the theorem matches all 134 stored values.
+
+**A simpler route to C.**
+- C is defined directly by C := ½ + 2Σ(−1)^k μ_k = ½ + 1 − 4 + 48 − 1088 + ⋯ (tangent numbers).
+- ρ₁(y) := −½Σ a_n(2y+1)^{−n−2}, with a_n = E_n(0)(−2)ⁿ(n+1).
+- Boole's formula gives ρ₁(y) + ρ₁(y+1) = −g(y).
+- Then β_y = C + (−1)^y ρ₁(y), and the 2-adic Stieltjes identity F_j(C) = Σ(−1)^kμ_k(2j+1)^{−2k−2} is a direct computation.
+- This removes the Mahler-series uniqueness argument from the main line. In the technical file it stays in Theorem 6(a).
+
+**Gap found and fixed (Lemma 3′).**
+- In the proof file, §4 Lemma 3 asserted v₂(Δ^k g) ≥ k + v₂((k+1)!) from a termwise argument that only gives k + v₂(k!).
+- New proof: Δ^k g(y) = (−2)^k·k!·[Σ_{i≤k} 1/(2y+2i+1)]/Π_{i≤k}(2y+2i+1), because g = −f′/2 with f = 1/(2y+1).
+- The sum of reciprocals of k + 1 consecutive odd numbers has v₂ ≥ v₂(k+1): blocks of 2^t consecutive odd numbers are complete odd residue systems mod 2^{t+1}, and inversion permutes residues.
+- Checked for y ∈ [−12, 12], k < 40. Lemma 3 itself only needed ≥ k + 1. The sharp bound feeds §9 (Lemma A) and Theorem 5's smoothness.
+
+**Literature.**
+- The 2-adic Catalan constant is known and proven irrational: Calegari, IMRN 2005 no. 20, 1235–1249 (arXiv math/0408214), Theorem 4.2, L₂(2, χ) irrational. Our C agrees with his approximation 783269/13060350 to 2-adic order 2³⁵ (he guarantees 2³⁴).
+- Beukers (Acta Math. Sinica 2008, arXiv math/0603277) proves such p-adic irrationalities by Stieltjes continued fractions, the same objects as our CDH J-fraction.
+- So the 2-adic analogue of "is G irrational?" is settled; the real G is open.
+- Sun's claim (arXiv 2609.04176) has a critique: D. Wachs, arXiv 2609.22339 (15 Sept 2026), "the proof of the main theorem is incomplete". Its main quantitative gap is an unaccounted prime-2 contribution (≈ (2·ln 2)B²).
+
+**Checks.** proof_checks/th_paper_checks.py:
+- W1: Lemma 3′;
+- W2: Appendix A integrals to 40 digits;
+- W3: the continuous dual Hahn recurrence and norms, exact for n < 30;
+- W4: the tangent-number C agrees with the Mahler C to 2^{−215};
+- W5: the growth table, (e₂ − K²/6 − (K/3)log₂K)/K ∈ [0.89, 1.22].
 - th_lemmaA_balanced.py (K = 4, 5, 8, 11): multiplication by x = the monic Jacobi matrix, the balanced bounds, M^S = Σ s_k·C(𝒥, k), margins ≥ 1.
 - th_kraw_recurrence.py (K = 3…24): the recurrences and norm valuations are exact.
 - No statement changed; only the proofs.
