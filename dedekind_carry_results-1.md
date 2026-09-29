@@ -2062,3 +2062,58 @@ with ζ(0) = −½ when y ∈ ℤ.
 - This is an exact linear-algebra problem over these Ramanujan values: no PSLQ and no measured gates.
 - The Γ₁(8) amplitude law (the G part pays π/2 at T = ½) should follow from the same Lemma. Not yet derived.
 
+# ∞ − 1 as the regularizer: the cusp dictionary, the cokernel, the every-n bound (2026-09-29; regularizer_exact.py). The user: "We want it to blow up in a way. We prove a bound out to infinity minus 1. We just have to do it through linear algebra." Asked to choose, they took: use the blow-up itself; 1/(1 − e(y)) is the infinity, and subtracting 1 regularizes it to −½, which carries G.
+**The regularizer at every twist.** Σ_{k≥0} e(ky) = 1/(1 − e(y)) = ½ + (i/2)cot πy for y ∉ ℤ, so Σ_{k≥1} e(ky) = (½ − 1) + (i/2)cot πy.
+- The real part of the ∞ is ½ at every twist, and the −1 makes it −½ = ζ(0). All of G sits there.
+- The blow-up (i/2)cot πy is purely imaginary and never carries G.
+
+**Cusp dictionary for G's Eisenstein series.** Take E_G(dτ) at the cusp a/c, and put y = d·a/c mod 1, c″ = the denominator of y. From L(E_G(d·), e(a/c·), s) = d⁻ˢ Σ_m χ₋₄(m) m⁻ˢ Li_{s−2}(e(mdy)):
+- The ∞ (the pole at s = 3, i.e. the constant term of W at the cusp) is d⁻³χ₋₄(c″)c″⁻³L(3,χ₋₄). It is nonzero exactly when c″ is odd and zero for every even c″. Where it is nonzero, F has a log² blow-up.
+- The finite part at s = 2 is d⁻²·(−G/2) at every cusp: the same −½ everywhere.
+- The log blow-up is d⁻²(i/2)Σ_m χ₋₄(m)cot(πmy)/m²:
+  - zero at a half turn (c″ = 2);
+  - iπ²/16 at a quarter turn;
+  - π² times an algebraic number otherwise.
+- So a G-component is completely invisible at a cusp exactly when it meets it at a half turn.
+
+**Case E and Γ₁(8), read through it.**
+- Γ₀(8): cusps ∞ (t = 0), 0 (t = ⅛, dominant), ¼ (t = ¼), ½ (the pole).
+  - W = E_G(τ) − 8E_G(2τ). Its ∞'s cancel at the dominant cusp: 1 − 8·(1/8) = 0.
+  - At ½, E_G(2τ) is untwisted, so W ≠ 0 there, and ½ is exactly where the frame puts t = ∞.
+  - At ¼, E_G(τ) meets a quarter turn: the (π/8)log(1 − 4t) blow-up. E_G(2τ) meets a half turn there and is invisible.
+- Γ₁(8), from the θ-asymptotics of T = (1 − θ₃(q²)/θ₃(q))/2:
+  - T(0) = (2 − √2)/4 (dominant, untwisted);
+  - T(½) = ∞ (the pole, a half turn);
+  - T(¼) = ½, the blocking cusp, a quarter turn.
+
+**Exact linear algebra (regularizer_exact.py).**
+- **Case E cokernel.** The cokernel of the recurrence operator on t·ℚ[t] is one-dimensional (L(1) = −4t + 32t², L(t) = t − 28t² + 128t³).
+  - So every inhomogeneity h gives y_h = κ_h y_t + P_h − P_h(0)f: one limit and one blow-up, in a fixed ratio.
+  - Example: h = t² has κ = ⅛, P = 1/32, limit G/16 − 1/32.
+- **Case E Casoratian.** u_n v_{n+1} − u_{n+1} v_n = 32ⁿ/(n+1)² exactly (checked for n < 40). Hence, for every n,
+    G/2 − v_n/u_n = Σ_{k≥n} 32^k/((k+1)² u_k u_{k+1}),   G = 2Σ_{k≥0} 32^k/((k+1)² u_k u_{k+1}),
+  with u_k = Σ_j C(k,j)C(2j,j)C(2k−2j,k−j). This is the bound out to infinity, exact term by term.
+- **Γ₁(8).**
+  - The recurrence has order 4, with leading polynomial p(T) = (1 − T)(1 − 2T)(1 − 8T + 8T²).
+  - The cokernel is 3-dimensional (T, T², T³), with exact reductions T⁴ ≡ T/16 − 5T²/8 + 3T³/2, T⁵ ≡ 5T/48 − 67T²/72 + 121T³/72, and so on.
+  - The weight-3 form of the class T, W₀ = (DT)²/(T·p·f), equals the CM cusp form g = η(τ)²η(2τ)η(4τ)η(8τ)² exactly (115 coefficients). Hence Λ(T) = L(g,2).
+
+**What "blow up only at infinity" requires.** Suppose a pure-G weight-3 form W had, at every finite cusp, no ∞ and zero blow-up.
+- Then F = f(g − L) blows up only at t = ∞, so F is entire and |F_n| falls below every geometric rate.
+- F is not a polynomial, since its Eisenstein projection is nonzero.
+- So q·d_n²·F_n ∈ ℤ ∖ {0} would force G irrational.
+- The whole question is therefore the linear algebra of the ∞'s and the twists. For pure-G Eisenstein combinations:
+  - **Γ₀(8).** αE_G(τ) + βE_G(2τ); the dominant ∞ forces α : β = 1 : −8, and that form meets ¼ at a quarter turn. It fails by one condition.
+  - **Γ₀(12)** (the "6G/12" check), with d ∈ {1, 3}. There are three conditions:
+    - the ∞ at ⅓ forces α₃ = α₁ (χ₋₄(3) = −1 against 3⁻³);
+    - the quarter turns at ¼ cancel only if α₃ = 9α₁ (cot(3πm/4) = −χ₋₄(m));
+    - the dominant ∞ forces α₁ + α₃/27 = 0.
+    - Any two of them kill everything, and at most one of 0, ⅓, ¼ can be the pole. It fails.
+  - **Γ₀(16).**
+    - Quarter turns at both ¼ and ¾ force α₁ = 0 (only one of them can be the pole).
+    - The ∞'s of E_G(4τ) at ¼ and ¾ force α₄ = 0.
+    - E_G(2τ) has an ∞ at ½ and a quarter turn at ⅛, so α₂ = 0.
+    - It fails.
+- In each case the ∞-cancellation at the dominant cusp (weights d⁻³) collides with the cancellations needed at the other cusps.
+- Next: the full classification, allowing E_ζ (1, χ₋₄) components and cusp forms that cancel among themselves, on the Γ₀(4k) and Γ₁(N) curves. It either finds a family that blows up only at infinity, or it explains exactly why G always keeps one ∞ or one quarter turn.
+

@@ -42,6 +42,13 @@
 - Lemma (derived): F = f(g − L) has log amplitude c·[L(W, e(a/c·), 2) − L] at a cusp a/c, and the s = 1 (−1/12) values cancel. Ramanujan summation Σ_{d≥1} e(dy) = −½ + (i/2)cot πy evaluates it.
 - Case E exactly: W = −E_G(τ + ½) (G's Eisenstein series with q ↦ −q). The limit is G·(−1 + 1 − 1 + ⋯) = G/2. The obstruction at t = ¼ is the quarter turn: (π/8)log(1 − 4t), checked to 1/n.
 - Rule: a G-component is invisible at a cusp iff it meets it at a half turn. The next step is exact linear algebra over these values (no scans, no PSLQ).
+- ∞ − 1 as the regularizer (the user's choice; results log section of that name; regularizer_exact.py):
+  - At a cusp, E_G(dτ) has an ∞ (constant term d⁻³χ₋₄(c″)c″⁻³L(3,χ₋₄), nonzero iff c″ is odd), the universal finite part −G/2·d⁻², and a blow-up (i/2)Σχ₋₄(m)cot(πmy)/m² that vanishes only at half turns.
+  - Case E's cokernel is 1-dimensional and Γ₁(8)'s is 3-dimensional; Γ₁(8)'s class T is exactly the CM form g.
+  - Case E Casoratian: G = 2Σ_{k≥0} 32^k/((k+1)²u_k u_{k+1}), with the exact tail for every n.
+  - TARGET: a pure-G weight-3 form with no ∞ and no blow-up at any finite cusp. Then F blows up only at t = ∞, F is entire, and G is irrational.
+  - Pure-G Eisenstein combinations fail on Γ₀(8), Γ₀(12), Γ₀(16): the dominant ∞-cancellation collides with the other cusps.
+  - Next: allow E_ζ and cusp-form components, and go to Γ₁(N) and Atkin–Lehner quotients.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.
