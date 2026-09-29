@@ -55,6 +55,12 @@
   - N = 4 (pole 0, W = E_G) is free at s = 2, but θ₃² vanishes at ½ (Σ(−1)ⁿ = 1 + 2(−½) = 0). So ½ pays at s = 1 through a square root; checked: y_n/u_n → −G/2 like 1.6/log n.
   - So "infinity minus 1" is exactly the best possible: one paying cusp class. Its orbit has norm ≥ 1, so R ≤ 1, against e^τ ≈ 7.4 for Apéry's criterion. With CDT's λ-factor 16 the question is R ≥ 0.46: case E has R = ¼, Γ₁(8) has R = ½.
   - Open: Atkin–Lehner quotients, and non-quadratic character orbits.
+- Uniformized at infinity (results log section of that name; uniformize_exact.py, uniformize_radius.py):
+  - The forms live on H/⟨T, harmless parabolics⟩ with those cusps filled. The Green's function there is 2πE(τ,1), so log R* = 2π²Σ1/c² over the double cosets.
+  - Γ₁(8)'s G-family is case E's function (W = −½(E_G(τ) − 8E_G(2τ))). The radius is coordinate-free.
+  - Width invariant w of the group ⟨T, (1 0; w 1)⟩: w = 5 (Apéry) gives log R* ≈ 5.1; w = 6 (case C, CDT) 2.68; w = 7 1.73; w = 8 (G) 1.23; against τ ≈ 1.95.
+  - G is forced to w = 8: θ₃'s square root doubles Γ₀(4)'s width-4 cusp.
+  - Next: G-forms with a second fat harmless parabolic. S has to rise from 0.062 to about 0.099.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.
