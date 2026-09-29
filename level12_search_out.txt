@@ -1,0 +1,10 @@
+﻿C(n,k)^2 C(2k,k)               z=1/4    roots |16.000| |4.000|  tau=0.757 r=0.2500 S=+0.629  -  -3*L = 1*ln2
+C(n,k)^2 C(2k,k)               z=1      roots |9.000| |1.000|  tau=1.941 r=1.0000 S=+0.831  -  2*L = -1*L3
+C(n,k)^2 C(n+k,k)              z=1      roots |11.090| |0.090|  tau=1.943 r=11.0902 S=+3.236  -  -30*L = 1*pi^2
+C(n,k) C(2k,k) C(2n-2k,n-k)    z=1      roots |8.000| |4.000|  tau=1.948 r=0.2500 S=-0.562  G  2*L = -1*G
+C(n,k)^3                       z=1      roots |8.000| |1.000|  tau=1.925 r=1.0000 S=+0.848  -  24*L = -1*pi^2
+C(n,2k) C(2k,k)^2              z=1/16   roots |32.000| |16.000|  tau=1.948 r=0.0625 S=-1.948  G  8*L = -1*G
+
+=== families whose Apery limit contains G, sorted by the gate S ===
+S=-0.562  C(n,k) C(2k,k) C(2n-2k,n-k)    z=1       tau=1.948 r=0.2500   2*L = -1*G
+S=-1.948  C(n,2k) C(2k,k)^2              z=1/16    tau=1.948 r=0.0625   8*L = -1*G

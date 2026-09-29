@@ -1942,3 +1942,85 @@ The user asked: "a more readable md file everyone can read with proofs … for a
 - th_kraw_recurrence.py (K = 3…24): the recurrences and norm valuations are exact.
 - No statement changed; only the proofs.
 
+# Real G by modular arithmetic: levels 6, 12, 16 and Γ₁(8) (2026-09-29; level12_search.py, level12_modular.py, gamma1_8_family.py, gamma1_8_kill.py, gamma1_8_amp.py, gamma1_8_amplaw.py). The user: "Might need to attack 3G/6 or 6G/12 more modular arithmetic"
+**Reading.** Case E's limit is G/2 = 3G/6 = 6G/12. So attack it at level 6, where CDT proved L(2,χ₋₃) irrational, or at level 12 = lcm(3, 4), where χ₋₃ and χ₋₄ both live.
+- Mod 12: S₁+S₅+S₇+S₁₁ = (2/3)ζ(2), S₁+S₅−S₇−S₁₁ = (10/9)G, S₁−S₅+S₇−S₁₁ = (5/4)L(2,χ₋₃), S₁−S₅−S₇+S₁₁ = L(2,χ₁₂) = π²/(6√3), with S_r = Σ_{n≡r (12)} n⁻².
+- Level 6 alone cannot carry G: χ₋₄ has conductor 4, so every modular G-family lives on a level divisible by 4.
+
+**The gate, sharpened.** S = ln(16r) − τ (the λ-function bound) is necessary.
+- It is meaningful only in a coordinate whose point at infinity is a cusp.
+- A Möbius frame t/(1 + at) that makes ∞ a regular point only adds an omitted point (maps must avoid t = −1/a), so a better score there is an artifact. At level 8 such frames scored +0.14 for (1 + 6G)/16 until this was seen.
+- A symmetric pair ±s of singular points lowers the bound from 16|s| to 4|s| (square root of λ(q²)).
+
+**Step 3: binomial sums at level 6/12 (level12_search.py, fixed).**
+- Setup: 11 templates × twists z = ±2^a3^b (|a| + |b| ≤ 4). Relations were accepted only if verified to ≥ 70 digits with height ≤ 2000.
+- The earlier "hits" came from a float bug in the twists plus PSLQ overfitting.
+- Only G-families: case E (S = −0.56) and its rescaling Σ C(n,2k)C(2k,k)²16^{−k} (S = −1.95).
+
+**Step 4: modular families (level12_modular.py).** Beukers' construction:
+- Hauptmodul t (an eta quotient with a zero at ∞) and a weight-1 Eisenstein form f: θ₃(q^m)² for χ₋₄, a(q^m) for χ₋₃. Then f = Σ u_n tⁿ.
+- v from the inhomogeneous recurrence (L v = t), then the limit, τ and the measured r.
+- Cusp values x = 1/t, in frames with the pole at a cusp:
+  - Γ₀(6): {9, 1} (case C, r = 1);
+  - Γ₀(8): {8, 4} (case E, r = 1/4);
+  - Γ₀(12): {6, 4, 3, 2} (pole at 1/2), {4, 2, −2, 1} (pole at 1/3), {±3, ±1} (pole at 1/4);
+  - Γ₀(16): {4, 2 ± 2i, 2}.
+- **Why 4 | N hurts.** τ ↦ τ + ½ normalizes Γ₀(N) exactly when 4 | N. It acts as q ↦ −q, and on x as x ↦ −c − x (c = twice the q² coefficient of t).
+  - The cusp values come in mirror pairs.
+  - The pole's mirror x = −c is the dominant one, and each other pair has max ≥ |c|/2. So the next singularity is within a factor 2 of the dominant (8 : 4, 6 : 4, 4 : 2√2).
+  - Otherwise the frame has ± pairs and the bound drops to 4r.
+- Level 12, best frame: r = 1/4, S = −0.55, the same as case E.
+- **New periods at level 12.** M₃(Γ₀(12), χ₋₄) has dimension 6: 4 Eisenstein series plus 2 cusp forms.
+  - The cusp forms are a non-CM conjugate pair: a₅ = −2 (T₅: (λ−26)⁴(λ+2)²) and a₇ = ±4√−3 (T₇ factor λ² + 48).
+  - No level-12 limit matched any basis of G, L(2,χ₋₃), π², π²√3, π, π√3, logs or 1/π powers (140+ digits). These cusp periods are the likely extra constants.
+- **Level 16.** One family (θ₃(q)², pole at 1/2) converges to L(η(4τ)⁶, 2) = Γ(1/4)⁴/(64π) (checked; L(η(4τ)⁶, 1) = Γ(1/4)⁴/(32π²)).
+  - Its τ is 0.98, not 2: the CM form lives only on primes ≡ 1 mod 4, so its Eichler integral carries half the denominators.
+  - Its naive S is +0.81. This is a CM period (transcendental by Chudnovsky), not G. It shows what an arithmetic discount looks like; G's Eisenstein series has none (w_p = p² + χ₋₄(p) ≠ 0 at every p).
+
+**Step 5: breaking the symmetry on Γ₁(8) (gamma1_8_family.py).** τ ↦ τ + ½ does not normalize Γ₁(8).
+- Hauptmodul T = (1 − θ₃(q²)/θ₃(q))/2 = q − 3q² + 6q³ − 11q⁴ + …, integral.
+- Cusp values x ∈ {4+2√2, 2, 4−2√2, 1}: the dominant-to-next ratio is 3.41 instead of 2.
+- **New G-family** (frame T/(1 − 2T), pole at the x = 2 cusp; f = θ₃(q)²): the limit is exactly (1 + 2G)/8, τ = 1.949, r = 1/2, S = +0.141.
+  - In that frame the coordinate is T/(1 − 2T) = q − q² − 2q³ + 3q⁴ + ….
+  - u = 1, 4, 8, 24, 88, 336, 1352, 5584, 23576, … (integers) and v = 0, 1, 3, 76/9, 280/9, 26792/225, ….
+  - Recurrence order 5 (6 terms), degree 2, leading coefficient (n+5)². Characteristic polynomial (x+2)²(x+1)(x² − 4x − 4): the dominant root is 2+2√2, and the next singularity is the old pole cusp at t = −½.
+  - This is the best G score of any holonomic family in the program (case E −0.55, Zudilin −1.59).
+- Frame 0 converges to L(g, 2), where g = η(τ)²η(2τ)η(4τ)η(8τ)² (weight 3, level 8, χ₋₈, CM by Q(√−2)). τ = 1.03 (CM lacunarity again), S = +1.05; not G.
+- Frames with the pole at the x = 1 cusp score ≈ +0.8 naively, but their next singularities are the pair ±1, so the true bound is ≤ ln 4 − τ < 0.
+
+**Step 6: the cusp T = ½ cannot be killed for G (gamma1_8_kill.py, gamma1_8_amp.py, gamma1_8_amplaw.py).** Inhomogeneities h ∈ {T^j, T^j/(1−2T), T^j/(1−T)} in the frame-0 recurrence.
+- Limits:
+  - Λ(T) = L(g,2);
+  - Λ(T²) = (2L(g,2) − G)/4;
+  - Λ(T/(1−2T)) = π²/16;
+  - Λ(T/(1−T)) = (96L(g,2) − π²)/72;
+  - Λ(T²/(1−T)) = (24L(g,2) − π²)/72;
+  - Λ(T³/(1−T)) = (18G − π² − 12L(g,2))/72.
+- Hence h = T² − T/2 is a pure G-family (limit −G/4).
+- **Amplitude law at T = ½.** Let A = lim nF_n/2ⁿ, the log amplitude of F = y(h) − Λ(h)f there (40 digits; PSLQ-exact on 5 of 6 cases).
+  - If Λ = c_Lg·L(g,2) + c_G·G + c_π²·π², then A = −6c_Lg·L(g,1) − (π/2)c_G.
+  - The ζ(2) part is analytic at T = ½.
+- **Consequence.** A family whose limit contains G is singular at T = ½: π and L(g,1) are Q-independent, since L(g,1)/π is a CM period ratio. So r ≤ ½ and S ≤ +0.14 for every such G-family on this curve with this f.
+- The G part pays exactly π/2 = 2L(1,χ₋₄) there. That is the s = 1 critical value of the same Eisenstein series whose s = 2 value is G: a modular-symbol statement.
+- T³ brings a further constant (not identified), so it is not covered.
+
+**Verdict on 3G/6 and 6G/12.**
+- Level 6 cannot hold G.
+- Level 12 has case E's geometry (r = 1/4) and adds cusp-form periods.
+- The obstruction is the prime 2 again: χ₋₄ forces 4 | N, and 4 | N brings the half-translation that pairs the cusps.
+- Breaking the pairing (Γ₁(8)) lifts the best G score from −0.55 to +0.14, and the amplitude law caps it there. CDT's working margin is ≈ 0.77.
+
+| family | limit | τ | r | naive S |
+|---|---|---|---|---|
+| case E, Γ₀(8) | G/2 | 1.95 | 1/4 | −0.55 |
+| Γ₀(12), best frame | unidentified (cusp periods) | 1.95 | 1/4 | −0.55 |
+| Γ₁(8), frame T/(1−2T) | (1 + 2G)/8 | 1.95 | 1/2 | +0.14 (capped by the amplitude law) |
+| case C, Γ₀(6) (CDT) | L(2,χ₋₃)/2 | 1.95 | 1 | +0.77 |
+| Γ₀(16), CM | Γ(1/4)⁴/(64π) | 0.98 | ≈ 0.35 | +0.81 (not G) |
+| Γ₁(8), frame 0, CM | L(η(τ)²η(2τ)η(4τ)η(8τ)², 2) | 1.03 | 1/2 | +1.05 (not G) |
+
+**Open, in order.**
+1. Other weight-1 forms on Γ₁(8) (θ₃(q)θ₃(q²), θ₃(q²)², combinations), and Γ₁(12), Γ₁(16): does some curve put G's π/2 cusp far away?
+2. Prove the amplitude law as a modular-symbol identity: the Eichler integral of the χ₋₄ Eisenstein series between the dominant cusp and T = ½.
+3. The CM discount (τ ≈ 1) is the only arithmetic saving seen. G's Eisenstein series has none, so any real gain for G must come from the geometry (r).
+

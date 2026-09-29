@@ -1,0 +1,28 @@
+﻿Gamma_0(16): Hauptmoduln (eta quotients, zero at oo)
+  pole at cusp 1/1: r = {1: -2, 2: 1, 4: 0, 8: -1, 16: 2}
+  pole at cusp 1/2: r = {1: 2, 2: -5, 4: 2, 8: -1, 16: 2}
+  pole at cusp 1/8: r = {1: 0, 2: 0, 4: 2, 8: -6, 16: 4}
+weight-1 forms: th3^2(q^1), th3^2(q^2), th3^2(q^4)
+a= +1 th3^2(q^1) R=6 d=2 |x| = 3 3 2.236 2.236 1 1  (no dominant root)
+a= +1 th3^2(q^2) R=7 d=2 |x| = 3 2.236 2.236 2.236 2.236 1 1  |F_n|^(1/n) -> 2.1926  tau=1.985  S=+0.002  (no small relation; 62 digits)
+a= +1 th3^2(q^4) R=6 d=2 |x| = 3 2.236 2.236 1 1 1  |F_n|^(1/n) -> 2.1774  tau=1.968  S=+0.026  (no small relation; 59 digits)
+a= +2 th3^2(q^1) R=5 d=2 |x| = 2 2 2 2 2  (no dominant root)
+a= +2 th3^2(q^2) R=6 d=2 |x| = 2 2 2 2 2 2  (no dominant root)
+a= +2 th3^2(q^4) R=4 d=2 |x| = 2 2 2 2  (no dominant root)
+a= +3 th3^2(q^1) R=6 d=2 |x| = 3 2.236 2.236 1 1 1  |F_n|^(1/n) -> 2.2294  tau=1.950  S=+0.021  (no small relation; 60 digits)
+a= +3 th3^2(q^2) R=7 d=2 |x| = 3 2.236 2.236 2.236 2.236 1 1  |F_n|^(1/n) -> 2.1926  tau=1.985  S=+0.002  (no small relation; 62 digits)
+a= +3 th3^2(q^4) R=6 d=2 |x| = 3 2.236 2.236 1 1 1  |F_n|^(1/n) -> 2.1774  tau=1.968  S=+0.026  (no small relation; 59 digits)
+a= +4 th3^2(q^1) R=4 d=2 |x| = 4 2.828 2.828 2  |F_n|^(1/n) -> 2.7159  tau=0.964  S=+0.810  (no small relation; 70 digits)
+a= +4 th3^2(q^2) R=6 d=2 |x| = 4 2.828 2.828 2.828 2.828 2  |F_n|^(1/n) -> 2.7973  tau=1.966  S=-0.222  (no small relation; 71 digits)
+a= +4 th3^2(q^4) R=5 d=2 |x| = 4 2.828 2.828 2 2  |F_n|^(1/n) -> 2.8535  tau=1.967  S=-0.243  (no small relation; 69 digits)
+a= +5 th3^2(q^1) R=6 d=2 |x| = 5 3.606 3.606 3 1 1  |F_n|^(1/n) -> 3.5764  tau=1.976  S=-0.478  (no small relation; 67 digits)
+a= +5 th3^2(q^2) R=7 d=2 |x| = 5 3.606 3.606 3.606 3.606 3 1  |F_n|^(1/n) -> 3.5631  tau=1.970  S=-0.468  (no small relation; 68 digits)
+a= +5 th3^2(q^4) R=6 d=2 |x| = 5 3.606 3.606 3 3 1  |F_n|^(1/n) -> 3.5889  tau=1.961  S=-0.467  (no small relation; 65 digits)
+a= +6 th3^2(q^1) R=6 d=2 |x| = 6 4.472 4.472 4 2 2  |F_n|^(1/n) -> 4.4508  tau=1.975  S=-0.695  (no small relation; 59 digits)
+a= +6 th3^2(q^2) R=7 d=2 |x| = 6 4.472 4.472 4.472 4.472 4 2  |F_n|^(1/n) -> 4.4312  tau=1.978  S=-0.694  (no small relation; 60 digits)
+a= +6 th3^2(q^4) R=6 d=2 |x| = 6 4.472 4.472 4 4 2  |F_n|^(1/n) -> 4.4518  tau=1.967  S=-0.687  (no small relation; 58 digits)
+a= +7 th3^2(q^1) R=6 d=2 |x| = 7 5.385 5.385 5 3 3  |F_n|^(1/n) -> 5.3657  tau=1.954  S=-0.862  (no small relation; 53 digits)
+a= +7 th3^2(q^2) R=7 d=2 |x| = 7 5.385 5.385 5.385 5.385 5 3  |F_n|^(1/n) -> 5.3432  tau=1.959  S=-0.862  (no small relation; 53 digits)
+a= +7 th3^2(q^4) R=6 d=2 |x| = 7 5.385 5.385 5 5 3  |F_n|^(1/n) -> 5.3587  tau=1.957  S=-0.863  (no small relation; 52 digits)
+
+=== families whose limit involves G, best gate first ===

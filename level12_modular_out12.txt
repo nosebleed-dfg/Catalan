@@ -1,0 +1,84 @@
+﻿Gamma_0(12): Hauptmoduln (eta quotients, zero at oo)
+  pole at cusp 1/1: r = {1: -3, 2: 2, 3: 1, 4: -1, 6: -2, 12: 3}
+  pole at cusp 1/2: r = {1: 3, 2: -7, 3: -1, 4: 2, 6: 1, 12: 2}
+  pole at cusp 1/3: r = {1: 1, 2: 0, 3: -3, 4: -1, 6: 0, 12: 3}
+  pole at cusp 1/4: r = {1: 0, 2: 2, 3: 0, 4: -4, 6: -2, 12: 4}
+  pole at cusp 1/6: r = {1: -1, 2: 3, 3: 3, 4: -2, 6: -9, 12: 6}
+weight-1 forms: th3^2(q^1), th3^2(q^3), a(q^1), a(q^2), a(q^4)
+a= -3 th3^2(q^1) R=7 d=2 |x| = 9 9 7 6 5 5 3  |F_n|^(1/n) -> 8.8437  tau=1.978  S=-1.385  (no small relation; 0 digits)
+a= -3 th3^2(q^3) R=7 d=2 |x| = 9 9 7 6 5 5 3  |F_n|^(1/n) -> 8.8861  tau=1.937  S=-1.349  (no small relation; 0 digits)
+a= -3 a(q^1)     no recurrence
+a= -3 a(q^2)     no recurrence
+a= -3 a(q^4)     bad-ext
+a= -2 th3^2(q^1) R=7 d=2 |x| = 8 8 6 5 4 4 2  (no dominant root)
+a= -2 th3^2(q^3) R=7 d=2 |x| = 8 8 6 5 4 4 2  (no dominant root)
+a= -2 a(q^1)     no recurrence
+a= -2 a(q^2)     no recurrence
+a= -2 a(q^4)     bad-ext
+a= -1 th3^2(q^1) R=7 d=2 |x| = 7 7 5 4 3 3 1  |F_n|^(1/n) -> 6.8789  tau=1.957  S=-1.113  (no small relation; 1 digits)
+a= -1 th3^2(q^3) R=7 d=2 |x| = 7 7 5 4 3 3 1  |F_n|^(1/n) -> 6.9116  tau=1.975  S=-1.136  (no small relation; 1 digits)
+a= -1 a(q^1)     no recurrence
+a= -1 a(q^2)     no recurrence
+a= -1 a(q^4)     bad-ext
+a= +0 th3^2(q^1) R=6 d=2 |x| = 6 6 4 3 2 2  (no dominant root)
+a= +0 th3^2(q^3) R=6 d=2 |x| = 6 6 4 3 2 2  (no dominant root)
+a= +0 a(q^1)     R=8 d=2 |x| = 9.464 9.464 6 4 3 2.536 2.536 2  (no dominant root)
+a= +0 a(q^2)     R=8 d=2 |x| = 6 4 3.464 3.464 3.464 3.464 3 2  |F_n|^(1/n) -> 3.9815  tau=1.934  S=-0.543  (no small relation; 80 digits)
+a= +0 a(q^4)     R=8 d=2 |x| = 6 4.732 4.732 4 3 2 1.268 1.268  |F_n|^(1/n) -> 4.6890  tau=1.949  S=-0.722  (no small relation; 48 digits)
+a= +1 th3^2(q^1) R=7 d=2 |x| = 5 5 3 2 1 1 1  (no dominant root)
+a= +1 th3^2(q^3) R=7 d=2 |x| = 5 5 3 2 1 1 1  (no dominant root)
+a= +1 a(q^1)     no recurrence
+a= +1 a(q^2)     no recurrence
+a= +1 a(q^4)     bad-ext
+a= +2 th3^2(q^1) R=5 d=2 |x| = 4 4 2 2 1  (no dominant root)
+a= +2 th3^2(q^3) R=5 d=2 |x| = 4 4 2 2 1  (no dominant root)
+a= +2 a(q^1)     R=8 d=2 |x| = 7.464 7.464 4 2 2 1 0.5359 0.5359  (no dominant root)
+a= +2 a(q^2)     R=8 d=2 |x| = 4 2 2 2 2 2 2 1  |F_n|^(1/n) -> 1.9740  tau=1.948  S=+0.144  (no small relation; 141 digits)
+a= +2 a(q^4)     R=8 d=2 |x| = 4 2.732 2.732 2 2 1 0.7321 0.7321  |F_n|^(1/n) -> 2.7066  tau=1.967  S=-0.191  (no small relation; 79 digits)
+a= +3 th3^2(q^1) R=6 d=2 |x| = 3 3 3 1 1 1  (no dominant root)
+a= +3 th3^2(q^3) R=6 d=2 |x| = 3 3 3 1 1 1  (no dominant root)
+a= +3 a(q^1)     R=8 d=2 |x| = 6.464 6.464 3 3 1 1 0.4641 0.4641  |F_n|^(1/n) -> 3.0085  tau=1.953  S=-0.282  (no small relation; -162 digits)
+a= +3 a(q^2)     R=8 d=2 |x| = 3 3 1.732 1.732 1.732 1.732 1 1  (no dominant root)
+a= +3 a(q^4)     R=8 d=2 |x| = 3 3 1.732 1.732 1.732 1.732 1 1  (no dominant root)
+a= +4 th3^2(q^1) R=6 d=2 |x| = 4 2 2 2 2 1  |F_n|^(1/n) -> 1.9885  tau=1.977  S=+0.109  (no small relation; 142 digits)
+a= +4 th3^2(q^3) R=6 d=2 |x| = 4 2 2 2 2 1  |F_n|^(1/n) -> 1.9877  tau=1.960  S=+0.126  (no small relation; 141 digits)
+a= +4 a(q^1)     R=8 d=2 |x| = 5.464 5.464 4 2 2 1.464 1.464 1  (no dominant root)
+a= +4 a(q^2)     R=8 d=2 |x| = 4 2 2 2 2 2 2 1  |F_n|^(1/n) -> 1.9740  tau=1.948  S=+0.144  (no small relation; 141 digits)
+a= +4 a(q^4)     R=8 d=2 |x| = 4 2.732 2.732 2 2 1 0.7321 0.7321  |F_n|^(1/n) -> 2.7066  tau=1.967  S=-0.191  (no small relation; 79 digits)
+a= +5 th3^2(q^1) R=7 d=2 |x| = 5 3 3 2 1 1 1  |F_n|^(1/n) -> 2.9717  tau=1.981  S=-0.297  (no small relation; 105 digits)
+a= +5 th3^2(q^3) R=7 d=2 |x| = 5 3 3 2 1 1 1  |F_n|^(1/n) -> 2.9421  tau=1.956  S=-0.263  (no small relation; 108 digits)
+a= +5 a(q^1)     no recurrence
+a= +5 a(q^2)     no recurrence
+a= +5 a(q^4)     bad-ext
+a= +6 th3^2(q^1) R=5 d=2 |x| = 6 4 4 3 2  |F_n|^(1/n) -> 3.9747  tau=1.946  S=-0.553  (no small relation; 82 digits)
+a= +6 th3^2(q^3) R=5 d=2 |x| = 6 4 4 3 2  |F_n|^(1/n) -> 3.9610  tau=1.965  S=-0.569  (no small relation; 84 digits)
+a= +6 a(q^1)     R=8 d=2 |x| = 6 4 3.464 3.464 3.464 3.464 3 2  |F_n|^(1/n) -> 3.9821  tau=1.941  S=-0.550  (no small relation; 81 digits)
+a= +6 a(q^2)     R=8 d=2 |x| = 6 4 3.464 3.464 3.464 3.464 3 2  |F_n|^(1/n) -> 3.9815  tau=1.934  S=-0.543  (no small relation; 80 digits)
+a= +6 a(q^4)     R=8 d=2 |x| = 6 4.732 4.732 4 3 2 1.268 1.268  |F_n|^(1/n) -> 4.6890  tau=1.949  S=-0.722  (no small relation; 48 digits)
+a= +7 th3^2(q^1) R=7 d=2 |x| = 7 5 5 4 3 1 1  |F_n|^(1/n) -> 4.9697  tau=1.978  S=-0.808  (no small relation; 68 digits)
+a= +7 th3^2(q^3) R=7 d=2 |x| = 7 5 5 4 3 1 1  |F_n|^(1/n) -> 4.9489  tau=1.952  S=-0.779  (no small relation; 69 digits)
+a= +7 a(q^1)     no recurrence
+a= +7 a(q^2)     no recurrence
+a= +7 a(q^4)     bad-ext
+a= +8 th3^2(q^1) R=7 d=2 |x| = 8 6 6 5 4 2 2  |F_n|^(1/n) -> 5.9644  tau=1.979  S=-0.993  (no small relation; 57 digits)
+a= +8 th3^2(q^3) R=7 d=2 |x| = 8 6 6 5 4 2 2  |F_n|^(1/n) -> 5.9384  tau=1.966  S=-0.975  (no small relation; 59 digits)
+a= +8 a(q^1)     no recurrence
+a= +8 a(q^2)     no recurrence
+a= +8 a(q^4)     bad-ext
+a= +9 th3^2(q^1) R=7 d=2 |x| = 9 7 7 6 5 3 3  |F_n|^(1/n) -> 6.9592  tau=1.967  S=-1.135  (no small relation; 50 digits)
+a= +9 th3^2(q^3) R=7 d=2 |x| = 9 7 7 6 5 3 3  |F_n|^(1/n) -> 6.9282  tau=1.960  S=-1.123  (no small relation; 51 digits)
+a= +9 a(q^1)     no recurrence
+a= +9 a(q^2)     no recurrence
+a= +9 a(q^4)     bad-ext
+a=+10 th3^2(q^1) R=7 d=2 |x| = 10 8 8 7 6 4 4  |F_n|^(1/n) -> 7.9540  tau=1.970  S=-1.271  (no small relation; 44 digits)
+a=+10 th3^2(q^3) R=7 d=2 |x| = 10 8 8 7 6 4 4  |F_n|^(1/n) -> 7.9181  tau=1.962  S=-1.259  (no small relation; 45 digits)
+a=+10 a(q^1)     no recurrence
+a=+10 a(q^2)     no recurrence
+a=+10 a(q^4)     bad-ext
+a=+11 th3^2(q^1) R=7 d=2 |x| = 11 9 9 8 7 5 5  |F_n|^(1/n) -> 8.9489  tau=1.975  S=-1.394  (no small relation; 39 digits)
+a=+11 th3^2(q^3) R=7 d=2 |x| = 11 9 9 8 7 5 5  |F_n|^(1/n) -> 8.9081  tau=1.975  S=-1.389  (no small relation; 40 digits)
+a=+11 a(q^1)     no recurrence
+a=+11 a(q^2)     no recurrence
+a=+11 a(q^4)     bad-ext
+
+=== families whose limit involves G, best gate first ===

@@ -27,6 +27,16 @@
 
 **Target.** A holonomic G-family with S > 0 (realistically ≳ 0.8). Also worth pursuing: a no-go explaining why χ₋₄ families cannot reach it.
 
+**Modular arithmetic, levels 6/12/16 and Γ₁(8)** (2026-09-29; the user: "attack 3G/6 or 6G/12 more modular arithmetic"; results log section "Real G by modular arithmetic"):
+- The gate is meaningful only in a coordinate whose ∞ is a cusp. Möbius frames that make ∞ regular only add constraints, and a symmetric pair ±s drops the bound to 4|s|.
+- Level 6 cannot hold G (χ₋₄ needs 4 | N). Binomial sums at level 6/12 (level12_search.py, fixed): only case E.
+- Beukers families (level12_modular.py N): Γ₀(12) has cusp values x = 1/t ∈ {6, 4, 3, 2}, so r = 1/4, S = −0.55 (case E again). Level 12 adds a non-CM pair of weight-3 cusp forms with χ₋₄ (a₅ = −2, a₇ = ±4√−3) whose periods contaminate the limits.
+- Why: τ ↦ τ + ½ normalizes Γ₀(N) iff 4 | N. It pairs the cusp values x ↔ −c − x, so the next singularity sits within a factor 2 of the dominant one.
+- Symmetry broken on Γ₁(8) (gamma1_8_family.py): T = (1 − θ₃(q²)/θ₃(q))/2, cusp values {4 ± 2√2, 2, 1}. In the frame T/(1−2T) with f = θ₃(q)², the limit is exactly (1 + 2G)/8, τ = 1.95, r = ½, S = +0.14. Best G score so far (case E −0.55).
+- Cap (gamma1_8_amp.py, gamma1_8_amplaw.py): at the cusp T = ½ the log amplitude is A = −6c_Lg·L(g,1) − (π/2)c_G (g = η(τ)²η(2τ)η(4τ)η(8τ)², CM). So G can never be analytic there, and S ≤ +0.14 on this curve with this f.
+- CM periods get τ ≈ 1 (lacunary coefficients): L(η(4τ)⁶, 2) = Γ(1/4)⁴/(64π) at level 16 (S = +0.81), L(g, 2) on Γ₁(8) (S = +1.05). Neither is G. G's Eisenstein series has no such discount.
+- Open: other forms/curves (Γ₁(12), Γ₁(16), θ₃(q)θ₃(q²)); a proof of the amplitude law as a modular-symbol identity.
+
 **Also settled.**
 - The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.
 - Sun's claim (2609.04176) is critiqued by Wachs (2609.22339), who finds an unaccounted prime-2 contribution.

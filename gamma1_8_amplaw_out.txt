@@ -1,0 +1,8 @@
+﻿L(g,1) = 0.238020881016028064864128591855974314106603708
+L(g,2) = 0.52874945559576683377595806385986587134115393
+poly1   [A, L(g,1), pi]: [1, 6, 0]   [Lam, L(g,2), G, pi^2, 1]: [1, -1, 0, 0, 0]   law holds: True
+poly2   [A, L(g,1), pi]: [-8, -24, 1]   [Lam, L(g,2), G, pi^2, 1]: [-4, 2, -1, 0, 0]   law holds: True
+poly3   [A, L(g,1), pi]: None   [Lam, L(g,2), G, pi^2, 1]: None   (a further constant enters; not covered)
+p11     [A, L(g,1), pi]: [-1, -8, 0]   [Lam, L(g,2), G, pi^2, 1]: [72, -96, 0, 1, 0]   law holds: True
+p12     [A, L(g,1), pi]: [1, 2, 0]   [Lam, L(g,2), G, pi^2, 1]: [72, -24, 0, 1, 0]   law holds: True
+p13     [A, L(g,1), pi]: [8, -8, 1]   [Lam, L(g,2), G, pi^2, 1]: [-72, -12, 18, -1, 0]   law holds: True
