@@ -1,0 +1,39 @@
+﻿1. Euler's formula with Ramanujan's 1/6 = -2 zeta(-1)
+   N = 2: |PSL2(Z/N)| =    6, cusps   3, chi = mu (1/N - 1/6) =    2, genus 0
+   N = 3: |PSL2(Z/N)| =   12, cusps   4, chi = mu (1/N - 1/6) =    2, genus 0
+   N = 4: |PSL2(Z/N)| =   24, cusps   6, chi = mu (1/N - 1/6) =    2, genus 0
+   N = 5: |PSL2(Z/N)| =   60, cusps  12, chi = mu (1/N - 1/6) =    2, genus 0
+   N = 6: |PSL2(Z/N)| =   72, cusps  12, chi = mu (1/N - 1/6) =    0, genus 1
+   N = 7: |PSL2(Z/N)| =  168, cusps  24, chi = mu (1/N - 1/6) =   -4, genus 3
+   N = 8: |PSL2(Z/N)| =  192, cusps  24, chi = mu (1/N - 1/6) =   -8, genus 5
+
+2. Ramanujan sums over residue classes mod 5 (exact)
+   S_a = sum_{n = a mod 5} n: {0: '-5/12', 1: '-1/60', 2: '11/60', 3: '11/60', 4: '-1/60'}
+   total = -1/12 (zeta(-1));  G: (S_1 + S_4)/2 = -1/60;  H: (S_2 + S_3)/2 = 11/60;  difference = 1/5;  -L(-1, chi_5)/2 = 1/5
+
+3. The icosahedral coordinate
+   S-matrix of (q^-1/60 G, q^11/60 H), times sqrt5/2: [[(0.951056516295 - 3.37610208793e-41j), (0.587785252292 + 1.2114922989e-40j)], [(0.587785252292 - 8.64025783146e-42j), (-0.951056516295 + 3.18694306954e-41j)]]   (sin 2pi/5 = 0.951056516295, sin pi/5 = 0.587785252292)
+   linearity tested at a third point: error 7.02e-41
+   r(-1/tau) - (1 - phi r)/(phi + r) at tau = (0.3699999999999999955591079014993738383055 + 0.5999999999999999777955395074968691915274j): 4.06e-42
+   r(tau + 1)/r(tau) - e(1/5): 3.25e-41
+   r(i) = 0.2840790438404122960282918;  sqrt((5 + sqrt5)/2) - phi = 0.2840790438404122960282918
+
+4-5. Exact q-series
+   1/r^5 - 11 - r^5 = (eta(tau)/eta(5tau))^6: True  (60 coefficients)
+   Apery numbers [1, 3, 19, 147, 1251, 11253] ...: sum u_n t^n = 1 + sum c(n) q^n/(1-q^n) with t = r^5: True
+   recurrence (n+1)^2 u_{n+1} = (11n^2+11n+3) u_n + n^2 u_{n-1}: True
+   roots of t^2 + 11t - 1: 0.0901699437495, -11.0901699437;  phi^-5 = 0.0901699437495, -phi^5 = -11.0901699437;  phi^5 = 11.09017 > e^2 = 7.3890561
+
+6. The Platonic faces and the two-parabolic group <T, L_w>
+   w = 3  triangle (tetrahedron)   tr(T L_w^-1) = -1  elliptic
+   w = 4  square (cube)            tr(T L_w^-1) = -2  parabolic
+   w = 5  pentagon (dodecahedron)  tr(T L_w^-1) = -3  hyperbolic
+   w = 6  hexagon (flat)           tr(T L_w^-1) = -4  hyperbolic
+   w = 8  octagon                  tr(T L_w^-1) = -6  hyperbolic
+   w = 5: eigenvalues of T L_5^-1 are -phi^2, -phi^-2: 0.0
+
+7. Volumes of the regular ideal solids
+   octahedron: 8 Lambda(pi/4) = 4 Cl_2(pi/2) = 3.6638623767088760602;  4G = 3.6638623767088760602
+   tetrahedron: 3 Lambda(pi/3) = 1.014941606409653625;  (3 sqrt3/4) L(2, chi_-3) = 1.014941606409653625
+
+8. Arithmetic only: 1 - 1/24 - 1/60 = 113/120

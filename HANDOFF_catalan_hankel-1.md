@@ -116,6 +116,11 @@
   - Still open from that handoff: the two-unknown (π², G) functional; a full-rate kernel whose pole values involve G only.
   - Closed there, do not repeat: Ramanujan summation over evens/odds/primes (it only returns β′(−1) = 2G/π); splitting G into two rational parts plus one irrational part.
   - STANDING CONSTRAINT (the user): no p-adic Catalan targets as a direction.
+- Ramanujan summation on the dodecahedron (results log section of that name; ramanujan_dodecahedron.py; the user asked):
+  - The dodecahedron is X(5). χ(X(N)) = |PSL₂(ℤ/N)|(1/N − 1/6), with 1/6 = −2ζ(−1), so the Platonic solids exist exactly while 1/N > 1/6.
+  - Its coordinate is the Rogers–Ramanujan continued fraction r, and the exponents are Ramanujan sums over classes mod 5: 1 + 6 + 11 + ⋯ = −1/60, 2 + 7 + 12 + ⋯ = 11/60, difference 1/5.
+  - t = r⁵ is Apéry's ζ(2) variable (singular points φ⁻⁵, −φ⁵; φ⁵ > e²). The dodecahedron is ζ(2)'s solid.
+  - The Platonic faces 3, 4, 5 are the elliptic, parabolic and hyperbolic cases of tr(T·L_w⁻¹) = 2 − w. G's solid is the cube/octahedron (conductor 4; ideal octahedron volume 4G), whose square face is the lattice threshold.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.

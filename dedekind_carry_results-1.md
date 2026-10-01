@@ -2670,3 +2670,51 @@ In GL₂/ℚ these are exactly the Eisenstein series E^{1,ψ}. The divisor d = 1
 
 **7. Standing constraint (the user, through the handoff).** No p-adic Catalan targets as a direction. Items 1 and 2 above are recorded because the Hankel machine's own denominators led there, not as a proposal.
 
+# Ramanujan summation on the dodecahedron (2026-10-01, real date; ramanujan_dodecahedron.py, ramanujan_dodecahedron_out.txt). The user: "How does ramanujan summation apply to the dodecahedron?"
+**The solid.** The dodecahedron is the modular curve X(5) = H/Γ(5) with its cusps filled in (Klein).
+- PSL₂(𝔽₅) ≅ A₅, the 60 rotations.
+- The 12 cusps, each of width 5, are the face centres. The 20 points over j = 0 are the vertices. The 30 points over j = 1728 are the edge midpoints.
+- T is the rotation by 72° about a face, S the half turn about an edge, ST the rotation by 120° about a vertex.
+- The cusp of the modular group is a face with infinitely many sides, because T has infinite order. Read mod 5 it is a pentagon: 1 + 1 + 1 + ⋯ closes after 5.
+
+**1. Euler's formula is Ramanujan's value.**
+- χ(X(N)) = |PSL₂(ℤ/N)|·(1/N − 1/6), with 1/6 = −2ζ(−1). The orbifold Euler characteristic of the modular group is 2ζ(−1) = −1/6, and each cusp gives back 1.
+- N = 5: 60·(1/5 − 1/6) = 2. N = 3 and 4 also give 2 (tetrahedron, octahedron). N = 6 gives 0, and N = 7 gives −4 (Klein's quartic).
+- So the Platonic solids exist exactly while 1/N > 1/6. The modular group itself is the case N = ∞: 1/3 − 1/2 + 0 = −1/6.
+
+**2. The coordinates are Ramanujan sums.**
+- Regularised sums over residue classes mod 5: Σ_{n ≡ a (5)} n = 5ζ(−1, a/5) = −(5/2)B₂(a/5) (exact).
+  - 1 + 6 + 11 + ⋯ = 4 + 9 + 14 + ⋯ = −1/60.
+  - 2 + 7 + 12 + ⋯ = 3 + 8 + 13 + ⋯ = 11/60.
+  - 5 + 10 + 15 + ⋯ = −5/12, and the total is −1/12.
+- These are the exponents of the Rogers–Ramanujan functions: q^{−1/60}G(q) and q^{11/60}H(q), with G = ∏1/((1 − q^{5n+1})(1 − q^{5n+4})) and H = ∏1/((1 − q^{5n+2})(1 − q^{5n+3})).
+- Their difference, 1/5 = 12/60 = −½L(−1, χ₅), is the exponent of Ramanujan's continued fraction r(τ) = q^{1/5}H/G = q^{1/5}∏(1 − qⁿ)^{(n/5)}.
+- Checked to 40 digits: with these exponents the pair transforms under τ ↦ −1/τ by (2/√5)·(sin 2π/5, sin π/5; sin π/5, −sin 2π/5).
+  - Hence r(−1/τ) = (1 − φr)/(φ + r) and r(τ + 1) = e(1/5)·r. So r is Klein's icosahedral coordinate.
+  - Ramanujan's r(i) = √((5 + √5)/2) − φ is the fixed point of that half turn: an edge midpoint.
+- The face equation 1/r⁵ − 11 − r⁵ = (η(τ)/η(5τ))⁶ holds exactly (60 coefficients).
+
+**3. In this program the dodecahedron is ζ(2)'s solid.**
+- t = r⁵ is the Hauptmodul of Apéry's ζ(2) family on Γ₁(5), the quotient of the dodecahedron by the 72° rotation.
+  - Σu_ntⁿ = 1 + Σc(n)qⁿ/(1 − qⁿ), with c = (3, 1, −1, −3) for n ≡ 1, 2, 3, 4 mod 5 and u_n = Σ_k C(n,k)²C(n+k,k) (exact, 60 coefficients).
+- Its singular points, the roots of t² + 11t − 1, are φ⁻⁵ and −φ⁵. They are the two rings of five faces around the top and bottom faces (|r| = φ⁻¹ and φ).
+- Apéry's inequality is φ⁵ = 11.09 > e² = 7.39. In the uniformized form: width 5 and log R* = 5.13 against τ = 2.
+
+**4. The three Platonic faces are the three regimes of the lattice principle.** tr(T·L_w⁻¹) = 2 − w.
+
+| face | w | T·L_w⁻¹ | ⟨T, L_w⟩ | constant living at that conductor | outcome |
+|---|---|---|---|---|---|
+| triangle (tetrahedron) | 3 | elliptic | lattice Γ₀(3) | L(2,χ₋₃) | doubled to 6: passes (CDT) |
+| square (cube, octahedron) | 4 | parabolic | lattice Γ₀(4) | G | doubled to 8: fails |
+| pentagon (dodecahedron) | 5 | hyperbolic, eigenvalues −φ^{±2} | thin | ζ(2) on Γ₁(5) | usable as it is: Apéry |
+
+- The pentagon is the only Platonic face that is not a lattice, so it is the only one usable without doubling.
+- G's solid is the cube and octahedron, in two senses:
+  - χ₋₄ has conductor 4, and X(4) is the octahedron;
+  - the regular ideal octahedron has volume 4G (it is the Whitehead link complement).
+- χ₋₃'s solid is the tetrahedron in the same two senses: X(3), and the regular ideal tetrahedron has volume (3√3/4)·L(2,χ₋₃).
+- So the dodecahedron does not carry G: its conductor is 5, and G needs 4. It shows what G lacks, a face of width ≥ 5 at its own conductor.
+- The doubled triangle is the hexagon, N = 6, the flat case where 1/N equals Ramanujan's 1/6; CDT's proof passes narrowly there. The gate's own threshold (2π²S(w) = 2) lies between w = 6 and 7. The two thresholds are close, and I have no proof that they are the same thing.
+
+**Arithmetic remark, with no derivation.** The user's 113/120 equals 1 − 1/24 − 1/60: η's exponent and the dodecahedron's exponent.
+
