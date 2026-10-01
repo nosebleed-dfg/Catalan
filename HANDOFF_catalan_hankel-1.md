@@ -121,6 +121,11 @@
   - Its coordinate is the Rogers–Ramanujan continued fraction r, and the exponents are Ramanujan sums over classes mod 5: 1 + 6 + 11 + ⋯ = −1/60, 2 + 7 + 12 + ⋯ = 11/60, difference 1/5.
   - t = r⁵ is Apéry's ζ(2) variable (singular points φ⁻⁵, −φ⁵; φ⁵ > e²). The dodecahedron is ζ(2)'s solid.
   - The Platonic faces 3, 4, 5 are the elliptic, parabolic and hyperbolic cases of tr(T·L_w⁻¹) = 2 − w. G's solid is the cube/octahedron (conductor 4; ideal octahedron volume 4G), whose square face is the lattice threshold.
+- Squaring the faces (results log section of that name; flip_families.py; the user asked):
+  - The torsion-free genus-0 subgroups of index 12 are exactly Beauville's six, all congruence. Each is 4 ideal triangles, so the cusp widths add up to 12.
+  - Under flips they form a tree. Up to the isogenies τ ↦ 2τ, 3τ it is a path: Apéry (5,5,1,1) – CDT (6,3,2,1) – G (8,2,1,1) ≅ (4,4,2,2) – level 9.
+  - The gate number is the smallest product of the widths of two adjacent cusps: 5, 6, 8, 9, with log R* = 5.13, 2.68, 1.23, 0.93.
+  - Squaring Apéry's two pentagons gives G's own family; the carried triangles double the unit cusps, (1, 5) → (2, 4). A flip is combinatorial and carries no proof across.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.

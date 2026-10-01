@@ -2718,3 +2718,38 @@ In GL₂/ℚ these are exactly the Eisenstein series E^{1,ψ}. The divisor d = 1
 
 **Arithmetic remark, with no derivation.** The user's 113/120 equals 1 − 1/24 − 1/60: η's exponent and the dodecahedron's exponent.
 
+# Squaring the faces: the six families form one flip tree, and G is one flip past CDT (2026-10-01, real date; flip_families.py, flip_families_out.txt). The user: "Can we not square each face and times by 12 to normalize. The carry will be the equalateral triangle part left over after normalization. Should be 12 times pi plus that bit left over"
+**Reading.** A face is a cusp, and its size is the cusp width: the number of ideal-triangle corners that meet there. Squaring a face means bringing its width to 4. The carry is the corners removed, and they have to go to other faces.
+
+**The normalisation by 12 is exact.**
+- Each of our families lives on a sphere with 4 cusps and no elliptic points, of index 12 in PSL₂(ℤ). It is tiled by 4 ideal triangles, each of area π, with 12 corners in all.
+- So the widths add up to 12: 5 + 5 + 1 + 1 (Apéry), 6 + 3 + 2 + 1 (CDT), 8 + 2 + 1 + 1 (G).
+- Summing each face's fan of triangles gives 12π for every family. Nothing is left over in the total: a carry only moves corners from one face to another.
+- In angle measure the user's split is exact for one face: a pentagon is a square plus a triangle, 3π = 2π + π. In Euclidean area it is not (regular pentagon − unit square = 0.7205, equilateral triangle = 0.4330).
+
+**All such surfaces (exact enumeration).** There are exactly six up to conjugacy, and all six are congruence: Beauville's six families.
+
+| widths | group | constant |
+|---|---|---|
+| (5, 5, 1, 1) | Γ₁(5) | ζ(2), Apéry |
+| (6, 3, 2, 1) | Γ₀(6) | L(2,χ₋₃), CDT |
+| (8, 2, 1, 1) | Γ₀(8) | G, case E |
+| (4, 4, 2, 2) | Γ₀(4) ∩ Γ⁰(2) | G again: case E in the variable 2τ |
+| (9, 1, 1, 1) | Γ₀(9) | level 9 (Zagier's case B) |
+| (3, 3, 3, 3) | Γ(3) | level 9 in the variable 3τ; the tetrahedron |
+
+**The carry is a flip.** A flip replaces one edge by the other diagonal of its quadrilateral. The two ends of the old edge lose a corner each, and the two ends of the new edge gain one. (A loop loses two at its one vertex.)
+- The flip graph of the six is a tree: (3,3,3,3) – (4,4,2,2) – (6,3,2,1) – (5,5,1,1), with the branch (6,3,2,1) – (8,2,1,1) – (9,1,1,1).
+- Up to the isogenies τ ↦ 2τ and τ ↦ 3τ it is a path: Apéry – CDT – G – level 9.
+- Squaring both pentagons, (5,5,1,1) → (4,4,2,2), takes two flips and passes through CDT's hexagon. The two carried triangles land on the two unit cusps and turn them into digons.
+- So the squared dodecahedral family is exactly G's own family.
+
+**What the carry costs.** The gate number is the invariant of an adjacent pair of cusps, which is the product of their widths.
+- Smallest products: 1·5 = 5 (Apéry); 1·6 = 2·3 = 6 (CDT); 1·8 = 2·4 = 8 (G, both frames); 1·9 = 3·3 = 9 (level 9).
+- log R*: 5.13, 2.68, 1.23, 0.93 (the last from uniformize_radius.py at w = 9, S ≈ 0.0471), against τ = 2, or τ = 3/2 for the best G-family.
+- Each flip away from Apéry's family raises the invariant: 5, 6, 8, 9. The gate passes at 5 and 6 and fails from 8 on.
+- The carry is the whole loss: it turns the pair (1, 5) into (2, 4).
+- The 2-adic form of the same statement is the width criterion: L₅ ≡ L₁ mod 4, and the remainder after removing squares is what brings −I into the group.
+
+**Scope.** A flip is combinatorial. It does not map the forms of one family to another, so it does not carry a proof across. It shows where G sits: one flip past the family that CDT proved, and two past Apéry's.
+

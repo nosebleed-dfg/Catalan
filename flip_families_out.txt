@@ -1,0 +1,23 @@
+﻿1. torsion-free genus-0 subgroups of index 12, up to conjugacy: 6
+   Gamma_0(6)               widths (6, 3, 2, 1)
+   Gamma_0(8)               widths (8, 2, 1, 1)
+   Gamma_0(9)               widths (9, 1, 1, 1)
+   Gamma_1(5)               widths (5, 5, 1, 1)
+   Gamma(3)                 widths (3, 3, 3, 3)
+   Gamma_0(4) n Gamma^0(2)  widths (4, 4, 2, 2)
+
+2. classes, edge products, and flips
+   3333 [Gamma(3)]                      edge products [9]                    flips to: 4422 [Gamma_0(4) n Gamma^0(2)]
+   4422 [Gamma_0(4) n Gamma^0(2)]       edge products [8, 16]                flips to: 3333 [Gamma(3)], 6321 [Gamma_0(6)]
+   5511 [Gamma_1(5)]                    edge products [5, 25]                flips to: 6321 [Gamma_0(6)]
+   6321 [Gamma_0(6)]                    edge products [6, 12, 18]            flips to: 4422 [Gamma_0(4) n Gamma^0(2)], 5511 [Gamma_1(5)], 8211 [Gamma_0(8)]
+   8211 [Gamma_0(8)]                    edge products [8, 16]                flips to: 6321 [Gamma_0(6)], 9111 [Gamma_0(9)]
+   9111 [Gamma_0(9)]                    edge products [9]                    flips to: 8211 [Gamma_0(8)]
+
+3. flip distance from Apery's family (5,5,1,1):
+   0  5511 [Gamma_1(5)]
+   1  6321 [Gamma_0(6)]
+   2  4422 [Gamma_0(4) n Gamma^0(2)]
+   2  8211 [Gamma_0(8)]
+   3  3333 [Gamma(3)]
+   3  9111 [Gamma_0(9)]
