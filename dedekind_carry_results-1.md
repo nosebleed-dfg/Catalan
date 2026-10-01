@@ -2788,3 +2788,53 @@ In GL₂/ℚ these are exactly the Eisenstein series E^{1,ψ}. The divisor d = 1
 - G's invariant is at best 8 in a congruence family. It misses the pure-G threshold by 0.61 in width and the π²-mixed threshold by 0.25.
 - The integers below the thresholds are 5 and 6 (τ = 2), and also 7 (τ ≤ 3/2). No congruence G-family has invariant 7: by the width criterion 4 must divide it.
 
+# Mixing families in the Calegari–Dimitrov–Tang bound: allowed, but it cannot beat the gate (2026-10-01, real date; mix_lemma.py, mix_lemma_out.txt). The user: "Can you use 2 pure G families and 1 other family and another 1 other family. Mix and match over 4 parts"
+**Reading.** Use several functions at once, with different denominator rates, instead of one family. This is how the CDT bound is built, so the test is their theorem itself.
+
+**The bound (arXiv 2408.15403, Theorem 2.5.1, read in the source).**
+- Take m holonomic functions in ℚ[[x]], ℚ(x)-linearly independent, with denominator rates σ₁ ≤ … ≤ σ_m, all meromorphic on the disc after composing with a map φ, φ(0) = 0.
+- Then m ≤ I(φ)/(L − τ), where:
+  - L = log|φ′(0)|;
+  - τ = (1/m²)·Σ(2i − 1)σ_i, a weighted average of the rates (it needs L > τ);
+  - I(φ) = ∬ log|φ(z) − φ(w)| over the torus, which is ≥ L, with equality only for univalent φ.
+- mix_lemma.py reproduces the paper's own values of τ: 3/4, 8/9, 69/50 (Theorem 2.8.4) and 191/49 (the 14 functions of Theorem A).
+- For G, L ≤ log R* = 1.2322548520 for every admissible φ: the functions live on X′ = H/⟨T, L₈⟩, and φ lifts to it.
+
+**The four-part mix.** Two pure-G functions of rate 3/2 (F₊ and F₋, from W*±), and two free functions with integer coefficients (1 and √(1 − 4t), which is holomorphic on X′ because t never takes the value 1/4 there).
+- τ = (5 + 7)·(3/2)/16 = 9/8 = 1.125, which is below L. So the averaged denominators do drop under the radius.
+- But the bound then allows I/(L − τ) ≥ 1.2323/0.1073 = 11.5 functions, and the mix has 4. No contradiction.
+- F₊ − F₋ = 4·f·D⁻²Z has limit exactly 0, so it is a function that exists whether or not G is rational. The two pure-G families are one G-dependent function plus one free function of rate 2.
+
+**Lemma (no rescue by mixing).** Put Φ(S) = |S|·τ(S) = (1/|S|)·Σ(2i − 1)σ_i for a multiset S of rates. Then Φ(S ∪ {σ}) − Φ(S) ≥ σ for every S and every σ ≥ 0.
+- Proof. Let S have m elements and insert σ at position k. The claim is equivalent to 2mC − B − A ≥ m(m − 2k + 2)σ, with A = Σ_{i<k}(2i − 1)σ_i, B = Σ_{i≥k}(2i − 1)σ_i, C = Σ_{i≥k}σ_i.
+  - 2mC − B = Σ_{i≥k}(2m − 2i + 1)σ_i ≥ σ·(m − k + 1)², since σ_i ≥ σ there and the coefficients are the first m − k + 1 odd numbers.
+  - A ≤ σ·(k − 1)².
+  - (m − k + 1)² − (k − 1)² = m(m − 2k + 2).
+- Tested on 200000 random multisets: the minimum of Φ(S ∪ {σ}) − Φ(S) − σ is 0.
+- **Consequence.** Split a set of functions as S₀ ⊔ S₁, where S₀ exists unconditionally and S₁ only under a hypothesis (here: G rational).
+  - The theorem applied to S₀ gives I ≥ |S₀|(L − τ(S₀)). (If L ≤ τ(S₀) this is trivial.)
+  - A contradiction needs |S|(L − τ(S)) > I. Subtracting, |S₁|·L > Φ(S) − Φ(S₀) ≥ Σ_{F∈S₁} σ_F.
+  - So L must exceed the average rate of the hypothesis-dependent functions. If S₀ is empty, I ≥ L gives the same with |S₁| − 1 in place of |S₁|.
+- In words: every free function added to dilute the average also adds to the count the bound has to beat, and the two effects cancel exactly at best.
+
+**Verdict for G.**
+
+| G-dependent functions | rate | L − rate |
+|---|---|---|
+| case E | 2 | −0.7677 |
+| best pure-G families (W*±) | 3/2 | −0.2677 |
+| π²-mixed (W_B; hypothesis: 1, π², G dependent) | 4/3 | −0.1011 |
+
+- No mixture can produce a contradiction from Theorem 2.5.1, whatever the other families are. The margins are the same as for a single family.
+- This is the precise form of CDT's Remark 11.1.17 ("e² > 16·(1/4) … definitely precludes").
+- So mixing is not a third lever. The two levers stay the same: the radius, and the G-dependent functions' own denominators.
+- Scope: proved for the bound of Theorem 2.5.1. The paper's refined bounds (Theorems 6.0.2, 7.1.6, 8.0.1) change the denominator term and the numerator; they are not covered by this lemma. CDT's own proof has L ≈ 5.08 against a top rate 4 in its variable, on the right side of the same inequality.
+
+**An illustration of why the count matters.** The six free functions 1, √(1 − 4t), log(1 − 4t), log((1 + √(1 − 4t))/2) and the two logs times √(1 − 4t) have rates (0, 0, 1, 1, 1, 1).
+- With one pure-G function, m = 7 and τ = 1.051, and the best-case bound L/(L − τ) is 6.80 < 7. That looks like a contradiction.
+- It is not one: the six free functions alone give L/(L − τ) = 3.59 < 6 in the same best case. So I(φ) = L is impossible for any φ that carries them, and in fact I ≥ 6(L − 8/9) = 2.06.
+
+**Noted in passing (from the source).**
+- CDT's Lemma 2.11.7: the Bost–Charles integral of their bivalent map 8(z + z³)/(1 + z)⁴ is log 8 + 4G/π. Catalan's constant is a term in their own bound.
+- Their Theorem 2.8.4 is about exactly the rate 3/2 (type [1..n][1..n/2]) with singular points {0, δ, 1, ∞}. Our W*± families have that shape in x = 4t, with δ = ½, but the change of variable costs 4ⁿ in the denominators. That is the same gap in another form.
+

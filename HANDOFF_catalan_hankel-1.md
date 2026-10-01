@@ -132,6 +132,12 @@
   - The modular floor is therefore 3/2 − 1.2322548520 = 0.2677451480.
   - The sum of the four family values is 9.9657. It is not a relation (the user asked): the four belong to different surfaces.
   - Threshold widths (real w): log R*(w) = τ at w = 6.6348 (τ = 2), 7.3949 (τ = 3/2, the best pure-G family), 7.7485 (τ = 4/3, π²-mixed). G sits at 8.
+- Mixing families in the CDT bound (results log "Mixing families in the Calegari–Dimitrov–Tang bound"; mix_lemma.py; the user proposed a four-part mix):
+  - CDT's Theorem 2.5.1 (read in the source): m ≤ I(φ)/(L − τ), with τ = (1/m²)Σ(2i−1)σ_i a weighted average of the functions' denominator rates, L = log|φ′(0)| ≤ 1.2323 for G, and I(φ) ≥ L.
+  - The four-part mix (two pure-G functions of rate 3/2, plus 1 and √(1 − 4t)) has τ = 9/8 < L, but the bound then allows 11.5 functions against 4.
+  - Lemma (proved): with Φ = mτ, Φ(S ∪ {σ}) − Φ(S) ≥ σ. So a contradiction needs L > the average rate of the functions that depend on G being rational: 3/2 for pure G (−0.2677), 4/3 with π² (−0.1011).
+  - Mixing is therefore not a third lever. Scope: Theorem 2.5.1's form only; the refined bounds (6.0.2, 7.1.6, 8.0.1) are not covered.
+  - Free functions on X′ noted: 1, √(1 − 4t), the log-type ones (rate 1), and f·D⁻²Z = (F₊ − F₋)/4, whose limit is exactly 0 (rate 2).
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.

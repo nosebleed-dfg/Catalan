@@ -1,0 +1,20 @@
+﻿1. The formula against the paper's own examples
+   log: (0, 1)                          tau = 3/4     (paper: 3/4)  True
+   Thm 2.7.2: (0, 1, 1)                 tau = 8/9     (paper: 8/9)  True
+   Thm 2.8.4: (0, 1, 3/2, 3/2, 3/2)     tau = 69/50   (paper: 69/50)  True
+   Thm A: (0, 2, 2, 4 x 11)             tau = 191/49  (paper: 191/49)  True
+
+2. Mixes for G (L <= 1.2322548520)
+   2 pure-G (3/2) + 1 + sqrt(1-4t)              m = 4  tau = 1.1250  L - tau = +0.1073  bound if I = L: m <= 11.49
+   1, sqrt, one pure-G                          m = 3  tau = 0.8333  L - tau = +0.3989  bound if I = L: m <= 3.09
+   1, sqrt, 4 log-type (rate 1), one pure-G     m = 7  tau = 1.0510  L - tau = +0.1812  bound if I = L: m <= 6.80
+   1, sqrt, 4 log-type, no G (unconditional)    m = 6  tau = 0.8889  L - tau = +0.3434  bound if I = L: m <= 3.59
+   1, sqrt, two pi^2-mixed (4/3)                m = 4  tau = 1.0000  L - tau = +0.2323  bound if I = L: m <= 5.31
+
+3. Lemma: Phi(S + {sigma}) - Phi(S) >= sigma
+   200000 random multisets: minimum of Phi(S + {sigma}) - Phi(S) - sigma = 0
+
+4. What a contradiction would need: L > average rate of the G-dependent functions
+   case E                       rate 2.0000   L - rate = -0.7677
+   best pure-G families (W*+-)  rate 1.5000   L - rate = -0.2677
+   pi^2-mixed (W_B)             rate 1.3333   L - rate = -0.1011
