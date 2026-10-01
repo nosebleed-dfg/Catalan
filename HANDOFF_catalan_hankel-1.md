@@ -126,6 +126,12 @@
   - Under flips they form a tree. Up to the isogenies τ ↦ 2τ, 3τ it is a path: Apéry (5,5,1,1) – CDT (6,3,2,1) – G (8,2,1,1) ≅ (4,4,2,2) – level 9.
   - The gate number is the smallest product of the widths of two adjacent cusps: 5, 6, 8, 9, with log R* = 5.13, 2.68, 1.23, 0.93.
   - Squaring Apéry's two pentagons gives G's own family; the carried triangles double the unit cusps, (1, 5) → (2, 4). A flip is combinatorial and carries no proof across.
+- The radii to 25 digits (results log "The radii to 25 digits by a transfer operator"; radius_transfer.py):
+  - S(w) = g(0), where g(x) = Σ_{m≠0}v²(1 + Ψ(v)), v = 1/(x + wm), and Ψ(u) = Σ_{k≠0}(k+u)⁻²g(1/(k+u)). One linear solve at Chebyshev nodes, with exact Hurwitz zeta sums. It also works for real w.
+  - log R* = 5.1254484666 (w = 5), 2.6777333373 (6), 1.7301539763 (7), 1.2322548520 (8), 0.9302696152 (9). These replace the word-enumeration extrapolations (uniformize_radius.py), which they confirm.
+  - The modular floor is therefore 3/2 − 1.2322548520 = 0.2677451480.
+  - The sum of the four family values is 9.9657. It is not a relation (the user asked): the four belong to different surfaces.
+  - Threshold widths (real w): log R*(w) = τ at w = 6.6348 (τ = 2), 7.3949 (τ = 3/2, the best pure-G family), 7.7485 (τ = 4/3, π²-mixed). G sits at 8.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.

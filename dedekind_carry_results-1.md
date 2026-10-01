@@ -2753,3 +2753,38 @@ In GL₂/ℚ these are exactly the Eisenstein series E^{1,ψ}. The divisor d = 1
 
 **Scope.** A flip is combinatorial. It does not map the forms of one family to another, so it does not carry a proof across. It shows where G sits: one flip past the family that CDT proved, and two past Apéry's.
 
+# The radii to 25 digits by a transfer operator; their sum is not a relation (2026-10-01, real date; radius_transfer.py, radius_transfer_out.txt). The user: "Those log R add up to 9.97. is that relevant at all?"
+**Answer: no.**
+- The four numbers belong to four different surfaces. Each is compared with its own family's τ, and no criterion adds them.
+- With exact values the sum is 9.9657, not 10 and not π² = 9.8696. (The rounded table values, one of them an extrapolation, added to 9.97.)
+
+**The exact values: a new method.** S(w) = g(0), where g and Ψ solve the linear functional equations
+    g(x) = Σ_{m≠0} v²·(1 + Ψ(v)), v = 1/(x + wm);   Ψ(u) = Σ_{k≠0} (k + u)⁻²·g(1/(k + u)).
+- Derivation. Let G(c, d) be the total of 1/c² over all continuations of a word whose bottom row is (c, d) and whose next syllable is a power of L_w. The two moves are (c, d) ↦ (c + dwm, d) and (c, d) ↦ (c, d + ck). G is homogeneous of degree −2, so G(c, d) = d⁻²g(c/d), and the recursion for G is the pair of equations above.
+- Ψ lives on [−ρ, ρ], with ρ = (1 − √(1 − 4/w))/2, and g on [−1/(1 − ρ), 1/(1 − ρ)]. Both are analytic well beyond these intervals.
+- For a polynomial the sums over m and k are exact Hurwitz zeta values: Σ_{m≠0}(x + wm)⁻ⁿ = w⁻ⁿ[ζ(n, 1 + x/w) + (−1)ⁿζ(n, 1 − x/w)]. So the fixed point is one linear solve at Chebyshev nodes.
+- Between 36 and 44 nodes the values agree to 26 digits (w = 5) and to 42 digits (w = 9).
+
+| w | S(w) | log R* = 2π²S(w) |
+|---|---|---|
+| 5 | 0.25965825266580560724 | 5.12544846657921541 |
+| 6 | 0.13565555560902939819 | 2.67773333734219755 |
+| 7 | 0.08765062438052809051 | 1.73015397628858056 |
+| 8 | 0.06242676007845623084 | 1.23225485203216218 |
+| 9 | 0.04712800926140793363 | 0.93026961524194359 |
+
+- These confirm the word-enumeration values (0.260, 0.1357, 0.0877, 0.062427, 0.0471), which were extrapolated tails.
+- The modular floor is 3/2 − 1.2322548520 = 0.2677451480.
+- Sum over w = 5, 6, 8, 9: S = 0.5048685776, 2π²S = 9.9657062712.
+
+**What is meaningful instead: the threshold width.** The operator works for real w, so the gate log R*(w) = τ can be solved for w.
+
+| τ | which families | passes below w = |
+|---|---|---|
+| 2 | full lcm² denominators (Apéry, CDT, case E) | 6.6348 |
+| 3/2 | the best pure-G family (W*±) | 7.3949 |
+| 4/3 | the π²-mixed family (W_B) | 7.7485 |
+
+- G's invariant is at best 8 in a congruence family. It misses the pure-G threshold by 0.61 in width and the π²-mixed threshold by 0.25.
+- The integers below the thresholds are 5 and 6 (τ = 2), and also 7 (τ ≤ 3/2). No congruence G-family has invariant 7: by the width criterion 4 must divide it.
+
