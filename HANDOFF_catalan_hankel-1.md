@@ -1,4 +1,4 @@
-# Catalan Hankel machine — handoff to Claude Code (updated 2026-09-29: cubic/thirds route measured and closed, section at the end; multi-β route 2026-09-28; original 2026-09-24)
+# Catalan Hankel machine — handoff to Claude Code (updated 2026-10-01, real date: the user's chat-side handoff merged into "REAL G"; 2026-09-29: cubic/thirds route measured and closed, section at the end; multi-β route 2026-09-28; original 2026-09-24)
 
 ## Direction (from the user, 2026-09-28, real date)
 "With a perspective on carries and primes. Base variance and such. Open problems are what the goal is with a note on understanding more than publishing. Catalan is proof of concept." Read every result as a carry mechanism at primes and ask how it changes with the base. Catalan's constant is where the method was built and tested. Open problems such as the odd-zeta tower from ζ(7) are the goal. Literature checks are for crediting and learning from known work, not for priority.
@@ -96,16 +96,30 @@
   - K² Catalan with a plain companion, exact at K = 30: every weight c loses (c = −2: 163 vs 160; generic c: 218). Per mirror pair it is 2 or 4, averaging Catalan's 3: the balance law, exactly.
   - Remaining door: a non-congruence G-family with harmless invariant 5–7, paid for in denominators.
 - The door, gone through (results log "The non-congruence door"; door_groups.py, door_belyi.py, door_family.py, door_recurrence.py):
-  - In SL₂(ℤ/2^a), −I lies in ⟨T, L_w⟩ exactly when 4 ∤ w. So bounded-denominator (congruence) G-families need 4 | w, and widths 5–7 force unbounded denominators.
+  - In SL₂(ℤ/2^a), −I lies in ⟨T, L_w⟩ exactly when 4 ∤ w (proved 2026-10-01, see below). So bounded-denominator (congruence) G-families need 4 | w, and widths 5–7 force unbounded denominators.
   - Smallest non-congruence candidates: index 9 with widths (1,1,7), (1,2,6), (1,3,5); index 10 with (1,2,7), (1,4,5).
   - The (1,2,6) group was built exactly. It is an index-3 subgroup of Γ₀(2), via y = t/(1 − 256t/27)³, with Belyi map over ℚ and f = E₄^{1/4}A(t)^{−1/4}.
     - Its recurrence: (n+1)²w_{n+1} = (80n²+72n+21)w_n − 64(4n−1)²w_{n−1}.
     - It carries one new constant Λ₁ = 0.019056859720…, and G is not in the span (300 digits).
-    - Its 3-adic cost is ≈ 3.2 per n, so τ ≈ 5.2 against log R* 2.68.
+    - Its 3-adic cost is exactly 3·ln 3 = 3.30 per n (corrected 2026-10-01; first logged as ≈ 3.2), so τ ≈ 5.3 against log R* 2.68.
   - The door is closed at its smallest instance. (1,3,5) is unbuilt and predicted the same.
+- The chat-side handoff of 2026-09-30, checked and merged 2026-10-01, real date (results log section of that name; handoff_checks.py):
+  - The user's chat-side session re-verified the Catalan half of twoadic_law_proof.md for K = 3…14 (content law with ties, both Smith forms, coefficient law) and read Lemma 12.1 and Theorems 7, 8 with no gap found. Not checked there: the twisted machine, Theorem 6's analytic steps, section 9.
+  - The width criterion is now a theorem for all w and a ≥ 2 (4 | w: everything is (1 ∗; 0 1) mod 4; w = 2·odd: (T⁻¹L₂)² = −I; w odd: everything).
+    - Added here: the closure of ⟨T, L_w⟩ in SL₂(ℤ̂) is the product of its 2-adic and odd parts. So a congruence odd-weight form with nebentypus χ₋₄ fixed by T and L_w vanishes unless 4 | w.
+    - The same at 3: χ₋₃ survives exactly when 3 | w (width 6 = CDT's Γ₀(6)).
+    - For non-congruence families it stays an inference.
+  - The index-9 family simplifies: f = θ₄(2τ)²(1 − 256t/27)^{−3/4}.
+    - a_n = 27ⁿu_n = 1, 84, 12228, 2167504, … is an integer sequence (proved), with (n+1)²a_{n+1} = 4(80n²+72n+21)a_n − 1024(4n−1)²a_{n−1}.
+    - Carry laws: v₃(a_n) = the number of borrows in (…2020)₃ − n (proved when ≤ 2, checked to n = 3000); v₂(a_n) = 2s₂(n) (checked to n = 3000).
+  - Its open item 1 (does the CDT bound close at width 8?) is answered by the R* computation above: no, −0.77 for Zagier's (12, 32, 4) and −0.27 at best.
+  - Still open from that handoff: the two-unknown (π², G) functional; a full-rate kernel whose pole values involve G only.
+  - Closed there, do not repeat: Ramanujan summation over evens/odds/primes (it only returns β′(−1) = 2G/π); splitting G into two rational parts plus one irrational part.
+  - STANDING CONSTRAINT (the user): no p-adic Catalan targets as a direction.
 
 **Also settled.**
-- The 2-adic G (our C) = Calegari's L₂(2,χ₋₄): irrational since 2005.
+- The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.
+- Credit: the twisted machine's J-fraction (λ_n = n⁴, b_n = 2n²+2n+¾) is Beukers' continued fraction for Θ(x) at x = ½, whose convergents are Calegari's approximations. The pencil and Smith-form laws are not in his paper.
 - Sun's claim (2609.04176) is critiqued by Wachs (2609.22339), who finds an unaccounted prime-2 contribution.
 - Eskandari (2609.26354) improves an explicit G-approximation exponent from 0.52 to 0.62.
 

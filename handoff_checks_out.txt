@@ -1,0 +1,22 @@
+﻿A. Width criterion
+   (T^-1 L_2)^2 = (-1, 0, 0, -1)  (= -I exactly: True)
+   mod 2^a, a = 2..6, w = 1..32: -I in <T, L_w> iff 4 does not divide w; exceptions: []
+   mod 3^a, a = 1..3, w = 1..27: -I in <T, L_w> iff 3 does not divide w; exceptions: []
+
+B. f = E4^(1/4) A(t)^(-1/4) equals theta4(2tau)^2 (1 - 256t/27)^(-3/4): True  (37 q-coefficients, exact)
+
+C. a_n = 27^n u_n, n <= 3000
+   first terms: [1, 84, 12228, 2167504, 423881700, 87791966544, 18873246794896]
+   integrality of the recurrence for all n: True
+   a_n = 27^n u_n for n < 37 (exact expansion of f in t): True
+   v_2(a_n) = 2 s_2(n): True
+   a_n = 64^n prod(4i-1)/n!  (mod 27): True
+   v_3(a_n) = borrows(n) when borrows <= 2 (proved): 862 of 862
+   v_3(a_n) = borrows(n) for every n <= 3000: True   (max v_3 = 7; first exceptions [])
+   so v_3(u_n) = -3n + v_3(a_n): cost 3 ln 3 = 3.2958 per n
+
+D. L = lim v_n/w_n = 0.0590912547640028912596965508815153135234483098
+   handoff:          0.05909125476400289125969655088151531352
+   (1701 L - 81)/1024 - Lambda_1 (door_recurrence_out.txt, 60 digits) = 1.8865e-62
+
+E. v_2(E_{2^N - 2} - 2C) for N = 3..9 (signed Euler numbers, C from the tangent-number series mod 2^200): [(3, 3), (4, 4), (5, 5), (6, 6), (7, 7), (8, 8), (9, 9)]

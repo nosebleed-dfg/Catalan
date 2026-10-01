@@ -2518,6 +2518,7 @@ In GL₂/ℚ these are exactly the Eisenstein series E^{1,ψ}. The divisor d = 1
 # The non-congruence door, gone through at its smallest instance (2026-09-29; door_groups.py, door_belyi.py, door_family.py, door_recurrence.py). The user: "Go for it"
 **A. Bounded denominators cannot do it (exact).**
 - In SL₂(ℤ/2^a), −I lies in ⟨T, L_w⟩ exactly when 4 ∤ w. Checked for w ≤ 16 and a = 2…6.
+  - UPDATE (2026-10-01, real date): now proved for all w and all a ≥ 2. See the section "The chat-side handoff of 2026-09-30" below.
 - G needs the χ₋₄ component at 2, on which −I acts by −1 (odd weight).
 - A multiplier that is trivial on T and L_w must therefore kill that component whenever 4 ∤ w.
 - A family with bounded denominators is congruence (Calegari–Dimitrov–Tang), so it carries G only when 4 | w, i.e. w ≥ 8 by the lattice principle. This is the sign of ∞ at the prime 2 once more.
@@ -2555,10 +2556,117 @@ In GL₂/ℚ these are exactly the Eisenstein series E^{1,ψ}. The divisor d = 1
 - **Denominators.**
   - t(q), u_n and v_n carry 3-adic denominators ≈ 3^{2.93n}, from the cubic cover: about 3.2 per n. They are 2-adically integral.
   - So τ ≈ 5.2 against log R* ≥ 2.68: a failure by about 2.5 even before G.
+  - CORRECTION (2026-10-01, real date; found by the user's chat-side session): the rate is exactly 3 per n, i.e. 3·ln 3 = 3.296, so τ ≈ 5.3 and the failure is about 2.6. The figure 2.93 was a fit at n = 40. The exact law is v₃(u_n) = −3n + (a borrow count); see the section "The chat-side handoff of 2026-09-30" below.
 
 **Reading.**
 - This family is non-congruence only at 3. At 2 it is bounded, so part A's 2-adic argument applies (−I ∈ ⟨T, L₆⟩ mod 2^a), and G is indeed absent.
 - A G-family at width 5–7 would have to be non-congruence at 2 itself. There is no mechanism that makes such a family's periods Tate, and the example's single constant is new.
 - The door is closed at its smallest instance on both counts: no G, and the arithmetic cost exceeds the analytic gain.
 - The remaining unbuilt candidate, (1, 3, 5) with monodromy A₉ and log R* ≥ 5.13, is predicted to behave the same way. It would need unbounded 2-adic denominators and G among its periods, and neither has a mechanism.
+
+# The chat-side handoff of 2026-09-30, checked and merged (2026-10-01, real date; handoff_checks.py, handoff_checks_out.txt). The user: "A small handoff doc on some side work."
+**Source.** The user's chat-side session of 2026-09-30 recomputed parts of this repo with separate code and wrote a handoff. In it, "verified" means recomputed from the written definitions, and "inference" means argued, not proved. This section records it, re-checks what could be re-checked here, and answers its open items where this log already has the answer. (Earlier day labels in this log ran ahead of the calendar, up to "10-01". This section is dated by the real clock.)
+
+**1. The 2-adic proof (twoadic_law_proof.md): an independent check.**
+- The chat side rebuilt the Catalan machine in the v-scale: moments μ_k = (k+1)T_{2k+1}/2, nodes −(2j+1)², pole values F_j(X) = −(−1)^j(2j+1)(β_j + β_{j+1})/4 + X·(−1)^j(2j+1)/2.
+- Verified there for every K = 3…14:
+  - the content law e₂(K), ties included (ties at K = 6 and 12);
+  - the Smith form of A(0): the K smallest of band ∪ moment pivots, top divisor raised at ties;
+  - the Smith form of A(C) = {v₂(h_q)}, which tests Theorems 6 and 7 end to end;
+  - the coefficient law v₂(q_{K−M}) for every M;
+  - the tangent-number and Boole/Mahler formulas for C agree to 2^200.
+- Read line by line there, no gap found: Lemma 12.1, Theorem 7, Theorem 8, the Cauchy–Binet consequences.
+- Not checked there: the twisted machine numerically, Theorem 6's analytic steps, section 9 in detail.
+- Reported there: A(X) = A(C) + (X − C)B gives the machine polynomial a 2-adic near-root at C of depth 204, 693, 2159, 9039 bits at K = 8, 14, 24, 48, tending to about 4K².
+  - The K = 8 value agrees with this repo's formulas: Σ_{q<8} h_q = 175 (the paper's 2¹⁷⁵) plus e₂(8) = 29.
+- Their reading matches ours: the law proves the 2-part of a height that was already measured, and the real gap is closeness. (Their "+0.38 per K²" is the K = 40 measurement; the asymptotic value here is +0.585.)
+
+**2. The name of C, and whose continued fraction the twisted machine is (credit).**
+- In the Kubota–Leopoldt convention, C = ζ₂(2).
+  - At p = 2 the Teichmüller character is χ₋₄, so L₂(1−n, 1) = L(1−n, χ₋₄) = β(1−n) for odd n. Hence ζ₂(2) is the 2-adic limit of β(−2k) = E_{2k}/2 as 2k → −2.
+  - Kubota–Leopoldt's L₂(s, χ₋₄) vanishes identically (odd character). Beukers says exactly this about Calegari's "2-adic Catalan constant" (arXiv math/0603277, §1, read in the source).
+  - So "Calegari's L₂(2, χ₋₄)" in this log and ζ₂(2) are the same number under two names.
+- Checked here with this repo's C (the tangent-number series): v₂(E_{2^N−2} − 2C) = N for N = 3…9.
+- Chat side: C matches Beukers' ζ₂(2) = H₂(2,1,4) + H₂(2,3,4) to 318 bits.
+- **Credit.** The twisted machine's J-fraction (λ_n = n⁴, b_n = 2n² + 2n + ¾) is Beukers' continued fraction for Θ(x) at x = ½.
+  - His recurrence is U_{n+1} = (2n² + 2n + 1 − x + x²)U_n − n⁴U_{n−1} (§6, read in the source).
+  - He states that it converges 2-adically to Θ₂(½) = −8ζ₂(2), and that its convergents are Calegari's approximations.
+  - So Theorem 1 and Theorem 6 for the twisted machine re-derive a known framework.
+  - The pencil A(X) = A(C) + (X − C)B and the Smith-form and content laws are not in Beukers' paper. That is the only paper either side checked.
+- Also in Beukers §6 (his remark, not re-derived here): the same Padé approximants at x = −n + ½ are Rivoal's Catalan approximations. So the twisted K² machine and the Rivoal–Zudilin K¹ forms are two specialisations of one Padé table, that of Θ(x).
+
+**3. The width criterion is now a theorem.**
+- **Theorem.** For every w ≥ 1 and a ≥ 2, −I lies in ⟨T, L_w⟩ ⊂ SL₂(ℤ/2^a) exactly when 4 ∤ w.
+- Proof (the chat side's). Write w = 2^k·m with m odd. Mod 2^a, L_w = (L_{2^k})^m and m is invertible, so L_w and L_{2^k} generate the same cyclic group.
+  - k = 0: T and L₁ generate SL₂(ℤ), which maps onto SL₂(ℤ/2^a).
+  - k = 1: (T⁻¹L₂)² = −I exactly, already in SL₂(ℤ).
+  - k ≥ 2: every generated matrix is (1 ∗; 0 1) mod 4, and −I is not.
+- Brute force agrees for w ≤ 32 and a = 2…6 (both sides).
+- **Lemma (product closure; added here).** The closure of ⟨T, L_w⟩ in SL₂(ℤ̂) is A × B, where A is its closure in SL₂(ℤ₂) and B its closure in ∏_{p odd} SL₂(ℤ_p).
+  - By Goursat the closure is a fibre product of A and B over a common quotient Q.
+  - The kernel of A → SL₂(𝔽₂) is pro-2, and the image is S₃ (w odd) or of order 2 (w even). So every nontrivial finite quotient of A has a quotient of order 2.
+  - B has no quotient of order 2. In ∏_{p odd} SL₂(ℤ_p) the square roots T^{1/2} = (1 ½; 0 1) and L_w^{1/2} are limits of powers of T and L_w, so they lie in B. A continuous map B → ℤ/2 therefore kills T and L_w, hence all of B.
+  - So Q = 1.
+- **Corollary (the congruence case).** Let W be a congruence form of odd weight with nebentypus χ₋₄, fixed by T and L_w. If 4 ∤ w, then W = 0.
+  - The image of ⟨T, L_w⟩ mod the level N = 2^a·M contains (−I mod 2^a, I mod M).
+  - That element comes from some γ ∈ Γ₀(N) with d ≡ −1 mod 2^a and d ≡ 1 mod M, and it acts on W by χ₋₄(d) = −1.
+- The premise "G needs nebentypus χ₋₄" is the independence assumption of the layer theorem: L(E^{χ₁,χ₂}, 2) = L(2,χ₁)·L(0,χ₂), which is a rational multiple of G only for χ₁ = χ₋₄ and χ₂ principal. The chat side lists this premise as not checked. It is an assumption here too, not a theorem.
+- **The same at 3.** −I lies in ⟨T, L_w⟩ ⊂ SL₂(ℤ/3^a) exactly when 3 ∤ w.
+  - If 3 ∤ w, the group is everything. If 3 | w, it is unipotent mod 3.
+  - Checked for w ≤ 27, a ≤ 3. The product lemma holds with cube roots in place of square roots.
+  - So χ₋₃ survives exactly at widths divisible by 3. The least such width ≥ 5 is 6, which is Γ₀(6), CDT's case. For G it is 8.
+  - For the harmless pair (∞, 0), i.e. for groups containing T and L_w, this proves the "least multiple of the conductor that is ≥ 5" rule on every congruence group, for conductors 3 and 4. The earlier table covered only Γ₀(N) and Γ₁(N). Other harmless pairs (∞, a/c) are not covered by this argument.
+- The chat side's stronger inference, that non-congruence families at widths 5–7 lose G as well, stays an inference. A non-congruence form is not in the span of the congruence Eisenstein series, so the corollary does not reach it. The status is unchanged: no mechanism, and one worked example.
+
+**4. The index-9 (1, 2, 6) family: simplification, an integer sequence, two carry laws, and a correction.**
+- **Simplification (chat side; checked here exactly on 37 q-coefficients).** f = θ₄(2τ)²·(1 − s)^{−3/4}, with s = 256t/27 and θ₄(2τ) = Σ(−1)ⁿq^{n²} = η(τ)²/η(2τ).
+  - Reason: E₄ = (1 + 256y)·θ₄(2τ)⁸ on Γ₀(2), and 1 + 256y = A(t)/(1 − s)³.
+  - θ₄(2τ)² is the χ₋₄ theta-square with its whole zero at the cusp 0 (it is θ₃(τ + ½)²). It has order ¾ at the width-6 cusp, and the twist (1 − s)^{−3/4} cancels exactly that. So f is a nonzero constant there.
+  - 64t + (1 − s)³ = −(s + ½)²(s − 4) (chat side). So the cover's last branch point is the elliptic point of Γ₀(2), and the group is a genuine index-3 subgroup with widths (1, 2, 6).
+- **An integer sequence.** a_n := 27ⁿu_n = 256ⁿ[sⁿ]f = 1, 84, 12228, 2167504, 423881700, …, with
+  (n+1)²a_{n+1} = 4(80n² + 72n + 21)a_n − 1024(4n − 1)²a_{n−1}.
+  - **Proved: a_n ∈ ℤ.**
+    - θ₄(2τ)² = Σ_k b_k y^k with b_k ∈ ℤ, because q ∈ y + y²ℤ[[y]].
+    - y = (27/256)·s·(1 − s)^{−3}, so y^k = (27/256)^k Σ_{m≥k} C(m + 2k − 1, m − k) s^m.
+    - (1 − s)^{−3/4} = Σ_j c_j s^j with c_j = ∏_{i≤j}(4i − 1)/(4i). Here 8^j c_j ∈ ℤ: its 2-adic valuation is s₂(j), and c_j = ±C(−3/4, j) is p-integral for odd p.
+    - So a_n = 256ⁿc_n + Σ_{k≥1} Σ_{m=k}^{n} b_k·27^k·256^{n−k}·C(m + 2k − 1, m − k)·c_{n−m}, and every term is an integer.
+  - **Proved: a_n ≡ 256ⁿc_n = 64ⁿ∏_{i≤n}(4i − 1)/n! (mod 27).** The terms with k ≥ 1 carry 27^k.
+  - **3-adic carry law.** By Kummer, v₃(C(−3/4, n)) is the number of borrows in the base-3 subtraction (…2020)₃ − n, since −3/4 = (…2020)₃.
+    - Proved: v₃(a_n) equals that borrow count whenever the count is ≤ 2 (862 of the n ≤ 3000).
+    - Checked: equality for every n ≤ 3000 (maximum 7).
+  - **2-adic carry law (checked, n ≤ 3000).** v₂(a_n) = 2·s₂(n), the Kummer count for C(2n, n)².
+- **CORRECTION of the door section.** v₃(u_n) = −3n + v₃(a_n), so the 3-adic rate is exactly 3 per n: 3·ln 3 = 3.296, not "about 3.2", and τ ≈ 5.3.
+  - The chat side found this from n < 58. The congruence above proves it.
+  - Equivalently, the family is integral in the variable t/27, where the conformal radius is 27 times smaller.
+- **The chat side's L.** L := lim v_n/w_n with v₀ = 0, v₁ = 1 is 0.059091254764002891259696550881531352…, and Λ₁ = (1701·L − 81)/1024. Confirmed here to 62 digits.
+  - Their relation search at 50 digits (coefficients up to 10⁶) against 1, G, π², Γ(¼)⁴/π² is negative, like ours at 300 digits.
+- Not checked on the chat side: log R* ≥ 2.68. It comes from uniformize_radius.py at w = 6, and it uses that F is analytic at the width-6 cusp: f is nonzero there (above) and W vanishes there.
+
+**5. Width 8 against width 6: the handoff's open item 1 is answered here.**
+- Their comparison (re-verified on their side to 40 and 37 digits):
+
+| family | group, cusp widths | singular points | ratio (convergence rate) |
+|---|---|---|---|
+| χ₋₃, Zagier (10, 9, 3), limit L(2,χ₋₃)/2 | Γ₀(6): 6, 3, 2, 1 | 1/9 and 1 | 9 |
+| χ₋₄, Zagier (12, 32, 4), limit G/2 | Γ₀(8): 8, 2, 1, 1 | 1/8 and 1/4 | 2 |
+| index-9 family | (1, 2, 6) | 1/64 and 1/16 | 4 |
+
+- Their question: does the Calegari–Dimitrov–Tang bound close on Γ₀(8) with ratio 2 instead of 9? It needs log R* for the (1, 8) pair with the two extra cusps, "not computed".
+- It is computed in this log ("Uniformized at infinity", "The half measure"): log R* = 2π²Σ1/c² over ⟨T, L₈⟩ = 1.2323 (S = 0.062427).
+  - The two extra cusps are not in the harmless group: ¼ pays (the quarter turn) and ½ is the pole.
+- **Answer: no.** The necessary gate log R* > τ fails.
+  - Zagier's (12, 32, 4) has τ = 2 (its true denominators are the full lcm², checked to n = 600): 1.2323 − 2 = −0.77.
+  - The best pure-G family on the same curve (W*±, τ = 3/2) gives −0.27, and that is the floor for every congruence pure-G family.
+  - CDT's case at width 6: 2.68 − 2 = +0.68.
+- Their open item 2, the two-unknown (π², G) functional: unchanged. Its K¹ counterpart here is W_B (limit G/2 − 11π²/240, τ = 4/3), which misses the gate by 0.10.
+- Their open item 3, a full-rate kernel whose pole values involve G only: unchanged. The companion test in this log (plain-kernel companion, exact at K = 30) washes exactly.
+
+**6. Closed on the chat side (recorded so that they are not repeated).**
+- Evens, odds and primes with Ramanujan summation.
+  - The parity sums regularise to Euler numbers, and the log-weighted prime sum is β′/β.
+  - The surviving identity, 3·log 3 − 5·log 5 + 7·log 7 − … = 2G/π, is the functional equation of β (this log's β′(−1) = 2G/π). It gives no approximations.
+  - Bare prime sums stop at the natural boundary. Krapivsky–Luck (arXiv 2606.24536) get past it only by a chosen regularisation.
+- Splitting G into two rational parts plus one irrational part: the rational parts carry nothing. The only three-term version with content is 1, π², G, the existing two-unknown construction.
+
+**7. Standing constraint (the user, through the handoff).** No p-adic Catalan targets as a direction. Items 1 and 2 above are recorded because the Hankel machine's own denominators led there, not as a proposal.
 

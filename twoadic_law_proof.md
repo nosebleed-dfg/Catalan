@@ -2,6 +2,14 @@
 (2026-09-28, real date.) Companion to `twoadic_law.py` and the results-log sections "The exact 2-adic structure…", "Both G machines are continuous dual Hahn weights", "Proof route, first stage", "THE PARTNER LAW, PINNED DOWN" and "Unified law and Catalan".
 
 ## 0. Status
+- INDEPENDENT CHECK (2026-09-30, the user's chat-side session; recorded 2026-10-01, real date).
+  - The Catalan machine was rebuilt from the definitions in this file with separate code and tested for K = 3…14: the content law e₂(K) with ties (K = 6, 12), the Smith form of A(0), the Smith form of A(C) = {v₂(h_q)} (Theorems 6 and 7 end to end), the coefficient law for every M, and the two formulas for C to 2^200. No failures.
+  - Read line by line there, with no gap found: Lemma 12.1, Theorem 7, Theorem 8, the Cauchy–Binet consequences.
+  - Not checked there: the twisted machine numerically, Theorem 6's analytic steps, section 9 in detail.
+- LITERATURE (2026-10-01, real date).
+  - In the Kubota–Leopoldt convention C is ζ₂(2): at p = 2 the Teichmüller character is χ₋₄, so ζ₂ interpolates β(−2k) = E_{2k}/2 (Beukers, arXiv math/0603277, §1). Checked: v₂(E_{2^N−2} − 2C) = N for N = 3…9 (handoff_checks.py).
+  - The twisted machine's recurrence (λ_n = n⁴, b_n = 2n² + 2n + ¾) is Beukers' continued fraction for Θ(x) at x = ½ (his §6: U_{n+1} = (2n² + 2n + 1 − x + x²)U_n − n⁴U_{n−1}). It converges 2-adically to −8ζ₂(2), and its convergents are Calegari's approximations. So Theorems 1 and 6 for the twisted machine re-derive that framework.
+  - The pencil A(X) = A(C) + (X − C)B and the Smith-form and content laws are not in Beukers' paper.
 - RIGOUR PASS (2026-09-29, prompted by the user's review of Theorem 7). Everything is now over ℚ₂, with integral monic bases.
   - The review: the old Theorem 7 wrote the CDH Gram matrix as D^{1/2}·π(J)·D^{1/2} with the orthonormal Jacobi matrix and L = W·√(h_q/h_q′). That needs √h_q and √λ_n, which do not lie in ℚ₂, and it did not show that L lies in the required integral ring.
   - Section 12, Theorem 7:
