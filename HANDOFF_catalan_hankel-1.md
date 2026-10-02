@@ -167,6 +167,12 @@
   - z ↦ z² straightens the rings and sends lattice points to Pythagorean points. Prime-numbered boundaries: 8 points or none, by class mod 4.
   - Landau–Ramanujan: K⁴ = π²/(32G)·∏_{p≡3 (4)}(1 − p⁻⁴)⁻¹ (8 digits).
   - This is the geometry of f = θ₃²; no new approximations to G.
+- Walking around a ring with straight lines (2026-10-02; results log section of that name; ring_walk.py; the user's construction):
+  - Every tangent chord has length 2 and turns by θ_n with cos θ_n = 1 − 2/n. Lines per turn: N_n = π/arcsin(1/√n) ≈ π√n − π/(6√n).
+  - Exact closure only for n = 1, 2, 4 (diameter, square, hexagon): e^{iθ_n} ∈ ℚ(√(1−n)) must be a root of unity. The ring around the unit disc takes 4 lines, not 3.
+  - At radius 10^k the count reads off π's digits; near closures at r = 7 (22 lines), 113 (355 lines), 33215.
+  - The tail (overshoot as a fraction of a line) is uniform on (0, 1): mean ½ line = 1 unit of arc.
+  - Dictionary: trace 2 − 4/n = trace of T·L_w⁻¹ with w = 4/n; closing rings 4, 2, 1 ↔ w = 1, 2, 4; G's w = 8 ↔ n = ½ (no rotation).
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.

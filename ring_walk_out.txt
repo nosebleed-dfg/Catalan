@@ -1,0 +1,57 @@
+﻿1-2. the first rings
+    n   chord   cos(theta)   theta (deg)   lines for one turn   lines used   overshoot (deg)   overshoot (fraction of a line)
+    2   2.0000   -0.00000      90.0000        4.00000             4            0.0000          0.0000
+    3   2.0000    0.33333      70.5288        5.10430             6           63.1727          0.8957
+    4   2.0000    0.50000      60.0000        6.00000             6            0.0000          0.0000
+    5   2.0000    0.60000      53.1301        6.77582             7           11.9107          0.2242
+    6   2.0000    0.66667      48.1897        7.47048             8           25.5175          0.5295
+    7   2.0000    0.71429      44.4153        8.10531             9           39.7378          0.8947
+    8   2.0000    0.75000      41.4096        8.69363             9           12.6866          0.3064
+    9   2.0000    0.77778      38.9424        9.24441            10           29.4244          0.7556
+   10   2.0000    0.80000      36.8699        9.76406            10            8.6990          0.2359
+   11   2.0000    0.81818      35.0968       10.25735            11           26.0648          0.7427
+   12   2.0000    0.83333      33.5573       10.72792            11            9.1304          0.2721
+   13   2.0000    0.84615      32.2042       11.17866            12           26.4507          0.8213
+   14   2.0000    0.85714      31.0027       11.61188            12           12.0326          0.3881
+   15   2.0000    0.86667      29.9264       12.02950            13           29.0437          0.9705
+   16   2.0000    0.87500      28.9550       12.43308            13           16.4153          0.5669
+   cos(theta_n) = 1 - 2/n for n <= 10^4: True
+   expansion check at n = 10^4: N = 314.15402922;  pi sqrt n - pi/(6 sqrt n) = 314.15402937
+   three lines: outer radius twice the inner one (cos theta = -1/2, n = 4/3); around the unit disc that is the circle of radius 2
+
+3. Pythagorean rings n = m^2 + 1: the step is (m + i)/(m - i)
+   n =  2: step = (1 + i)/(1 - i) = 1j;  cos, sin = 0/2, 2/2
+   n =  5: step = (2 + i)/(2 - i) = (0.6+0.8j);  cos, sin = 3/5, 4/5
+   n = 10: step = (3 + i)/(3 - i) = (0.7999999999999999+0.6j);  cos, sin = 8/10, 6/10
+   n = 17: step = (4 + i)/(4 - i) = (0.8823529411764706+0.47058823529411764j);  cos, sin = 15/17, 8/17
+
+4. whole-number radius r: N = pi/arcsin(1/r)
+   r = 10^1: N = 31.363417537951   (pi * r = 31.4159265358979)
+   r = 10^2: N = 314.1540292228627   (pi * r = 314.1592653589793)
+   r = 10^3: N = 3141.5921299908693   (pi * r = 3141.5926535897932)
+   r = 10^4: N = 31415.9264835380547   (pi * r = 31415.9265358979324)
+   r = 10^5: N = 314159.2653537433361   (pi * r = 314159.2653589793238)
+   r = 10^6: N = 3141592.6535892696397   (pi * r = 3141592.6535897932385)
+   r = 10^7: N = 31415926.5358978800247   (pi * r = 31415926.5358979323846)
+   r = 10^8: N = 314159265.3589793186103   (pi * r = 314159265.3589793238463)
+   record small overshoots (radius, lines, fraction of a line): [(3, 10, 0.756), (4, 13, 0.567), (5, 16, 0.398), (6, 19, 0.238), (7, 22, 0.0841), (14, 44, 0.0552), (21, 66, 0.0515), (113, 355, 0.00466), (226, 710, 0.00238), (339, 1065, 0.00163), (452, 1420, 0.00128), (565, 1775, 0.00108), (678, 2130, 0.000953), (791, 2485, 0.000873), (904, 2840, 0.00082), (1017, 3195, 0.000786), (1130, 3550, 0.000765), (1243, 3905, 0.000753), (1356, 4260, 0.000748), (33215, 104348, 2.68e-05), (99532, 312689, 8.16e-06)]
+   r = 7: N = 21.9159116376, so 22 lines overshoot by 0.08409 of a line (arc 0.1688)
+   r = 106: N = 333.003881545, so 333 lines overshoot by -0.003882 of a line (arc -0.007763)
+   r = 113: N = 354.995336135, so 355 lines overshoot by 0.004664 of a line (arc 0.009328)
+   r = 33102: N = 103993.000003, so 103993 lines overshoot by -3.312e-6 of a line (arc -6.623e-6)
+
+5. the tail over many rings
+   rings 5..10^7: mean tail = 0.50001 of a line;  mean overshoot along the circle = 1.00002 units
+   share of rings by tail in tenths: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+   rings 5..100: mean tail 0.5116
+   rings 100..10000: mean tail 0.4995
+   rings 10000..1000000: mean tail 0.5000
+
+6. dictionary with the two-parabolic groups: trace 2 - 4/n = 2 - w
+   ring n = 4       w = 4/n = 1     trace  1.00   rotation of finite order     hexagon, 6 lines
+   ring n = 2       w = 4/n = 2     trace  0.00   rotation of finite order     square, 4 lines
+   ring n = 1.333   w = 4/n = 3     trace -1.00   rotation of finite order     triangle, 3 lines
+   ring n = 1       w = 4/n = 4     trace -2.00   half turn (threshold)        diameter, 2 lines
+   ring n = 0.8     w = 4/n = 5     trace -3.00   no rotation (|trace| > 2)    none
+   ring n = 0.6667  w = 4/n = 6     trace -4.00   no rotation (|trace| > 2)    none
+   ring n = 0.5     w = 4/n = 8     trace -6.00   no rotation (|trace| > 2)    none

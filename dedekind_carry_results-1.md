@@ -3104,3 +3104,51 @@ Notation: R_k = 11…1 (k ones) = (10^k − 1)/9, and R_k(b) = (b^k − 1)/(b �
 
 **What it gives.** The user's picture is the geometry of the form f = θ₃² = Σ r₂(n)qⁿ: ring n is the coefficient of qⁿ. π is the first average of the race on the rings, and G is the second.
 
+# Walking around a ring with straight lines: the count is π√n, it closes only for rings 1, 2, 4, and the mean overshoot is one unit (2026-10-02; ring_walk.py, ring_walk_out.txt). The user: "Now take a point on the second ring. And you can only draw straight lines. And you also can't go thru the first ring. And you go around the inside of that ring until you hit the first point or go past it. I think the first ring can be done in 3 lines. … Since pi is irrational. The only time the line lands exactly back at the original point is infinity. Also the distance that the line lands after the point might be the universal carry tail of each ring."
+**Setup.** Ring n lies between radius √(n−1) and √n. A line from the outer circle that may not enter the inner disc goes furthest when it is tangent to the inner circle.
+
+**1. Every line has length exactly 2.** The half-chord squared is n − (n−1) = 1. (The area of a ring is π times the square of its half tangent chord, and the area is π.)
+- Each line turns by θ_n with cos θ_n = 1 − 2/n.
+- The number of lines for one full turn is N_n = 2π/θ_n = π/arcsin(1/√n) = π√n − π/(6√n) − ⋯. So the count measures π times the outer radius.
+
+**2. The first rings.**
+
+| ring n | turn per line | lines for one turn | lines used | overshoot (fraction of a line) |
+|---|---|---|---|---|
+| 2 | 90° | 4 | 4 | 0 (a square) |
+| 3 | 70.53° | 5.104 | 6 | 0.896 |
+| 4 | 60° | 6 | 6 | 0 (a hexagon) |
+| 5 | 53.13° | 6.776 | 7 | 0.224 |
+| 6 | 48.19° | 7.470 | 8 | 0.530 |
+| 7 | 44.42° | 8.105 | 9 | 0.895 |
+| 8 | 41.41° | 8.694 | 9 | 0.306 |
+| 9 | 38.94° | 9.244 | 10 | 0.756 |
+| 10 | 36.87° | 9.764 | 10 | 0.236 |
+
+- The ring around the unit disc takes exactly 4 lines, not 3. Three lines (a triangle) need the outer radius to be twice the inner one: around the unit disc that is the circle of radius 2, three rings out.
+
+**3. It closes only for rings 1, 2 and 4.**
+- Closing, after any number of turns, needs e^{iθ_n} = ((n−2) + 2i√(n−1))/n to be a root of unity.
+- That number lies in ℚ(√(1−n)), an imaginary quadratic field, whose only roots of unity are ±1, ±i and the sixth roots. So cos θ_n ∈ {0, ±½, ±1}, which gives n = 2 (square), n = 4 (hexagon), n = 1 (a diameter, back and forth), and n = 4/3 (the triangle), not a whole-number ring.
+- So on every other ring the walk never returns to its starting point. The user's "only at infinity" is correct, with the two exceptions n = 2 and 4.
+- For n = m² + 1 the step is (m + i)/(m − i), a Pythagorean rotation: 3-4-5 for n = 5 and n = 10, 8-15-17 for n = 17. The walk visits rational points of the circle only.
+
+**4. The count reads off π.** At whole-number radius r (ring r²), N = π/arcsin(1/r).
+- r = 10, 10², 10³, 10⁴, 10⁵: N = 31.36, 314.154, 3141.5921, 31415.92648, 314159.265354. The integer part is the start of π's digits, and the tail is the rest of them (with the small correction −π/(6r)).
+- Near closures happen at the denominators of π's continued fraction:
+  - r = 7: 22 lines overshoot by 0.084 of a line;
+  - r = 113: 355 lines overshoot by 0.0047 of a line, an arc of 0.0093 on a circle of circumference 710;
+  - r = 33215: 104348 lines overshoot by 0.000027 of a line.
+- Record small overshoots up to r = 200000: r = 7, 14, 21, 113, 226, …, 1356, 33215, 99532.
+
+**5. The tail.** Let the tail be the overshoot as a fraction of one line.
+- Over the rings 5 to 10⁷ the tail is evenly spread between 0 and 1: each tenth holds 10.00% of the rings.
+- Its mean is 0.50001 of a line, and the mean overshoot along the circle is 1.00002 units.
+- So there is no single tail value. What is universal is the average: half a line, which is one unit, the radius the construction started with.
+- The reason is that π√n is equidistributed mod 1.
+
+**6. Dictionary with the lattice principle.** The step is a rotation with trace 2cos θ_n = 2 − 4/n. That is the trace of T·L_w⁻¹ with w = 4/n.
+- Ring 4 ↔ w = 1 (6 lines), ring 2 ↔ w = 2 (4 lines), n = 4/3 ↔ w = 3 (3 lines), ring 1 ↔ w = 4 (the threshold). These are the cases in which ⟨T, L_w⟩ is a lattice.
+- The widths of the three families, w = 5, 6, 8, correspond to n = 4/5, 2/3, 1/2: inside the first ring, where the trace is below −2 and there is no rotation at all. G's width 8 is "ring ½".
+- This is the same quadratic equation λ² − (2 − w)λ + 1 = 0 read in two geometries. It is algebra, not a new construction.
+
