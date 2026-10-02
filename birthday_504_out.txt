@@ -1,0 +1,19 @@
+﻿1. counts: with repeats 10000, without 5040 = 7! (True);  10! = 6! 7!: True;  ratio 63/125 = 0.504
+
+2. x(x-1)(x-2)(x-3) = x**4 - 6*x**3 + 11*x**2 - 6*x
+   at b = 10: 1 - 6/10 + 11/100 - 6/1000 = 63/125;   (1 - 5/10) + ((11 - 10)/100 - 6/1000) = 1/2 + 1/250
+   in base b the same split is (1 - 5/b) + ((11 - b) b - 6)/b^3; the first part is 1/2 only for b = 10
+
+3. chance that k symbols out of b are all different
+        b=7      b=8      b=9      b=10     b=11     b=12     b=13   
+   k=3  0.6122   0.6562   0.6914   0.7200   0.7438   0.7639   0.7811 
+   k=4  0.3499   0.4102   0.4609   0.5040   0.5409   0.5729   0.6008 
+   k=5  0.1499   0.2051   0.2561   0.3024   0.3442   0.3819   0.4160 
+   four slots cross 1/2 at b = 9.900267739;  23 people in 365 days: 0.4927;  e^(-6/10) = 0.5488
+
+4. Robin's inequality sigma(n) < e^gamma n log log n
+   exceptions for 3 <= n <= 10^6: [3, 4, 5, 6, 8, 9, 10, 12, 16, 18, 20, 24, 30, 36, 48, 60, 72, 84, 120, 180, 240, 360, 720, 840, 2520, 5040]
+   sigma(5040)/5040 = 3.83810  against  e^gamma log log 5040 = 3.81688
+
+5. 504 = -2/zeta(-5): 504.0;   5040 = 2 lcm(1..10): True;   504 = 7*8*9: True
+   sum of the four radius sums S(5) + S(6) + S(8) + S(9) = 0.5048685776 (radius_transfer.py): not 0.504

@@ -2878,3 +2878,25 @@ with E_n the Euler numbers.
 - It explains how a prime's class enters the rational parts (through u_{p−1}), and it gives the exact second digit.
 - It does not change the denominator growth. The digit symmetries concern residues mod p, not exponents, and the Wieferich-type primes are far too rare (two below 700) to save anything.
 
+# 5040/10000 = 0.504: the birthday number of base ten, and its carry (2026-10-02; birthday_504.py, birthday_504_out.txt). The user: ".504. with that .004 being that carry I see pop up all the time. I got this from 10000 4 number conbos with repeaters. And I got 5040 with non repeaters. Take 5040/10000 gives us something universal I feel."
+**What it is.** 10⁴ strings of four decimal digits, and 10·9·8·7 = 5040 with no repeated digit. So 0.504 = 63/125 is the chance that four decimal digits are all different: the birthday problem with 4 people and 10 days.
+- 5040 = 7! because 10·9·8 = 6!. That is the identity 10! = 6!·7!.
+
+**The carry, exactly.** b(b−1)(b−2)(b−3)/b⁴ = 1 − 6/b + 11/b² − 6/b³, with the Stirling numbers 6, 11, 6.
+- At b = 10 this reads 1 − 0.6 + 0.11 − 0.006. The 11 does not fit in one decimal digit, so it carries.
+- 1 − 6/10 + 10/100 = ½, and what is left is 1/100 − 6/1000 = 4/1000.
+- So "½ plus a carry of .004" is literally correct in base ten. In base b the same split is (1 − 5/b) + ((11 − b)b − 6)/b³, and the first part is ½ only for b = 10.
+
+**Universal or not.**
+- The number is not universal. Four slots give 0.3499, 0.4102, 0.4609, 0.5040, 0.5409, 0.5729 in bases 7 to 12. Three and five slots in base ten give 0.72 and 0.3024.
+- The law is universal: the chance is ∏_{j<k}(1 − j/b) ≈ e^{−k(k−1)/(2b)}, and it crosses ½ near k ≈ 1.18·√b.
+- For four slots the crossing is at b = 9.9003. Base ten is the first base in which four different digits are more likely than not, which is why the value is ½ plus a little. Four is to ten what 23 is to 365 (0.4927).
+
+**Where 5040 itself is a boundary.** Robin's criterion: the Riemann hypothesis is equivalent to σ(n) < e^γ·n·log log n for every n > 5040.
+- The exceptions for 3 ≤ n ≤ 10⁶ are 3, 4, 5, 6, 8, 9, 10, 12, 16, 18, 20, 24, 30, 36, 48, 60, 72, 84, 120, 180, 240, 360, 720, 840, 2520, 5040 (recomputed here).
+- σ(5040)/5040 = 3.8381 against 3.8169.
+
+**Also true, with no derivation linking it to the digit count.** 504 = 7·8·9 = −2/ζ(−5), the coefficient of E₆, and 5040 = 2·lcm(1..10).
+
+**In this program.** 0.504 does not occur in the G numbers. The sum of the four radius sums is 0.50487, a different number. The other small excesses in this log (0.023 over log 2, 1/144 over 1/6) have their own causes; there is no single carry constant.
+
