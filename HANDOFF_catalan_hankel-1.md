@@ -173,6 +173,7 @@
   - At radius 10^k the count reads off π's digits; near closures at r = 7 (22 lines), 113 (355 lines), 33215.
   - The tail (overshoot as a fraction of a line) is uniform on (0, 1): mean ½ line = 1 unit of arc.
   - Dictionary: trace 2 − 4/n = trace of T·L_w⁻¹ with w = 4/n; closing rings 4, 2, 1 ↔ w = 1, 2, 4; G's w = 8 ↔ n = ½ (no rotation).
+  - Crossing the start again (results log "Crossing the start again"; ring_carry.py): same direction = the carry process (tails t, 2t, 3t mod 1; a lap is one line shorter at each overflow; share of short laps = t). Turning around with the same lines retraces exactly. Turning around with the leftover = Euclid: alternating sides is the regular continued fraction (median 12 stages to 10⁻⁶), the same side is the minus continued fraction (median 28, up to 15655). Over rings 3–2000 the digits follow Gauss–Kuzmin, Khinchin and Lévy (π²/(12 log 2)).
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.

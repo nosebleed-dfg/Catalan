@@ -3152,3 +3152,42 @@ Notation: R_k = 11…1 (k ones) = (10^k − 1)/9, and R_k(b) = (b^k − 1)/(b �
 - The widths of the three families, w = 5, 6, 8, correspond to n = 4/5, 2/3, 1/2: inside the first ring, where the trace is below −2 and there is no rotation at all. G's width 8 is "ring ½".
 - This is the same quadratic equation λ² − (2 − w)λ + 1 = 0 read in two geometries. It is algebra, not a new construction.
 
+# Crossing the start again: same direction is the carry process, turning around is Euclid (2026-10-02; ring_carry.py, ring_carry_out.txt). The user: "Where it gets interesting. Is when you have to cross the point twice. That's where your carry starts to appear. Now which is the correct way. Once cross. Keep going the same direction? Or is it better. Once you cross. You now change direction and have to cross the point the other way twice."
+Notation: N = π/arcsin(1/√n) lines per turn of ring n, and t = ⌈N⌉ − N the first tail.
+
+**Way 1: keep going the same direction.** After j turns the walk has used ⌈jN⌉ lines, and its tail is ⌈jN⌉ − jN, which is j·t reduced mod 1.
+- So the tails add: t, 2t, 3t, …. Each time the sum passes one whole line, that lap is one line shorter. That is the carry, and it first can appear at the second crossing.
+- Ring 3 (N = 5.1043, t = 0.8957): laps of 6, 5, 5, 5, 5, 5, 5, 5, 5, 6, … lines; tails 0.8957, 0.7914, 0.6871, 0.5828, ….
+- Ring 5 (N = 6.7758, t = 0.2242): laps 7, 7, 7, 7, 6, 7, 7, 7, 6, …; tails 0.2242, 0.4484, 0.6725, 0.8967, then 0.1209 after the carry.
+- Over 20000 laps the share of short laps equals t (0.89570 and 0.22415).
+
+**Way 2: turn around.**
+- With the same lines the walk retraces itself and lands exactly on the start. The tail cancels: +t, then −t. It carries no information.
+- With the leftover gap as the new step it is Euclid's algorithm on N. There are two versions.
+  - Alternate sides (round down each time): the regular continued fraction N = a₀ + 1/(a₁ + 1/(a₂ + ⋯)).
+  - Stay on the same side (always overshoot): the "minus" continued fraction N = b₀ − 1/(b₁ − 1/(b₂ − ⋯)).
+- The same-side version is Way 1 again: a digit 2 means "one more lap", and its misses are the tails t, 2t, 3t, ….
+
+**Ring 3, stage by stage (lines, turns, miss in lines).**
+- Alternating, digits 5, 9, 1, 1, 2, 2, 1, 7, 12: (5, 1, 0.10), (46, 9, −0.061), (51, 10, 0.043), (97, 19, −0.018), (245, 48, 0.0064), (587, 115, −0.0056), (832, 163, 0.00079).
+- Same side, digits 6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 4, …: (6, 1, 0.90), (11, 2, 0.79), (16, 3, 0.69), (21, 4, 0.58), (26, 5, 0.48), (31, 6, 0.37), (36, 7, 0.27).
+- Ring 3's angle is arccos(1/3), the angle between two faces of a regular tetrahedron. So this walk is "tetrahedra around an edge": five fit with a gap, and it never closes.
+
+**Which is better.** Stages needed to bring the miss below 10⁻⁶ of a line, rings 3 to 400:
+
+| method | median | mean | max |
+|---|---|---|---|
+| alternating sides | 12 | 12.5 | 20 |
+| same side | 28 | 90.9 | 15655 |
+
+- Alternating sides traps the start between successive stages, and each stage is the best miss so far.
+- The same side is exact too, but it has no guaranteed rate.
+
+**The universal law of the alternating method (rings 3 to 2000, first 60 digits each).**
+- Digit shares 0.4155, 0.1720, 0.0931, 0.0588 for the digits 1, 2, 3, 4, against Gauss–Kuzmin's 0.4150, 0.1699, 0.0931, 0.0589.
+- Geometric mean of the digits 2.668 (Khinchin 2.685).
+- (1/k)·log q_k = 1.178, against Lévy's π²/(12·log 2) = 1.1866. So the miss shrinks by e^{π²/(6·log 2)} = 10.7 per stage on average.
+- So the rings share one statistical carry law. π²/12 appears again, as a value.
+
+**Answer.** Both are correct, and they measure different things. Keeping the direction is the carry process itself (the tails add and overflow). Turning around with the leftover is the efficient way to find when the walk nearly closes. The alternating digits are the continued-fraction digits, whose alternating sum is the Dedekind sum of this log's Siegel section.
+

@@ -1,0 +1,39 @@
+﻿1. same direction: laps and carries
+   ring 3: N = 5.1042993, tail t = 0.895701
+      lines per lap, first 20 laps: [6, 5, 5, 5, 5, 5, 5, 5, 5, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6]
+      tail after 1..6 crossings: ['0.8957', '0.7914', '0.6871', '0.5828', '0.4785', '0.3742']   (t, 2t, 3t, ... mod 1)
+      share of short laps over 20000 laps: 0.89570   (t = 0.89570)
+   ring 5: N = 6.7758198, tail t = 0.22418
+      lines per lap, first 20 laps: [7, 7, 7, 7, 6, 7, 7, 7, 6, 7, 7, 7, 7, 6, 7, 7, 7, 6, 7, 7]
+      tail after 1..6 crossings: ['0.2242', '0.4484', '0.6725', '0.8967', '0.1209', '0.3451']   (t, 2t, 3t, ... mod 1)
+      share of short laps over 20000 laps: 0.22415   (t = 0.22418)
+   ring 7: N = 8.1053135, tail t = 0.894687
+      lines per lap, first 20 laps: [9, 8, 8, 8, 8, 8, 8, 8, 8, 9, 8, 8, 8, 8, 8, 8, 8, 8, 9, 8]
+      tail after 1..6 crossings: ['0.8947', '0.7894', '0.6841', '0.5787', '0.4734', '0.3681']   (t, 2t, 3t, ... mod 1)
+      share of short laps over 20000 laps: 0.89465   (t = 0.89469)
+
+2. turning around: Euclid on the leftover
+   ring 3
+      alternating sides: digits [5, 9, 1, 1, 2, 2, 1, 7, 12]
+         (lines, turns, miss in lines): [(5, 1, 0.1), (46, 9, -0.061), (51, 10, 0.043), (97, 19, -0.018), (245, 48, 0.0064), (587, 115, -0.0056), (832, 163, 0.00079)]
+      same side every time: digits [6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 4, 2, 3, 2]
+         (lines, turns, miss in lines): [(6, 1, 0.9), (11, 2, 0.79), (16, 3, 0.69), (21, 4, 0.58), (26, 5, 0.48), (31, 6, 0.37), (36, 7, 0.27)]
+   ring 5
+      alternating sides: digits [6, 1, 3, 2, 5, 1, 6, 5, 3]
+         (lines, turns, miss in lines): [(6, 1, 0.78), (7, 1, -0.22), (27, 4, 0.1), (61, 9, -0.018), (332, 49, 0.015), (393, 58, -0.0025), (2690, 397, 0.00046)]
+      same side every time: digits [7, 5, 2, 7, 8, 2, 2, 2, 2, 5, 3, 2, 3, 4]
+         (lines, turns, miss in lines): [(7, 1, 0.22), (34, 5, 0.12), (61, 9, 0.018), (393, 58, 0.0025), (3083, 455, 0.002), (5773, 852, 0.0015), (8463, 1249, 0.0011)]
+   ring 7
+      alternating sides: digits [8, 9, 2, 54, 1, 1, 3, 1, 1]
+         (lines, turns, miss in lines): [(8, 1, 0.11), (73, 9, -0.052), (154, 19, 0.00096), (8389, 1035, -0.00054), (8543, 1054, 0.00042), (16932, 2089, -0.00012), (59339, 7321, 7.1e-05)]
+      same side every time: digits [9, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2]
+         (lines, turns, miss in lines): [(9, 1, 0.89), (17, 2, 0.79), (25, 3, 0.68), (33, 4, 0.58), (41, 5, 0.47), (49, 6, 0.37), (57, 7, 0.26)]
+
+3. stages needed to bring the miss below 10^-6 of a line, rings 3..400 (ring 4 excluded)
+   alternating sides: median 12, mean 12.5, max 20
+   same side:         median 28, mean 90.9, max 15655
+
+4. digit statistics of the alternating method over rings 3..2000 (first 60 digits each)
+   share of digit 1, 2, 3, 4: ['0.4155', '0.1720', '0.0931', '0.0588']   (Gauss-Kuzmin: ['0.4150', '0.1699', '0.0931', '0.0589'])
+   geometric mean of the digits: 2.6683   (Khinchin 2.6854)
+   mean of (1/k) log q_k: 1.1779   (Levy: pi^2/(12 log 2) = 1.1866);  misses shrink by e^(2 * that) = 10.73 per stage
