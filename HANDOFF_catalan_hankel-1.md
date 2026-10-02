@@ -149,6 +149,12 @@
   - π(10^k) = 25, 168, 1229: "one in 2k" is the prime number theorem at small size (k·π/10^k = 0.5, 0.504, 0.4916, … → 1/log 10 = 0.4343).
   - Four slots: 10⁴ − 1 = 9·11·101 with 10 ≡ 1, −1, i. A four-slot number is the Fourier transform of its digits. Among the 5040 no-repeat strings 593 are prime (619 if independent); the rules for 3 and 11 explain the gap.
   - No connection to the G gate was found.
+- Square stuff (2026-10-02; results log section of that name; square_stuff.py; the user asked for more on the race mod 4 and squares):
+  - χ₋₄(p) asks whether −1 is a square mod p. The lead of 3 mod 4 is the half-count of prime squares; with Riemann's weighting the race is level.
+  - Over odd primes: ∏p²/(p²−1) = π²/8, ∏p²/(p²−χ₋₄(p)) = G, ∏p²/(p²+1) = π²/12. Partial products of G sit above G at 79% of primes x ≤ 3·10⁶ (normalised mean −0.31, predicted −⅓).
+  - Pythagorean identity: G = π²/12 + Σ_{all triples}1/c², and 6G/π² = ½ + Σ_{primitive triples}1/c² (10 digits, 3.18 million triples). Probably classical; unchecked.
+  - r₂ = 4(d₁ − d₃) is f = θ₃²; r₆ = 16E_G − 4E_ζ; Σ'1/(a²+b²)² = 4ζ(2)G; Σ_{n≡1,3 (4)}1/n² = π²/16 ± G/2.
+  - n² + 1 primes follow the same race (C = 1.3728). No new approximations to G.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.

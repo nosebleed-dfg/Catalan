@@ -2962,3 +2962,58 @@ with E_n the Euler numbers.
 - The counts are the prime number theorem. The "half" in ¼, 1/6, 1/8 is 1/log 10 = 0.4343 seen at small size.
 - Which strings are prime is governed by the three characters of four slots (9, 11, 101). Repeats, reversal and palindromes act on them in a simple exact way.
 
+# Square stuff: the race mod 4, G between π²/12 and π²/8, and the Pythagorean identity (2026-10-02; square_stuff.py, square_stuff_out.txt). The user: "On that number 4. Try more stuff. Play with square stuffs"
+**0. The race is a question about squares.** χ₋₄(p) = +1 exactly when −1 is a square mod p, which is exactly when p = a² + b². So "1 mod 4 against 3 mod 4" is "is −1 a square?".
+
+**1. Why 3 mod 4 leads: the prime squares.** Every odd prime square is 1 mod 4.
+
+| k | D(10^k) = π(x;4,3) − π(x;4,1) | ½·π(√x) | fair race (p^j counted 1/j) |
+|---|---|---|---|
+| 2 | 2 | 1.5 | 0.6 |
+| 3 | 7 | 5.0 | 1.8 |
+| 4 | 10 | 12.0 | −2.4 |
+| 5 | 25 | 32.0 | −8.2 |
+| 6 | 147 | 83.5 | 61.7 |
+| 7 | 218 | 222.5 | −6.9 |
+| 8 | 446 | 614.0 | −173.7 |
+
+- The lead of 3 mod 4 is the half-count of prime squares. With prime powers counted as Riemann does, the race is level and oscillates around 0.
+- Among the 5,761,454 odd primes below 10⁸, 1 mod 4 is ahead at only 1940 of them (first at p = 26861) and tied at 284.
+
+**2. G is the race written in squares.** Over the odd primes:
+    ∏ p²/(p² − 1) = π²/8,   ∏ p²/(p² − χ₋₄(p)) = G,   ∏ p²/(p² + 1) = π²/12.
+- So G is the product in which each prime picks its sign by its class: p²/(p² − 1) if −1 is a square mod p, and p²/(p² + 1) if not. If every prime were 1 mod 4 the value would be π²/8 = 1.2337; if every prime were 3 mod 4 it would be π²/12 = 0.8225.
+- G = (π²/8)·∏_{p≡3}(p² − 1)/(p² + 1) = (π²/12)·∏_{p≡1}(p² + 1)/(p² − 1). G is below 1 because 3 comes before 5.
+- Partial products at x = 10, 10², 10³, 10⁴, 10⁶, 10⁸: 0.91875, 0.9160246, 0.9159650, 0.9159657, 0.9159655941, 0.9159655942.
+- **The bias reaches G.** Let T(x) = log G − log(partial product up to x). For primes x ≤ 3·10⁶:
+  - T(x)·x^{3/2}·log x has mean −0.307 and standard deviation 0.387;
+  - the partial product is above G at 79.3% of those primes (73.8% with logarithmic weights).
+  - Prediction of the mean: Σ_{p≤t}χ₋₄(p) ≈ −√t/log t from the prime squares, and T(x) = −S(x)/x² + 2∫_x^∞ S(t)t⁻³dt, which gives −⅓.
+- Odd squares by class: Σ_{n≡1 (4)} 1/n² = π²/16 + G/2 and Σ_{n≡3 (4)} 1/n² = π²/16 − G/2. So G/2 is how far each class of odd squares sits from its fair share π²/16.
+
+**3. The Pythagorean identity.**
+- Let g(n) = r₂(n²)/4 = Σ_{d|n²}χ₋₄(d). It is multiplicative, with g(p^a) = 2a + 1 for p ≡ 1 (4) and 1 otherwise. So
+    Σ g(n)·n⁻ˢ = ζ(s)²·L(s,χ₋₄)/((1 + 2⁻ˢ)·ζ(2s)).
+- At s = 2 this is 2G. Since g(n) = 1 + 2·T(n), with T(n) the number of triples a > b > 0, a² + b² = n²:
+    **G = π²/12 + Σ over all Pythagorean triples of 1/c²,   6G/π² = ½ + Σ over primitive triples of 1/c².**
+- Second derivation: Σ over coprime pairs of 1/(m² + n²)² = 4ζ(2)G/ζ(4) = 60G/π². The both-odd pairs are a quarter of the opposite-parity ones, so the opposite-parity pairs give 48G/π². Remove the 4 axis points and divide by 8.
+- Check: 3,183,100 primitive triples with c ≤ 2·10⁷ (N/2π = 3,183,099). Their sum plus the tail 1/(2πN) is 0.0568403091, and 6G/π² − ½ = 0.0568403091. For all triples: 0.0934985608 = G − π²/12.
+- Reading in the user's terms: G/ζ(2) is a half plus a carry, and the carry is the sum of 1/c² over the primitive Pythagorean triples.
+- Probably classical (the hypotenuse Dirichlet series goes back to Lehmer). Not checked.
+
+**4. Sums of squares are this program's forms (checked by counting).**
+- Two squares: r₂(n) = 4·(d₁(n) − d₃(n)), the race among the divisors of n. This is f = θ₃², the weight-1 form of case E.
+- Six squares: r₆(n) = 16·Σ_{d|n}χ₋₄(n/d)d² − 4·Σ_{d|n}χ₋₄(d)d², i.e. 16·E_G − 4·E_ζ. G's own Eisenstein series counts sums of six squares.
+- Σ over the square lattice of 1/(a² + b²)² = 4ζ(2)G = 6.02681204 (checked to 8 digits).
+
+**5. Primes of the form n² + 1 (Landau's open problem) are the same race.** n² + 1 is never divisible by a prime that is 3 mod 4.
+- The conjectured count is (C/2)·li(N), with C = ∏_{p odd}(1 − χ₋₄(p)/(p − 1)) = 1.3728.
+- n ≤ 10³, 10⁴, 10⁵: 112, 841, 6656 primes; predicted 122, 855, 6610; without the factor C it would be 89, 623, 4815.
+
+**6. Four slots: multiplying sisters extracts squares.** With x = d₀ − d₂, y = d₁ − d₃, and n* the string with d₁ and d₃ exchanged (true for all 10⁴ strings):
+- n·n* ≡ x² + y² (mod 101);
+- n·rev(n) ≡ −10·(x² + y²) (mod 101), ≡ −(alternating sum)² (mod 11), ≡ (digit sum)² (mod 9).
+- Example: 1234·4321 ≡ 21 ≡ −80 (mod 101), with x = y = 2.
+
+**What it gives.** These are identities and they locate G: between π²/12 and π²/8, a half of ζ(2) plus the Pythagorean sum. They do not give new rational approximations to G.
+

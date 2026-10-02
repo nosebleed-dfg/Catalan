@@ -1,0 +1,45 @@
+﻿1. the race and the prime squares
+    k   D(10^k) = pi(4,3) - pi(4,1)   (1/2) pi(sqrt x)   fair race (p^k counted 1/k)
+    2          2                          1.5                0.6
+    3          7                          5.0                1.8
+    4         10                         12.0               -2.4
+    5         25                         32.0               -8.2
+    6        147                         83.5               61.7
+    7        218                        222.5               -6.9
+    8        446                        614.0             -173.7
+   over the 5761454 odd primes below 10^8: 1 mod 4 is ahead at 1940 of them (first at p = 26861), tied at 284
+
+2. three products over the odd primes
+        x      all minus (-> pi^2/8)   by class (-> G)   all plus (-> pi^2/12)
+   10^1   1.1962890625            0.9187500000      0.8480769231
+   10^2   1.2314588975            0.9160246398      0.8239641292
+   10^3   1.2335438927            0.9159649765      0.8225714850
+   10^4   1.2336884406            0.9159656668      0.8224751066
+   10^6   1.2337004665            0.9159655941      0.8224670892
+   10^8   1.2337005495            0.9159655942      0.8224670338
+   limits 1.2337005501            0.9159655942      0.8224670334
+   log G - log(partial product up to x), times x^1.5 log x, for x <= 3*10^6: mean -0.307 (log-weighted -0.260), std 0.387
+   partial product above G: 79.3% of the primes x <= 3*10^6 (log-weighted 73.8%)
+
+3. Pythagorean triples
+   primitive triples with c <= 20000000: 3183100 (N/(2 pi) = 3183099);  sum 1/c^2 = 0.0568403011, plus tail 1/(2 pi N) = 0.0568403091
+   6G/pi^2 - 1/2 = 0.0568403091
+   all triples: zeta(2) * that = 0.0934985608;   G - pi^2/12 = 0.0934985608
+   first hypotenuses: 1/25 + 1/100 + 1/169 + 1/225 + 1/289 + 1/400 + 2/625 = 0.069522
+
+4. sums of squares
+   r_2(n) = 4 (d_1 - d_3) for n <= 2000: True
+   r_6(n) = 16 sum chi(n/d) d^2 - 4 sum chi(d) d^2 for n <= 80: True
+   sum over the square lattice of 1/(a^2+b^2)^2 = 6.02681204 (to n = 3000000, tail pi/N added);   4 zeta(2) G = 6.02681204
+   odd squares by class: sum_{n = 1 mod 4} 1/n^2 = 1.0748330722 = pi^2/16 + G/2 = 1.0748330722;   sum_{n = 3 mod 4} 1/n^2 = 0.1588674780 = pi^2/16 - G/2 = 0.1588674780
+
+4b. primes of the form n^2 + 1 (Landau's problem): the same race
+   C = prod over odd primes (1 - chi_-4(p)/(p - 1)) = 1.372804 (primes below 10^8; known value 1.372813...)
+   n <= 1000: n^2 + 1 prime for 112 values;  (C/2) li(N) = 122;  without the race factor: 89
+   n <= 10000: n^2 + 1 prime for 841 values;  (C/2) li(N) = 855;  without the race factor: 623
+   n <= 100000: n^2 + 1 prime for 6656 values;  (C/2) li(N) = 6610;  without the race factor: 4815
+
+5. four slots: multiplying a string by its conjugate or its reversal
+   n n* = x^2 + y^2 (mod 101): True;   n rev(n) = -10 (x^2 + y^2) (mod 101): True
+   n rev(n) = -(alternating sum)^2 (mod 11): True;   n rev(n) = (digit sum)^2 (mod 9): True
+   example 1234: x, y = 2, 2;  1234 * 3214 mod 101 = 8;  1234 * 4321 mod 101 = 21 = -80 mod 101
