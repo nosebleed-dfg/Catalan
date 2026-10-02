@@ -1,0 +1,63 @@
+﻿1. running totals
+   all 11111 strings with at most 4 slots, listed by length: string number n has k slots iff R_k <= n < R_(k+1), and it is n - R_k: True
+   zero-free base ten (digits 1..10): n has k digits iff R_k <= n < R_(k+1), for n < 200000: True
+   2345 - 1111 = 1234;  1000 in zero-free digits: [9, 9, 10];  10^18 - R_18 = 888888888888888889
+
+2. Legendre: digits weighed by repunits
+   v_p(n!) = sum d_j R_j(p) for p <= 13, n <= 5000: True;   base ten: sum floor(n/10^j) = sum d_j R_j = (n - digit sum)/9: True
+   5^4 = 625: v_5(625!) = 156 = 1111 in base 5;  2345 = [3, 3, 3, 4, 0] in base 5, so 2345! ends in 583 zeros
+   2345 = [2, 1, 1, 1] in repunits 1111, 111, 11, 1;  and sum floor(21110/10^j) = 2345
+   lcm(1..n): exponent of p = (number of base-p digits of n) - 1, for p <= 7, n < 400: True
+
+3. the sieve written in ones
+   1/9 + 1/99 + 1/999 + ... = 0.122324243426244526264428344628264449244828266430364628484432...
+   number of divisors d(n):    12232424342624452626442834462826444924482826642X36462848442X
+   digits agree with d(n) up to n = 46; first d(n) >= 10 at n = 48 (carry);  places with digit 2 below 48: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43]
+   1/9 - 1/999 + 1/99999 - ... = 0.110120011200200121020000320020010201200220002000130220000200...
+   r_2(n)/4:                      110120011200200121020000320020010201200220002000130220000200   (agree: True)
+   theta_3(1/10) = 1.2002000020000002000000002000000000020000...;  theta_3^2 = 1 + 4 * (the line above): True
+
+4. squares and powers of ones
+   R_2^2 = 121  palindrome
+   R_3^2 = 12321  palindrome
+   R_4^2 = 1234321  palindrome
+   R_9^2 = 12345678987654321  palindrome
+   R_10^2 = 1234567900987654321  not a palindrome (carry)
+   11^2 = 121;  Pascal row [1, 2, 1]
+   11^3 = 1331;  Pascal row [1, 3, 3, 1]
+   11^4 = 14641;  Pascal row [1, 4, 6, 4, 1]
+   11^5 = 161051;  Pascal row [1, 5, 10, 10, 5, 1]
+   R_k mod 4 for k = 2..18: [3]
+
+5. infinitely many ones in base b: R_k(b) = -1/(b-1) mod b^k
+   b =  2: (b - 1) R_k + 1 = 0 mod b^k for k <= 30: True   so ...111 = -1/1
+   b =  3: (b - 1) R_k + 1 = 0 mod b^k for k <= 30: True   so ...111 = -1/2
+   b =  7: (b - 1) R_k + 1 = 0 mod b^k for k <= 30: True   so ...111 = -1/6
+   b = 10: (b - 1) R_k + 1 = 0 mod b^k for k <= 30: True   so ...111 = -1/9
+   b = 13: (b - 1) R_k + 1 = 0 mod b^k for k <= 30: True   so ...111 = -1/12
+
+6. primes
+   R_2  = 11                                            new primes: [11]   (prime factors 3 mod 4, with multiplicity: 1)
+   R_3  = 3 * 37                                        new primes: [3, 37]   (prime factors 3 mod 4, with multiplicity: 1)
+   R_4  = 11 * 101                                      new primes: [101]   (prime factors 3 mod 4, with multiplicity: 1)
+   R_5  = 41 * 271                                      new primes: [41, 271]   (prime factors 3 mod 4, with multiplicity: 1)
+   R_6  = 3 * 7 * 11 * 13 * 37                          new primes: [7, 13]   (prime factors 3 mod 4, with multiplicity: 3)
+   R_7  = 239 * 4649                                    new primes: [239, 4649]   (prime factors 3 mod 4, with multiplicity: 1)
+   R_8  = 11 * 73 * 101 * 137                           new primes: [73, 137]   (prime factors 3 mod 4, with multiplicity: 1)
+   R_9  = 3^2 * 37 * 333667                             new primes: [333667]   (prime factors 3 mod 4, with multiplicity: 3)
+   R_10 = 11 * 41 * 271 * 9091                          new primes: [9091]   (prime factors 3 mod 4, with multiplicity: 3)
+   R_11 = 21649 * 513239                                new primes: [21649, 513239]   (prime factors 3 mod 4, with multiplicity: 1)
+   R_12 = 3 * 7 * 11 * 13 * 37 * 101 * 9901             new primes: [9901]   (prime factors 3 mod 4, with multiplicity: 3)
+   R_13 = 53 * 79 * 265371653                           new primes: [53, 79, 265371653]   (prime factors 3 mod 4, with multiplicity: 1)
+   R_14 = 11 * 239 * 4649 * 909091                      new primes: [909091]   (prime factors 3 mod 4, with multiplicity: 3)
+   R_15 = 3 * 31 * 37 * 41 * 271 * 2906161              new primes: [31, 2906161]   (prime factors 3 mod 4, with multiplicity: 3)
+   R_16 = 11 * 17 * 73 * 101 * 137 * 5882353            new primes: [17, 5882353]   (prime factors 3 mod 4, with multiplicity: 1)
+   R_17 = 2071723 * 5363222357                          new primes: [2071723, 5363222357]   (prime factors 3 mod 4, with multiplicity: 1)
+   R_18 = 3^2 * 7 * 11 * 13 * 19 * 37 * 52579 * 333667  new primes: [19, 52579]   (prime factors 3 mod 4, with multiplicity: 7)
+   the first repunit divisible by p has as many ones as the period of 1/p, for 7 <= p < 1000: True
+   487 (Wieferich in base ten): first repunit divisible by 487 is R_486, and 487^2 divides it: True
+   repunit primes R_k, k <= 60: k = [2, 19, 23]
+
+7. totals without repeated digits
+   strings with at most k different-digit slots: [1, 11, 101, 821, 5861, 36101, 187301, 792101, 2606501, 6235301, 9864101]
+   the last one is floor(e * 10!) = 9864101;  with at most 4 slots: 5861 of 11111 = 0.5275

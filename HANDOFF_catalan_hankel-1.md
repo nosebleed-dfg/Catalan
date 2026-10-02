@@ -155,6 +155,12 @@
   - Pythagorean identity: G = π²/12 + Σ_{all triples}1/c², and 6G/π² = ½ + Σ_{primitive triples}1/c² (10 digits, 3.18 million triples). Probably classical; unchecked.
   - r₂ = 4(d₁ − d₃) is f = θ₃²; r₆ = 16E_G − 4E_ζ; Σ'1/(a²+b²)² = 4ζ(2)G; Σ_{n≡1,3 (4)}1/n² = π²/16 ± G/2.
   - n² + 1 primes follow the same race (C = 1.3728). No new approximations to G.
+- Numbers written with ones only (2026-10-02; results log section of that name; repunits.py; the user asked):
+  - R_k = 11…1 is the number of digit strings with fewer than k slots. String number n has k slots iff R_k ≤ n < R_{k+1}, and it is n − R_k (2345 − 1111 = 1234). Same as zero-free base ten.
+  - Legendre: v_p(n!) = Σ d_j·R_j(p), digits weighed by repunits; lcm(1..n) uses digit count − 1. These are the program's two denominator rulers.
+  - 1/9 + 1/99 + 1/999 + ⋯ = 0.12232424342624…: the n-th decimal is d(n), so primes are the 2s (until the carry at 48). The alternating odd version gives r₂(n)/4, i.e. f = θ₃² at q = 1/10.
+  - R_k² palindromes to k = 9; R_k ≡ 3 mod 4, never a square; …111 = −1/(b−1) b-adically (−½, −1/6, −1/12 in bases 3, 7, 13).
+  - Factor table of R_k to k = 18 in the log; no-repeat totals end at ⌊e·10!⌋.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.

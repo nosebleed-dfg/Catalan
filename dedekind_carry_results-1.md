@@ -3017,3 +3017,61 @@ with E_n the Euler numbers.
 
 **What it gives.** These are identities and they locate G: between π²/12 and π²/8, a half of ζ(2) plus the Pythagorean sum. They do not give new rational approximations to G.
 
+# Numbers written with ones only: the ruler behind combos, factorials and the sieve (2026-10-02; repunits.py, repunits_out.txt). The user: "I feel like more needs to be played with when it comes to putting solely 1s as digits. Like 111. … So like say you want 2345. It's bigger than 1111. So you need another digit. So 11111. So you have to compare 2345 and 11111 and 1111 in a way. Something foundational going on when just using 1s"
+Notation: R_k = 11…1 (k ones) = (10^k − 1)/9, and R_k(b) = (b^k − 1)/(b − 1) in base b.
+
+**1. Ones are the running totals of all combos.**
+- R_k = 1 + 10 + ⋯ + 10^{k−1} is the number of digit strings with fewer than k slots (the empty one included).
+- List all strings by length. String number n has k slots exactly when R_k ≤ n < R_{k+1}, and it is the string n − R_k. Checked on all 11111 strings with at most 4 slots.
+- The user's example: 1111 ≤ 2345 < 11111, so 2345 is a 4-slot string, and 2345 − 1111 = 1234.
+- The same statement is zero-free base ten (digits 1 to 10): n has k digits there exactly when R_k ≤ n < R_{k+1} (checked for n < 200000). For instance 1000 = (9, 9, 10), three digits, because 1000 < 1111.
+- A power of ten always sits 8/9 of the way between two repunits: 10^18 − R₁₈ = 888888888888888889.
+
+**2. Ones are the weights of factorials (Legendre).**
+- Read the digits of n with the weights 1, 11, 111, … in place of 1, 10, 100, …. The result is Σ d_j·R_j = (n − digit sum)/9 = Σ_{j≥1}⌊n/10^j⌋.
+- In a prime base p this is the exponent of p in n!: v_p(n!) = Σ d_j·R_j(p). Checked for p ≤ 13, n ≤ 5000.
+  - v₅(625!) = 156, which is 1111 in base 5: the factorial of a power of the base has a repunit exponent.
+  - 2345 = (3, 3, 3, 4, 0) in base 5, so 2345! ends in 3·156 + 3·31 + 3·6 + 4·1 = 583 zeros.
+- The other ruler is lcm(1..n): its exponent of p is (number of base-p digits of n) − 1.
+- So the two denominators of this program use the two rulers: lcm(1..n) counts digits against 1, 10, 100, …, and n! weighs digits against 1, 11, 111, ….
+- In repunits, 2345 = 2·1111 + 1·111 + 1·11 + 1·1, and those digits form 21110, the number with Σ⌊21110/10^j⌋ = 2345.
+
+**3. The sieve written in ones.**
+- 1/9 + 1/99 + 1/999 + ⋯ = 0.1223242434262445262644283446282644492448282664…. The n-th decimal is d(n), the number of divisors of n, because 1/(10^k − 1) puts a 1 at every multiple of k.
+  - So the primes are exactly the places holding a 2: 2, 3, 5, 7, 11, …, 43.
+  - It holds up to n = 46. d(48) = 10 is the first carry, and it spoils the digit at 47.
+- With signs on the odd lengths, 1/9 − 1/999 + 1/99999 − ⋯ = 0.110120011200200121020000320020010201…. The n-th decimal is r₂(n)/4, the count of ways to write n as a sum of two squares (60 digits checked).
+- θ₃(1/10) = 1.2002000020000002000000002…, with its 2s at the squares, and θ₃(1/10)² = 1 + 4·(the previous number). This is the weight-1 form f of case E at q = 1/10, readable digit by digit.
+
+**4. Squares and powers of ones.**
+- R_k² is the palindrome 123…k…321 for k ≤ 9 (R₉² = 12345678987654321). At ten ones a carry breaks it: R₁₀² = 1234567900987654321.
+- 11ⁿ is the n-th row of Pascal's triangle for n ≤ 4 (11⁴ = 14641). 11⁵ = 161051 against the row 1, 5, 10, 10, 5, 1: carries again.
+- R_k ≡ 3 mod 4 for every k ≥ 2. So a number made of ones is never a square and never a sum of two squares, and it always has an odd number of prime factors that are 3 mod 4 (checked to k = 18).
+
+**5. Infinitely many ones.** R_k(b) ≡ −1/(b − 1) mod b^k, so in the b-adic numbers …111 = −1/(b − 1): Euler's value of 1 + b + b² + ⋯.
+- Base ten: −1/9. Base 3: −½. Base 7: −1/6. Base 13: −1/12.
+- These equal ζ(0), −B₂ and ζ(−1) as numbers. The series are different, so this is a match of values, not a derivation.
+
+**6. Ones and primes.** For p ≠ 2, 3, 5 the first repunit divisible by p has as many ones as the period of 1/p (checked for p < 1000).
+
+| ones | new primes | ones | new primes |
+|---|---|---|---|
+| 2 | 11 | 11 | 21649, 513239 |
+| 3 | 3, 37 | 12 | 9901 |
+| 4 | 101 | 13 | 53, 79, 265371653 |
+| 5 | 41, 271 | 14 | 909091 |
+| 6 | 7, 13 | 15 | 31, 2906161 |
+| 7 | 239, 4649 | 16 | 17, 5882353 |
+| 8 | 73, 137 | 17 | 2071723, 5363222357 |
+| 9 | 333667 | 18 | 19, 52579 |
+| 10 | 9091 | | |
+
+- 487 is a Wieferich prime in base ten: the first repunit it divides is R₄₈₆, and 487² divides it too.
+- R_k is prime for k = 2, 19, 23 (k ≤ 60). Whether there are infinitely many repunit primes is open.
+
+**7. The no-repeat totals.** Strings with at most k slots and no repeated digit: 1, 11, 101, 821, 5861, 36101, …, ending at 9864101 = ⌊e·10!⌋.
+- With repeats the totals are the partial sums of a geometric series (repunits). Without repeats they are the partial sums of the series for e, times 10!.
+- With at most 4 slots: 5861 of 11111, a share of 0.5275.
+
+**What is foundational here.** The number with k ones is the count of everything shorter than k slots. That one fact gives the three rulers above: combos (totals), factorials (Legendre weights) and primes (periods and divisor counts).
+
