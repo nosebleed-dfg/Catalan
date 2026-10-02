@@ -3191,3 +3191,82 @@ Notation: N = π/arcsin(1/√n) lines per turn of ring n, and t = ⌈N⌉ − N 
 
 **Answer.** Both are correct, and they measure different things. Keeping the direction is the carry process itself (the tails add and overflow). Turning around with the leftover is the efficient way to find when the walk nearly closes. The alternating digits are the continued-fraction digits, whose alternating sum is the Dedekind sum of this log's Siegel section.
 
+# Same way against alternating: no fixed ratio in stage counts, G against π² in weighted sums, and ring identities for G (2026-10-02; same_vs_alternating.py, ring_machin.py, with their _out.txt files). The user: "Can we do same way divided by alternated in some way. Or is there any open questions regarding this we can start picking at?"
+Notation as in the last two sections: N = π/arcsin(1/√n) lines per turn of ring n, θ_n = 2π/N its turning angle; alternating digits a_i (regular continued fraction of N), same-side digits b_j (minus continued fraction).
+
+**1. As stage counts there is no fixed ratio.**
+- Conversion rule (checked on rings 3, 5–59): the same-side digits are a₀ + 1, then a₁ − 1 twos, then a₂ + 2, then a₃ − 1 twos, then a₄ + 2, and so on. So the same side needs 1 + a₁ + a₃ + ⋯ + a_{k−1} stages to cover k alternating stages.
+- Over rings 3 to 1500:
+
+| alternating stages k | 6 | 12 | 24 | 48 | 96 |
+|---|---|---|---|---|---|
+| median of same ÷ alternating | 1.50 | 2.00 | 2.50 | 3.04 | 3.48 |
+| ½·log₂ k | 1.29 | 1.79 | 2.29 | 2.79 | 3.29 |
+| mean of same ÷ alternating | 3.89 | 7.20 | 6.08 | 7.59 | 7.42 |
+
+- The median grows by ½ for each doubling of k: it is ½·log₂ k + 0.2. This is Khinchin's law for sums of continued-fraction digits (k digits add up to about k·log₂ k). The mean is carried by rare giant digits (the digit sum has no finite average).
+- So the quotient has no limit.
+
+**2. The exact link is a difference, with 3 as the zero of the same-side digits.**
+- On a convergent P/Q = [a₀; a₁, …, a_{2m}] = [[b₀, …, b_s]]: Σ(b_j − 3) = a₀ − a₁ + a₂ − ⋯ + a_{2m} − 3 (checked on rings 3, 5–199).
+- This number is a Dedekind sum: 12·s(Q, P) = Σ(b_j − 3) + (Q + Q*)/P with Q·Q* ≡ 1 (mod P) (30 cases, exact). In alternating digits it is the Barkan–Hickerson formula 12·s(h, k) = Σ(−1)^{i+1}a_i + (h + (−1)^{r+1}q_{r−1})/k − 3·[r odd] (24 cases, exact).
+- So the same-side walk keeps a running total of (digit − 3), the alternating walk computes the same total with signs, and the total is the Dedekind sum this log started from. Both formulas are classical; here they are read on the walk with P lines and Q turns.
+
+**3. Weighted sums: the same way gives G, turning around gives π².** Weight corner k of the walk by 1/k² and add the heights (on the unit circle).
+- Same way: Σ sin(kθ)/k² = Cl₂(θ). The heights are odd in k.
+- Turning around at every crossing (m lines out, m lines back to the start): the heights become even in k, and the sum is (π²/4m²)·[Σ_{r<m} sin(rθ)/sin²(πr/2m) + ½·sin(mθ)], an algebraic number times π². The reason is ψ₁(x) + ψ₁(1 − x) = π²/sin²(πx).
+- Square ring (n = 2): the heights 1, 0, −1, 0, … give 1 − 1/9 + 1/25 − ⋯ = G the same way. Turning around gives the signs + − − + on the odd k, which is L(2, χ₈) = π²/(8√2).
+- So same ÷ turning = 8√2·G/π² = 1.0499881562… on the square.
+- Hexagon ring (n = 4): same way = Cl₂(π/3) = (3√3/4)·L(2, χ₋₃); turning around = π²(9 + √3)/108.
+- Rings 3 and 5: same way 1.0012792 and 1.0084130; turning around 0.1010164·π² and 0.0993038·π².
+- At other weights k^{−s} the two sign patterns of the square swap roles:
+
+| s | same way (+ − + −) | turning around (+ − − +) |
+|---|---|---|
+| −1 | 0 | −1 |
+| 0 | ½ | 0 |
+| 1 | π/4 | log(1 + √2)/√2 |
+| 2 | G | π²/(8√2) |
+| 3 | π³/32 | 0.9583804… (no closed form known) |
+
+- The same way is the odd character χ₋₄ and turning around is the even character χ₈. Each is known in closed form at half of the exponents. G is the same way at an exponent where it is not. The values ½ and −1 at s = 0 and −1 are the Ramanujan sums of the two patterns.
+
+**4. Open questions in this picture.**
+- Is G/π² rational? This is "same ÷ turning" on the square, up to √2, and it is the program's target. For the hexagon the corresponding statement is the Calegari–Dimitrov–Tang theorem (1, ζ(2), L(2, χ₋₃) are independent over ℚ).
+- For one fixed ring, do the alternating digits stay bounded? Open for every ring other than 1, 2, 4. Known: N is transcendental (Gelfond–Schneider), and the miss after q turns is at least q^{−κ} for some κ (Baker).
+- Can two rings nearly close at the same number of turns better than chance (Littlewood's problem for N_a, N_b)? Open.
+- In reach, and started below: which same-way ring sums add up to a rational multiple of G?
+
+**5. Started: ring identities for G.** Write W(n) = Cl₂(θ_n) for the same-way sum of ring n, so W(2) = G.
+- For n = m² + 1 the step is z = (m + i)/(m − i) in ℚ(i), and 1 − z = −2i/(m − i). So z and 1 − z only involve the primes of 2 and of m² + 1.
+- If Σ n_m·z_m ∧ (1 − z_m) = 0 in Λ²(ℚ(i)^×) ⊗ ℚ, the combination lies in the Bloch group of ℚ(i), which has rank 1 and is spanned by [i] with D(i) = G (Borel, Bloch, Suslin). So Σ n_m·W(m² + 1) = r·G with r rational. The condition is linear algebra on the exponents of Gaussian primes.
+- **(I) 2·W(5) + 6·W(10) + W(50) = 9·G.**
+  - Rings 5, 10, 50 are m = 2, 3, 7: all the rings whose number has only the primes 2 and 5. Their steps are (3 + 4i)/5, (4 + 3i)/5, (24 + 7i)/25.
+  - The angles satisfy θ₅ + θ₁₀ = π/2 and θ₅ − θ₁₀ = θ₅₀ (Euler's arctan ½ + arctan ⅓ = π/4).
+  - Proved from four five-term relations D(x) + D(y) + D((1−x)/(1−xy)) + D(1−xy) + D((1−y)/(1−xy)) = 0, at (x, y) = (i, −iz₅), (1+i, 1+i), (i, −2−i), (−iz₅, z₅). With A, B, C = W(5), W(10), W(50) and d = D(2+i), e = D(−2−i), f = D(2i), they read: R1: A + B = G + 2d; R2: f = 2G − 2d; R3: e = B − G + d − f; R4: C = A − B − 2e. The target is −3·R1 − 2·R2 − 2·R3 − R4 (exact linear algebra on orbit classes; each relation also checked to 60 digits).
+- **(II) 3W(10) + W(17) + W(26) − 2W(50) − W(65) − 2W(170) − W(325) − W(1445) − 2W(2210) + W(3250) + W(71825) = G** (m = 3, 4, 5, 7, 8, 13, 18, 38, 47, 57, 268).
+- **(III) 36W(5) + 60W(10) + 24W(26) + 12W(65) + 4W(3250) − W(57122) = 129·G** (m = 2, 3, 5, 8, 57, 239).
+  - For (II) and (III) the multiple is rational by the theorem and was read off from 48 digits. No five-term certificate is written.
+- (I), (II), (III) are a basis of all relations among the rings with primes up to 61.
+- Count of independent relations as primes are added (m ≤ 10⁸ searched; s is the number of primes ≡ 1 mod 4; the vectors z ∧ (1 − z) of rings lie in a space of dimension s² + s):
+
+| largest prime | 5 | 13 | 17 | 29 | 37 | 41 | 53 | 61 | 73 | 89 | 97 | 101 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| rings | 3 | 8 | 14 | 21 | 31 | 40 | 56 | 73 | 93 | 119 | 155 | 188 |
+| rank | 2 | 6 | 11 | 18 | 28 | 37 | 53 | 70 | 89 | 109 | 132 | 156 |
+| s² + s | 2 | 6 | 12 | 20 | 30 | 42 | 56 | 72 | 90 | 110 | 132 | 156 |
+| relations | 1 | 2 | 3 | 3 | 3 | 3 | 3 | 3 | 4 | 10 | 23 | 32 |
+
+  - From the prime 97 on the rings fill the whole space, so the count is rings − (s² + s).
+  - Every multiple of G found is a whole number.
+  - The ring count 155 for primes below 100 agrees with Luca's 156 values of m (which include m = 1), largest 24208144. The list for 101 is not certified complete.
+- Machin's pair 5, 239 (rings 26 and 57122): there is no relation between the two rings alone. With a quarter-turn twist there is one: 4·Cl₂(arctan(12/5)) + 20·W(26) − W(57122) = 21·G.
+- All unit-circle points for the primes 2 and 5 (six of them) give relations 6G, 4G, 1G and the duplication formula. The 6G one, 3W(5) + 2W(10) + Cl₂(π − θ₅) = 6G, is Lewin's 6·Ti₂(1) − 4·Ti₂(½) − 2·Ti₂(⅓) − Ti₂(¾) = π·log 2 in Clausen form.
+- Base 5: W(m² + 1) = Σ_k 2^k·Im((1 + mi)^k)/((m² + 1)^k·k²) + θ_m·log(√(m² + 1)/2). So (I) reads 9G = π·log 5 − (5π/4)·log 2 + Σ_k [(2^{k+1}·Im(1+2i)^k + 6·Im(1+3i)^k)/5^k + Im(1+7i)^k/25^k]/k² (checked to 59 digits). It converges like (2/√5)^k.
+- Literature: Lewin's identity is classical. (I)–(III) were not found in one search (arXiv 2605.01830, on Ti₂ and G, does not have them). They are of the dilogarithm-ladder type and probably derivable from that literature. Unchecked beyond that.
+
+**What it gives.**
+- The user's two ways are the two parities: the same way is the odd character (G), turning around is the even one (π²). "Same ÷ turning" on the square is the open question itself.
+- The square ring's sum G is an exact whole-number mix of the sums on the Pythagorean rings (the 3-4-5 and 7-24-25 triangles for (I)).
+- These are identities. They give no rational approximations to G, and the gate analysis above is unchanged.
+

@@ -1,0 +1,40 @@
+﻿1. conversion rule
+   same-side digits = (a0 + 1), (a1 - 1) twos, (a2 + 2), (a3 - 1) twos, ...: holds for rings 3, 5..59: True
+   ring 3: alternating [5, 9, 1, 1, 2, 2, 1, 7, 12]  ->  same side [6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 4, 2, 3, 2]
+
+2. stage counts, rings 3..1500 (ring 4 excluded): same-side stages needed to cover k alternating stages
+   alternating stages k:                          6       12       24       48       96
+   median of same/alternating:                 1.50     2.00     2.50     3.04     3.48
+   (1/2) log2(k):                              1.29     1.79     2.29     2.79     3.29
+   mean of same/alternating:                   3.89     7.20     6.08     7.59     7.42
+   median of (digit sum)/(k/2) - log2(k/2):    1.08     1.25     1.33     1.46     1.35
+   (the mean is carried by rare giant digits; the digit sum has no finite average)
+
+3. the difference, with 3 as the zero of the same-side digits
+   sum(b_j - 3) = a0 - a1 + a2 - ... + a8 - 3 on the convergent [a0; a1, ..., a8], rings 3, 5..199: True
+   ring 3: alternating [5, 9, 1, 1, 2, 2, 1, 7, 12], same side [6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 4, 2, 3, 2, 2, 2, 2, 2, 2, 13]: -1 = -1
+
+4. the Dedekind sum
+   alternating digits: 12 s(h, k) = sum (-1)^(i+1) a_i + (h +- q_(r-1))/k - 3[r odd]: True (24 cases)
+   same-side digits:   12 s(Q, P) = sum (b_j - 3) + (Q + Q*)/P: True (30 cases)
+   examples (ring, lines P, turns Q, same-side digits, 12 s(Q, P)): [(3, 51, 10, [6, 2, 2, 2, 2, 2, 2, 2, 2, 2], '-250/51'), (3, 245, 48, [6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3], '-216/49'), (3, 832, 163, [6, 2, 2, 2, 2, 2, 2, 2, 2, 3, 4, 2, 2], '-2121/416')]
+
+5. weighted walks: corner k weighted by 1/k^2, heights added (unit circle)
+   square   (4 lines per lap): same way = 0.91596559417721901505;  turning around = 0.87235802495485994177 = 0.0883883476483184 pi^2  (sine formula agrees: True)
+            same/turning = 1.0499881562098492091
+   hexagon  (6 lines per lap): same way = 1.014941606409653625;  turning around = 0.98075088780644811745 = 0.0993708408108229 pi^2  (sine formula agrees: True)
+            same/turning = 1.0348617768571962487
+   ring 3   (6 lines per lap): same way = 1.0012792054026234755;  turning around = 0.99699156509739622227 = 0.101016365457095 pi^2  (sine formula agrees: True)
+            same/turning = 1.0043005783151318769
+   ring 5   (7 lines per lap): same way = 1.0084130373169353748;  turning around = 0.98008953799632382589 = 0.0993038320652595 pi^2  (sine formula agrees: True)
+            same/turning = 1.0288988895632082405
+   square:  same way - G = -1.34e-51;  turning around - pi^2/(8 sqrt 2) = -1.34e-51
+   hexagon: same way - (3 sqrt 3/4) L(2, chi_-3) = -5.35e-51;  turning around - pi^2 (9 + sqrt 3)/108 = 4.01e-51
+   square: same/turning = 8 sqrt(2) G/pi^2 = 1.049988156209849209064187
+
+   the two sign patterns of the square at other weights k^(-s)  (same way: + - + -;  turning around: + - - +)
+   s = -1: same way 0.0 (0);  turning around -1.0 (-1)
+   s =  0: same way 0.5 (1/2);  turning around 0.0 (0)
+   s =  1: same way 0.785398163397448 (pi/4);  turning around 0.623225240140231 (log(1 + sqrt 2)/sqrt 2)
+   s =  2: same way 0.915965594177219 (G);  turning around 0.87235802495486 (pi^2/(8 sqrt 2))
+   s =  3: same way 0.968946146259369 (pi^3/32);  turning around 0.958380454563095 (no closed form known)

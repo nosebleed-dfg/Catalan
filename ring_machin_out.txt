@@ -1,0 +1,71 @@
+﻿1. S = {2, 5}: rings m = 2, 3, 7
+   m = 2, ring 5: step (m+i)/(m-i), m + i = {(5, 1): 1};  z ^ (1-z) = {((2, 0), (5, -1)): 2, ((2, 0), (5, 1)): -2, ((5, -1), (5, 1)): 1}
+   m = 3, ring 10: step (m+i)/(m-i), m + i = {(2, 0): 1, (5, -1): 1};  z ^ (1-z) = {((2, 0), (5, -1)): -1, ((2, 0), (5, 1)): 1, ((5, -1), (5, 1)): -1}
+   m = 7, ring 50: step (m+i)/(m-i), m + i = {(2, 0): 1, (5, 1): 2};  z ^ (1-z) = {((2, 0), (5, -1)): 2, ((2, 0), (5, 1)): -2, ((5, -1), (5, 1)): 4}
+   relation: +2 W(5) +6 W(10) +1 W(50) = 9 G   (ratio to G: 9.0)
+   angles: theta_5 + theta_10 - pi/2 = 0.0;  theta_5 - theta_10 - theta_50 = 0.0
+
+2. proof from five-term relations
+   names: G = D(i), A = W(5), B = W(10), C = W(50), d = D(2+i), e = D(-2-i), f = D(2i)
+   R1: (x, y) = (01i, 4/5-3/5i): five-term sum = 0.0;  reduced: -1 A -1 B +1 G +2 d = 0
+   R2: (x, y) = (11i, 11i): five-term sum = 7.78e-62;  reduced: +2 G -2 d -1 f = 0
+   R3: (x, y) = (01i, -2-1i): five-term sum = -7.78e-62;  reduced: -1 B +1 G -1 d +1 e +1 f = 0
+   R4: (x, y) = (4/5-3/5i, 3/54/5i): five-term sum = -1.17e-61;  reduced: +1 A -1 B -1 C -2 e = 0
+   target 2A + 6B + C - 9G: +2 A +6 B +1 C -9 G = 0
+   rank of the four relations = 4, with the target added = 4;  target = [-3, -2, -2, -1] . (R1, R2, R3, R4)
+
+3. larger prime sets: rings with m^2 + 1 smooth (m <= 10^8 searched)
+   (z ^ (1-z) of a ring lies in a space of dimension s^2 + s for s primes p = 1 mod 4: (x_p - y_p)^(1+i), x_p^y_p,
+    and for each pair x_p^y_q + x_q^y_p, x_p^x_q - y_p^y_q.  Luca: 156 values of m have m^2 + 1 with all primes < 100.)
+   primes 2, 5..5: 3 rings, largest m = 7;  rank 2 of at most 2;  1 relations;  gcd of the multiples of G: 9
+      m = [2, 3, 7]
+      +2 W(5) +6 W(10) +1 W(50) = 9 G
+   primes 2, 5..13: 8 rings, largest m = 239;  rank 6 of at most 6;  2 relations;  gcd of the multiples of G: 3
+      m = [2, 3, 5, 7, 8, 18, 57, 239]
+      +2 W(5) +6 W(10) +1 W(50) = 9 G
+      +14 W(5) -6 W(10) +24 W(26) -11 W(50) +12 W(65) +4 W(3250) -1 W(57122) = 30 G
+   primes 2, 5..17: 14 rings, largest m = 268;  rank 11 of at most 12;  3 relations;  gcd of the multiples of G: 1
+      m = [2, 3, 4, 5, 7, 8, 13, 18, 21, 38, 47, 57, 239, 268]
+      +3 W(10) +1 W(17) +1 W(26) -2 W(50) -1 W(65) -2 W(170) -1 W(325) -1 W(1445) -2 W(2210) +1 W(3250) +1 W(71825) = 1 G
+      +2 W(5) +3 W(10) -1 W(17) -1 W(26) +3 W(50) +1 W(65) +2 W(170) +1 W(325) +1 W(1445) +2 W(2210) -1 W(3250) -1 W(71825) = 8 G
+      +16 W(5) -3 W(10) -1 W(17) +23 W(26) -8 W(50) +13 W(65) +2 W(170) +1 W(325) +1 W(1445) +2 W(2210) +3 W(3250) -1 W(57122) -1 W(71825) = 38 G
+      a basis of the lattice (checked: unimodular change from the reduced basis):
+      (I) +2 W(5) +6 W(10) +1 W(50) = 9 G   (ratio 9.0)
+      (II) +3 W(10) +1 W(17) +1 W(26) -2 W(50) -1 W(65) -2 W(170) -1 W(325) -1 W(1445) -2 W(2210) +1 W(3250) +1 W(71825) = 1 G   (ratio 1.0)
+      (III) +36 W(5) +60 W(10) +24 W(26) +12 W(65) +4 W(3250) -1 W(57122) = 129 G   (ratio 129.0)
+   primes 2, 5..29: 21 rings, largest m = 307;  rank 18 of at most 20;  3 relations;  gcd of the multiples of G: 1
+      m = [2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 21, 38, 41, 47, 57, 70, 99, 157, 239, 268, 307]
+   primes 2, 5..37: 31 rings, largest m = 18543;  rank 28 of at most 30;  3 relations;  gcd of the multiples of G: 1
+      m = [2, 3, 4, 5, 6, 7, 8, 12, 13, 17, 18, 21, 31, 38, 41, 43, 47, 57, 68, 70, 99, 117, 157, 191, 239, 268, 302, 307, 327, 882, 18543]
+   primes 2, 5..41: 40 rings, largest m = 18543;  rank 37 of at most 42;  3 relations;  gcd of the multiples of G: 1
+      m = [2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 17, 18, 21, 31, 32, 38, 41, 43, 47, 57, 68, 70, 73, 99, 117, 132, 157, 191, 239, 268, 278, 302, 307, 327, 378, 829, 882, 993, 2943, 18543]
+   primes 2, 5..53: 56 rings, largest m = 485298;  rank 53 of at most 56;  3 relations;  gcd of the multiples of G: 1
+   primes 2, 5..61: 73 rings, largest m = 485298;  rank 70 of at most 72;  3 relations;  gcd of the multiples of G: 1
+   primes 2, 5..73: 93 rings, largest m = 485298;  rank 89 of at most 90;  4 relations;  gcd of the multiples of G: 1
+      1 new; the tamest new reduced relation has 85 terms, largest coefficient 50584546, and gives 49044605 G
+   primes 2, 5..89: 119 rings, largest m = 24208144;  rank 109 of at most 110;  10 relations;  gcd of the multiples of G: 1
+      6 new; the tamest new reduced relation has 109 terms, largest coefficient 363, and gives 178 G
+   primes 2, 5..97: 155 rings, largest m = 24208144;  rank 132 of at most 132;  23 relations;  gcd of the multiples of G: 1
+      13 new; the tamest new reduced relation has 150 terms, largest coefficient 45, and gives 56 G
+   primes 2, 5..101: 188 rings, largest m = 24208144;  rank 156 of at most 156;  32 relations;  gcd of the multiples of G: 1
+      9 new; the tamest new reduced relation has 161 terms, largest coefficient 30, and gives 23 G
+
+4. all unit-circle points for S = {2, 5} (the 3-4-5 angles)
+   u = 2 + 1i, powers up to 40: 6 points with 1 - x smooth: ['W(5)', 'Cl2(126.8699 deg)', 'W(10)', 'Cl2(106.2602 deg)', 'W(50)', 'Cl2(20.60969 deg)']
+      +1 Cl2(126.8699 deg) -2 W(10) +1 Cl2(106.2602 deg) +1 W(50) +1 Cl2(20.60969 deg) = 1 G
+      +2 W(5) -2 Cl2(126.8699 deg) -1 Cl2(106.2602 deg) = 0 G
+      -1 W(5) +2 W(10) +1 Cl2(106.2602 deg) +2 W(50) +1 Cl2(20.60969 deg) = 4 G
+      +3 W(5) +1 Cl2(126.8699 deg) +2 W(10) = 6 G
+
+5. Machin's pair: unit-circle points for S = {2, 13}
+   u = 3 + 2i, powers up to 40: 3 points with 1 - x smooth: ['Cl2(67.38014 deg)', 'W(26)', 'W(57122)']
+      +4 Cl2(67.38014 deg) +20 W(26) -1 W(57122) = 21 G
+   the two rings 26 and 57122 alone: rank 2, 0 relations
+
+   Lewin's inverse-tangent identity 6 Ti2(1) - 4 Ti2(1/2) - 2 Ti2(1/3) - Ti2(3/4) - pi log 2 = 3.11e-61
+   (in Clausen form it is the relation 3 W(5) + 2 W(10) + Cl2(pi - theta_5) = 6 G of part 4)
+
+6. the first relation as a series in powers of 1/5
+   W(50) - [sum_k 2^k Im((1+7i)^k)/(50^k k^2) + theta log(sqrt(50)/2)] = -1.56e-61
+   W(57122) - [sum_k 2^k Im((1+239i)^k)/(57122^k k^2) + theta log(sqrt(57122)/2)] = 4.86e-63
+   9 G - pi log 5 + (5 pi/4) log 2 - sum_k [(2^(k+1) Im(1+2i)^k + 6 Im(1+3i)^k)/5^k + Im(1+7i)^k/25^k]/k^2 = 1.87e-60

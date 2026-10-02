@@ -174,6 +174,11 @@
   - The tail (overshoot as a fraction of a line) is uniform on (0, 1): mean ½ line = 1 unit of arc.
   - Dictionary: trace 2 − 4/n = trace of T·L_w⁻¹ with w = 4/n; closing rings 4, 2, 1 ↔ w = 1, 2, 4; G's w = 8 ↔ n = ½ (no rotation).
   - Crossing the start again (results log "Crossing the start again"; ring_carry.py): same direction = the carry process (tails t, 2t, 3t mod 1; a lap is one line shorter at each overflow; share of short laps = t). Turning around with the same lines retraces exactly. Turning around with the leftover = Euclid: alternating sides is the regular continued fraction (median 12 stages to 10⁻⁶), the same side is the minus continued fraction (median 28, up to 15655). Over rings 3–2000 the digits follow Gauss–Kuzmin, Khinchin and Lévy (π²/(12 log 2)).
+  - Same way against alternating (results log "Same way against alternating"; same_vs_alternating.py, ring_machin.py):
+    - Stage counts: no fixed ratio; same ÷ alternating grows like ½·log₂ k. The exact link is a difference: Σ(b_j − 3) = alternating digit sum − 3, which is the Dedekind sum 12·s(Q, P) up to (Q + Q*)/P.
+    - Corners weighted by 1/k²: the same way on the square ring is G, turning around is π²/(8√2) (odd character χ₋₄ against even χ₈). Same ÷ turning = 8√2·G/π², the open question itself.
+    - Ring identities, W(n) = Cl₂(θ_n): (I) 2W(5) + 6W(10) + W(50) = 9G, proved from four five-term relations; (II) an 11-ring combination with coefficients ±1, ±2, 3 equals G; (III) 36W(5) + 60W(10) + 24W(26) + 12W(65) + 4W(3250) − W(57122) = 129G. (II), (III): rational by Borel–Bloch–Suslin, value from 48 digits.
+    - Independent relations by largest prime 5 … 101: 1, 2, 3, 3, 3, 3, 3, 3, 4, 10, 23, 32. Identities only; no approximations to G.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.
