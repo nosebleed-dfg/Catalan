@@ -1,0 +1,58 @@
+﻿1. Wieferich primes
+   p = 1093: p - 1 = 10001000100 (base 2) = 2104 (base 8) = 444 (base 16);  order of 2 mod p = 364
+      p - 1 = (2^12 - 1) * 4/15;  alternating harmonic sum 1 - 1/2 + ... - 1/(p-1) = 0 mod p: True
+      reversed in base  2: 1297  prime
+      reversed in base 10: 3901  = {47: 1, 83: 1}
+   p = 3511: p - 1 = 110110110110 (base 2) = 6666 (base 8) = db6 (base 16);  order of 2 mod p = 1755
+      p - 1 = (2^12 - 1) * 6/7;  alternating harmonic sum 1 - 1/2 + ... - 1/(p-1) = 0 mod p: True
+      reversed in base  2: 3803  prime
+      reversed in base 10: 1153  prime
+   Eisenstein's formula for all odd p < 200: True
+   Wieferich primes in base b, p < 2*10^6, and whether p - 1 is a palindrome in base b, b^2, b^3, b^4:
+      b =  2: 1093 (p-1 palindrome in b^k for k = [4]; reversal 1297 prime); 3511 (p-1 palindrome in b^k for k = [3]; reversal 3803 prime)
+      b =  3: 11 (p-1 palindrome in b^k for k = [1, 2, 3, 4]; reversal 19 prime); 1006003 (p-1 palindrome in b^k for k = none; reversal 648835 composite)
+      b =  4: 1093 (p-1 palindrome in b^k for k = [2]; reversal 1297 prime); 3511 (p-1 palindrome in b^k for k = [3]; reversal 3559 prime)
+      b =  5: 20771 (p-1 palindrome in b^k for k = none; reversal 28331 composite); 40487 (p-1 palindrome in b^k for k = none; reversal 40487 prime)
+      b =  6: 66161 (p-1 palindrome in b^k for k = none; reversal 265801 composite); 534851 (p-1 palindrome in b^k for k = none; reversal 1639111 composite)
+      b =  7: 5 (p-1 palindrome in b^k for k = [1, 2, 3, 4]; reversal 5 prime); 491531 (p-1 palindrome in b^k for k = none; reversal 606827 composite)
+      b =  8: 3 (p-1 palindrome in b^k for k = [1, 2, 3, 4]; reversal 3 prime); 1093 (p-1 palindrome in b^k for k = [4]; reversal 2570 composite); 3511 (p-1 palindrome in b^k for k = [1, 2, 4]; reversal 4022 composite)
+      b =  9: 11 (p-1 palindrome in b^k for k = [1, 2, 3, 4]; reversal 19 prime); 1006003 (p-1 palindrome in b^k for k = none; reversal 998803 composite)
+      b = 10: 3 (p-1 palindrome in b^k for k = [1, 2, 3, 4]; reversal 3 prime); 487 (p-1 palindrome in b^k for k = [3, 4]; reversal 784 composite)
+      b = 11: 71 (p-1 palindrome in b^k for k = [2, 3, 4]; reversal 61 prime)
+      b = 12: 2693 (p-1 palindrome in b^k for k = [4]; reversal 9865 composite); 123653 (p-1 palindrome in b^k for k = none; reversal 118505 composite)
+
+2. Four slots: cusp widths of the six families
+   Apery zeta(2)        (5, 5, 1, 1)  product  25 = 5^2 (True)   equal cross products: [5]
+   CDT chi_-3           (6, 3, 2, 1)  product  36 = 6^2 (True)   equal cross products: [6]
+   G, 2tau frame        (4, 4, 2, 2)  product  64 = 8^2 (True)   equal cross products: [8]
+   G, Gamma_0(8)        (8, 2, 1, 1)  product  16 = 4^2 (True)   equal cross products: none
+   level 9, 3tau frame  (3, 3, 3, 3)  product  81 = 9^2 (True)   equal cross products: [9]
+   level 9, Gamma_0(9)  (9, 1, 1, 1)  product   9 = 3^2 (True)   equal cross products: none
+
+3. Case E
+   a. u_n v_{n+1} - u_{n+1} v_n = 32^n/(n+1)^2 for all n < 2500: True
+   b. u_{p-1} = chi_-4(p) (mod p) for all odd p < 2500: True
+   p =  3, n < 81: Lucas failures for u: 0;  digit law for v without the sign: 60 failures of 78;  with chi_-4(p)^L: 0
+   p =  5, n < 625: Lucas failures for u: 0;  digit law for v without the sign: 0 failures of 620;  with chi_-4(p)^L: 0
+   p =  7, n < 2401: Lucas failures for u: 0;  digit law for v without the sign: 1110 failures of 2394;  with chi_-4(p)^L: 0
+   p = 11, n < 2500: Lucas failures for u: 0;  digit law for v without the sign: 1279 failures of 2489;  with chi_-4(p)^L: 0
+   p = 13, n < 2500: Lucas failures for u: 0;  digit law for v without the sign: 0 failures of 2487;  with chi_-4(p)^L: 0
+   c. p = 7, digits (1, 2, 4, 5) in the four slots, all 24 arrangements: (u_n mod p, p^6 v_n mod p) by leading digit: {1: [(2, 3)], 2: [(2, 0)], 4: [(2, 2)], 5: [(2, 6)]}
+      reversal: p^2 (v_{bp+a} - v_{ap+b}) = chi_-4(p) (u_a v_b - u_b v_a)  (mod p), and
+      u_a v_b - u_b v_a = u_a u_b sum_{k=a}^{b-1} 32^k/((k+1)^2 u_k u_{k+1}) exactly: 0 failures of 4755
+
+4. Wieferich-type primes for case E (5 <= p < 700)
+   depth of u_p - u_1:                 {2: 121, 3: 2}
+   depth of p^2 v_p - chi_-4(p) v_1:   {2: 121, 3: 2}
+   primes with E_{p-3} = 0 (mod p):    [149, 241]
+   primes with u_p = u_1 (mod p^3):    [149, 241]
+   primes with p^2 v_p = chi v_1 (mod p^3): [149, 241]
+   (u_p - u_1)/p^2 divided by E_{p-3} (mod p), most common values: [(-8, 62), (8, 55), (-2, 1)]
+   (p^2 v_p - chi v_1)/p^2 divided by E_{p-3} (mod p), by class, most common: [((-1, 1), 64), ((1, 1), 57)]
+   u_p = 4 + 8 chi_-4(p) p^2 E_{p-3} (mod p^3) for all 5 <= p < 700: True
+   p^2 v_p = chi_-4(p) + p^2 E_{p-3} (mod p^3) for all 5 <= p < 700: True
+   sum_{0<k<p/4} k^-2 divided by E_{p-3} (mod p), by class: [((-1, -4), 63), ((1, 4), 56), ((1, -1), 1), ((-1, 3), 1)]
+   p = 2946901: sum_{0<k<p/4} k^-2 = 0 (mod p)  -> p divides E_{p-3}
+   p = 2946907: sum_{0<k<p/4} k^-2 = 1645602 (mod p)  
+   p = 149: reversed in base 10: 941 (prime); in base 2: 169 ({13: 2})
+   p = 241: reversed in base 10: 142 ({2: 1, 71: 1}); in base 2: 143 ({11: 1, 13: 1})

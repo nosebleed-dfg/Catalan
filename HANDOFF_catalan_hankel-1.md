@@ -138,6 +138,12 @@
   - Lemma (proved): with Φ = mτ, Φ(S ∪ {σ}) − Φ(S) ≥ σ. So a contradiction needs L > the average rate of the functions that depend on G being rational: 3/2 for pure G (−0.2677), 4/3 with π² (−0.1011).
   - Mixing is therefore not a third lever. Scope: Theorem 2.5.1's form only; the refined bounds (6.0.2, 7.1.6, 8.0.1) are not covered.
   - Free functions on X′ noted: 1, √(1 − 4t), the log-type ones (rate 1), and f·D⁻²Z = (F₊ − F₋)/4, whose limit is exactly 0 (rate 2).
+- Digit games made exact (2026-10-02; results log section of that name; digit_games.py; the user's thoughts on Wieferich primes, palindromes, reversal, cross multiplication, four slots). All for Zagier's case E:
+  - u_n is Lucas, so u_n mod p ignores the order of n's base-p digits. The rational part obeys p^{2L}v_n ≡ χ₋₄(p)^L·v_lead·∏u_lower (mod p), with the sign u_{p−1} ≡ χ₋₄(p). Over rearrangements only the leading digit matters.
+  - Reversal is a cross product: p²(v_{bp+a} − v_{ap+b}) ≡ χ₋₄(p)(u_av_b − u_bv_a), a sum of 32^k/(k+1)² terms.
+  - Second digit: u_p ≡ 4 + 8χ₋₄(p)p²E_{p−3} and p²v_p ≡ χ₋₄(p) + p²E_{p−3} (mod p³), for 5 ≤ p < 700. G's Wieferich-type primes are those dividing E_{p−3}: 149, 241, then 2946901.
+  - The products of the four cusp widths are squares (25, 36, 64, 16, 81, 9); the cross products 5, 6, 8, 9 are the gate invariants.
+  - None of this changes the denominator growth. Literature not checked.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.

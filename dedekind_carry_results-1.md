@@ -2838,3 +2838,43 @@ In GL₂/ℚ these are exactly the Eisenstein series E^{1,ψ}. The divisor d = 1
 - CDT's Lemma 2.11.7: the Bost–Charles integral of their bivalent map 8(z + z³)/(1 + z)⁴ is log 8 + 4G/π. Catalan's constant is a term in their own bound.
 - Their Theorem 2.8.4 is about exactly the rate 3/2 (type [1..n][1..n/2]) with singular points {0, δ, 1, ∞}. Our W*± families have that shape in x = 4t, with δ = ½, but the change of variable costs 4ⁿ in the denominators. That is the same gap in another form.
 
+# Digit games made exact: reversal, four slots, cross multiplication, and G's Wieferich primes (2026-10-02; digit_games.py, digit_games_out.txt). The user: "I was thinking about weiferich primes and palindromes. And foundational number theory. And cross multiplication to extract squares. And writing primes reversed to get its sister primes. But also using the same numbers to fill 4 slots in every combo."
+All statements are for Zagier's case E (limit G/2): u_n integers, v_n rationals, (n+1)²x_{n+1} = (12n² + 12n + 4)x_n − 32n²x_{n−1}, u = 1, 4, 20, 112, …, v = 0, 1, 7, ….
+
+**1. The same digits in every slot: the residues do not see the order.**
+- Lucas: u_n ≡ ∏ u_d over the base-p digits d of n (mod p). No failures for p = 3, 5, 7, 11, 13 and n < min(p⁴, 2500).
+- So u_n mod p is unchanged by every rearrangement of n's base-p digits. Reversal is one of them, and palindromes are its fixed points.
+- **Digit law for the rational part.** With L lower digits, p^{2L}·v_n ≡ χ₋₄(p)^L · v_{leading digit} · ∏ u_{lower digits} (mod p). No failures (same range).
+  - Without the sign it fails for p ≡ 3 mod 4 (1110 of 2394 at p = 7).
+  - The sign is u_{p−1} ≡ χ₋₄(p) (mod p), which holds for every odd p < 2500.
+  - Derivation: v_n = u_n·Σ_{k<n} 32^k/((k+1)²u_ku_{k+1}). The terms with p^L | k + 1 dominate, and Lucas gives u_{mp^L − 1} ≡ u_{m−1}·u_{p−1}^L. So the character whose L-value is the limit enters the rational parts through u_{p−1}.
+- So over all arrangements of the same digits, v depends only on which digit leads.
+  - Example: p = 7, digits 1, 2, 4, 5 in four slots, 24 arrangements. u_n ≡ 2 every time, and p⁶v_n takes exactly four values: 3, 0, 2, 6 for leading digit 1, 2, 4, 5.
+
+**2. Cross multiplication extracts squares.**
+- Neighbours: u_n·v_{n+1} − u_{n+1}·v_n = 32ⁿ/(n+1)², exactly, for all n < 2500.
+- Reversal: p²·(v_{bp+a} − v_{ap+b}) ≡ χ₋₄(p)·(u_a v_b − u_b v_a) (mod p), and u_a v_b − u_b v_a = u_a u_b·Σ_{k=a}^{b−1} 32^k/((k+1)²u_ku_{k+1}) exactly. No failures in 4755 cases (p ≤ 47).
+  - Reversing a two-digit index is a cross multiplication, and the cross product is a sum over the squares between the two digits.
+- The four cusp widths of the six families: the products are 25, 36, 64, 16, 81, 9, all squares. (They are the squared orders of the torsion groups of the elliptic surfaces.)
+  - In the four frames where the widths form a proportion a : b = c : d, the cross product ad = bc is 5, 6, 8, 9: the gate invariant of the flip section.
+
+**3. Wieferich primes (verified).**
+- 1093 − 1 = 444 in base 16, and 3511 − 1 = 6666 in base 8: both are repdigits, hence palindromes. They are (2¹² − 1)·4/15 and (2¹² − 1)·6/7.
+- Reversed in base 2, both give primes: 1093 ↔ 1297 and 3511 ↔ 3803. In base 10: 3511 ↔ 1153 (prime), and 1093 ↔ 3901 = 47·83.
+- Eisenstein: (2^{p−1} − 1)/p ≡ ½·(1 − 1/2 + 1/3 − ⋯ − 1/(p−1)) (mod p), checked for p < 200. So a Wieferich prime is one where the alternating harmonic sum vanishes mod p; it does for 1093 and 3511.
+- In other bases (p < 2·10⁶, b ≤ 12) the palindrome pattern does not persist: none in bases 5 and 6. It is a feature of the two base-2 primes, not a law.
+
+**4. G's Wieferich primes.** For every prime 5 ≤ p < 700:
+    u_p ≡ 4 + 8·χ₋₄(p)·p²·E_{p−3} (mod p³),   p²·v_p ≡ χ₋₄(p) + p²·E_{p−3} (mod p³),
+with E_n the Euler numbers.
+- Hence v_p/u_p ≡ χ₋₄(p)/(4p²) − E_{p−3}/4 (mod p).
+- The Euler number E_{p−3} plays the part of the Fermat quotient. The primes with one more power are exactly those dividing E_{p−3}: 149 and 241 below 700.
+- The next is 2946901, confirmed through the quarter sum: Σ_{0<k<p/4} k⁻² ≡ 4χ₋₄(p)E_{p−3} (mod p) (checked for p < 700; Lehmer's congruence).
+- E_{p−3}/2 = β(3 − p), and 3 − p ≡ 2 mod (p − 1). By Kummer's congruence this is G read mod p. (Recorded as bookkeeping. No p-adic target is proposed.)
+- Sisters: 149 ↔ 941 (prime) in base 10. 241 ↔ 142 is not prime.
+- Literature not checked. The u-congruence is probably known (supercongruences for Apéry-like numbers in the work of Z.-W. Sun and Z.-H. Sun). The v-congruence and the digit law with the character sign may be new.
+
+**5. What this does and does not do.**
+- It explains how a prime's class enters the rational parts (through u_{p−1}), and it gives the exact second digit.
+- It does not change the denominator growth. The digit symmetries concern residues mod p, not exponents, and the Wieferich-type primes are far too rare (two below 700) to save anything.
+
