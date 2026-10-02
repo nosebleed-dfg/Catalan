@@ -3075,3 +3075,32 @@ Notation: R_k = 11…1 (k ones) = (10^k − 1)/9, and R_k(b) = (b^k − 1)/(b �
 
 **What is foundational here.** The number with k ones is the count of everything shorter than k slots. That one fact gives the three rulers above: combos (totals), factorials (Legendre weights) and primes (periods and divisor counts).
 
+# Rings of equal area: every lattice point sits on a ring boundary, and G weighs the rings (2026-10-02; rings.py, rings_out.txt). The user: "Say we have a circle. Go to center. Go 1unit in any direction. Take that area of that ring. Now go from that unit an amount that gives the same area in the next ring. … The further you go from center. The tighter the distance between each ring gets."
+**1. The rings.** A disc of radius r has area πr², so equal areas π give the radii √1, √2, √3, …. Ring n lies between √(n−1) and √n.
+- Its width is √n − √(n−1) = 1/(√n + √(n−1)): exactly one over (inner radius + outer radius). The widths are 1, 0.4142, 0.3178, 0.2679, 0.2361, ….
+- Between radius k and k + 1 there are 2k + 1 rings (the odd numbers). The rings with whole-number radius are the square-numbered ones.
+- The approximate widths 1/(2√n) add up to √N + ζ(½)/2 = √N − 0.7302 (measured −0.729927 at N = 10⁶). The exact widths add up to √N.
+
+**2. Every lattice point sits exactly on a ring boundary.** x² + y² is a whole number, so the point (x, y) is on boundary number n = x² + y².
+- Boundary n carries r₂(n) = 4·(d₁(n) − d₃(n)) points: 4, 4, 0, 4, 8, 0, 0, 4, 4, 8, 0, 0, 8, … for n = 1, 2, 3, ….
+- The average is π, the area of one ring: 3.1416 at 10⁴ rings and 3.141602 at 10⁷.
+  - Reason: a divisor d occurs in one n out of d, so the average of the divisor race is 4·(1 − 1/3 + 1/5 − ⋯) = π. The area of each ring is Leibniz's series.
+- The difference between the number of points in the disc and its area is the Gauss circle problem (open). Measured at 10^k rings, k = 2…7: 2.8, 7.4, 1.1, 37.7, −43.7, 98.5, of the size N^{1/4}.
+
+**3. G on the rings.**
+- Weigh ring n by 1/n²: Σ r₂(n)/n² = 4ζ(2)G = 6.02681204 (checked to 8 digits).
+- Use only the whole-number radii: Σ_k r₂(k²)/k² = 8G. Partial sums 7.2216, 7.3261, 7.327702 at k ≤ 10², 10⁴, 10⁶, against 8G = 7.327725.
+- Give each divisor's vote the weight 1/d: the mean of Σ_{d|n}χ₋₄(d)/d over the rings is G (0.915966 at 10⁶). So π is the race with weights 1/d averaged once, and G is the same race with weights 1/d².
+
+**4. Squaring the plane straightens the rings.** z ↦ z² sends boundary n (radius √n) to the circle of radius n, so the tightening rings become evenly spaced.
+- It sends lattice points to Pythagorean points: (a + bi)² = (a² − b²) + 2ab·i on the circle of radius a² + b². For example (2 + i)² = 3 + 4i on radius 5.
+- That is why the sum over whole-number radii is the Pythagorean sum of the section "Square stuff".
+
+**5. Prime-numbered rings.** Boundary p carries 8 points if p ≡ 1 mod 4 and none if p ≡ 3 mod 4 (and 4 for p = 2): the race mod 4.
+
+**6. How many boundaries carry any point: the Landau–Ramanujan constant.** The share of occupied boundaries up to x behaves like K/√(log x), with K = 0.76422365.
+- Measured shares: 0.2749, 0.2163, 0.1846 at x = 10⁴, 10⁶, 10⁸ (the limit law gives 0.2518, 0.2056, 0.1781; the convergence is slow).
+- K is built from G: K⁴ = π²/(32G)·∏_{p≡3 (4)}(1 − p⁻⁴)⁻¹. Both sides are 0.34110014. The leading part (1/√2)·(π²/(8G))^{1/4} is 0.7618.
+
+**What it gives.** The user's picture is the geometry of the form f = θ₃² = Σ r₂(n)qⁿ: ring n is the coefficient of qⁿ. π is the first average of the race on the rings, and G is the second.
+

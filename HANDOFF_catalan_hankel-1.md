@@ -161,6 +161,12 @@
   - 1/9 + 1/99 + 1/999 + ⋯ = 0.12232424342624…: the n-th decimal is d(n), so primes are the 2s (until the carry at 48). The alternating odd version gives r₂(n)/4, i.e. f = θ₃² at q = 1/10.
   - R_k² palindromes to k = 9; R_k ≡ 3 mod 4, never a square; …111 = −1/(b−1) b-adically (−½, −1/6, −1/12 in bases 3, 7, 13).
   - Factor table of R_k to k = 18 in the log; no-repeat totals end at ⌊e·10!⌋.
+- Rings of equal area (2026-10-02; results log section of that name; rings.py; the user's picture):
+  - Radii √n, width exactly 1/(inner + outer radius). Every lattice point lies on boundary n = x² + y², which carries r₂(n) = 4(d₁ − d₃) points; the mean is π (the ring's area, Leibniz's series).
+  - G on the rings: Σ r₂(n)/n² = 4ζ(2)G; over whole-number radii Σ r₂(k²)/k² = 8G; the mean of Σ_{d|n}χ₋₄(d)/d is G.
+  - z ↦ z² straightens the rings and sends lattice points to Pythagorean points. Prime-numbered boundaries: 8 points or none, by class mod 4.
+  - Landau–Ramanujan: K⁴ = π²/(32G)·∏_{p≡3 (4)}(1 − p⁻⁴)⁻¹ (8 digits).
+  - This is the geometry of f = θ₃²; no new approximations to G.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.
