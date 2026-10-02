@@ -2900,3 +2900,65 @@ with E_n the Euler numbers.
 
 **In this program.** 0.504 does not occur in the G numbers. The sum of the four radius sums is 0.50487, a different number. The other small excesses in this log (0.023 over log 2, 1/144 over 1/6) have their own causes; there is no single carry constant.
 
+# Primes among digit strings: the count is the prime number theorem, the structure is 9·11·101 (2026-10-02; primes_in_slots.py, primes_in_slots_out.txt). The user: "Well look at primes. 1/4 of 100 are primes. And 168 in 1000. 1229 is first 9999 digits. Something is happening here. Push this a bit hard"
+**1. How many.**
+
+| digits k | π(10^k) | k·π/10^k | 10^k/π | step |
+|---|---|---|---|---|
+| 2 | 25 | 0.5000 | 4.000 | |
+| 3 | 168 | 0.5040 | 5.952 | 1.95 |
+| 4 | 1229 | 0.4916 | 8.137 | 2.18 |
+| 5 | 9592 | 0.4796 | 10.425 | 2.29 |
+| 6 | 78498 | 0.4710 | 12.739 | 2.31 |
+| 7 | 664579 | 0.4652 | 15.047 | 2.31 |
+| 8 | 5761455 | 0.4609 | 17.357 | 2.31 |
+
+- The user's pattern is "one in 2k": ¼, about 1/6, about 1/8. It is exact at k = 2, off by 1.3 at k = 3 (166.7 against 168), by 21 at k = 4, and it drifts after that.
+- The law is the prime number theorem: 10^k/π(10^k) ≈ k·log 10 − 1, so each extra digit adds log 10 = 2.3026 to the ratio. The measured steps are 1.95, 2.18, 2.29, 2.31, 2.31, 2.31.
+- In the "half" form, k·π(10^k)/10^k tends to 1/log 10 = 0.4343, not ½. It would tend to ½ in base e² = 7.389. In bases 7 and 8 the value near 10⁸ is 0.547 and 0.514.
+- 3·168 = 504 exactly, the same digits as 5040/10000. No derivation: 168 is a count of primes and 504 = 7·8·9.
+
+**2. Which ones: primes against repeated digits (strings 0000 to 9999).**
+
+| different digits | strings | primes | density |
+|---|---|---|---|
+| 4 | 5040 | 593 | 0.1177 |
+| 3 | 4320 | 587 | 0.1359 |
+| 2 | 630 | 49 | 0.0778 |
+| 1 | 10 | 0 | 0 |
+
+- Primality and repetition are not independent: 0.504·1229 = 619, and the count is 593.
+- Two digit rules account for it.
+  - Multiples of 3 (digit sum): 34.29% of the no-repeat strings, against 33.34% of all strings.
+  - Multiples of 11 (alternating digit sum): exactly 1/9 of the no-repeat strings (560 of 5040), 1/27 of the strings with one repeated digit (160 of 4320), and 2/7 of those with two different digits (180 of 630).
+  - With both rules the prediction is 597 (610.6 with the rule for 3 alone); the count is 593.
+- Why 1/27: if the two equal digits sit at an odd distance, the alternating sum is the difference of the other two digits, which is never 0 mod 11.
+
+**3. The exact structure of four slots.** 10⁴ − 1 = 9·11·101, and 10 is 1, −1 and a square root of −1 modulo the three factors (10² ≡ −1 mod 101).
+- So a four-slot number mod 9999 is the Fourier transform of its digit string:
+  - mod 9: the digit sum;
+  - mod 11: the alternating sum;
+  - mod 101: (d₀ − d₂) + i·(d₁ − d₃), with i = 10.
+- Checked on all 10⁴ strings:
+  - all arrangements of the same digits agree mod 9;
+  - n + rev(n) ≡ 0 mod 11 and n ≡ rev(n) mod 9;
+  - every palindrome abba is a multiple of 11, so there is no four-slot palindromic prime;
+  - the multiples of 101 are exactly the strings abab;
+  - rotating the digits multiplies by i mod 101.
+- These are the untwisted sum, the half turn and the quarter turn of the cusp dictionary, here for the base ten.
+
+**4. The same four different digits in every arrangement (210 digit sets, 24 arrangements each).**
+- Number of prime arrangements → number of sets: 0 → 83, 1 → 8, 2 → 19, 3 → 20, 4 → 23, 5 → 13, 6 → 13, 7 → 14, 8 → 6, 9 → 6, 10 → 3, 11 → 2.
+- 72 sets have digit sum divisible by 3, so no arrangement is prime. 70 sets lose 8 arrangements to 11 (two pairs of digits with equal sums mod 11).
+- The maximum is 11 primes out of 24, for the digits 1, 2, 7, 9 and for 1, 2, 3, 7. From 1, 2, 7, 9: 1279, 1297, 2179, 2719, 2791, 2917, 2971, 7129, 7219, 9127, 9721.
+
+**5. Sisters.** 102 pairs of four-digit primes are each other's reversal (204 primes), 1153 ↔ 3511 among them.
+- Chance alone would give about 70 pairs. Reversal keeps the residue mod 9 and only flips the sign mod 11, which raises the expectation to about 115.
+- The four-digit circular primes are the rotations of 1193 and 3779.
+
+**6. The race mod 4.** Primes ≡ 3 mod 4 lead primes ≡ 1 mod 4 at every power of ten: by 2, 7, 10, 25, 147, 218, 446 for k = 2…8. The lead is of the size √x/log x (2, 5, 11, 27, 72, 196, 543). This is Chebyshev's bias, a statement about χ₋₄.
+
+**What is happening.**
+- The counts are the prime number theorem. The "half" in ¼, 1/6, 1/8 is 1/log 10 = 0.4343 seen at small size.
+- Which strings are prime is governed by the three characters of four slots (9, 11, 101). Repeats, reversal and palindromes act on them in a simple exact way.
+

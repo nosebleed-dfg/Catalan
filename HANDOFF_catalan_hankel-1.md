@@ -144,6 +144,11 @@
   - Second digit: u_p ≡ 4 + 8χ₋₄(p)p²E_{p−3} and p²v_p ≡ χ₋₄(p) + p²E_{p−3} (mod p³), for 5 ≤ p < 700. G's Wieferich-type primes are those dividing E_{p−3}: 149, 241, then 2946901.
   - The products of the four cusp widths are squares (25, 36, 64, 16, 81, 9); the cross products 5, 6, 8, 9 are the gate invariants.
   - None of this changes the denominator growth. Literature not checked.
+- Digit strings and primes (2026-10-02; results log sections "5040/10000 = 0.504" and "Primes among digit strings"; birthday_504.py, primes_in_slots.py; the user's counts):
+  - 0.504 = 5040/10000 is the chance that four decimal digits differ: 1 − 6/10 + 11/100 − 6/1000, and the 11 carries to give ½ + 0.004. Base-ten specific; the law ∏(1 − j/b) is general.
+  - π(10^k) = 25, 168, 1229: "one in 2k" is the prime number theorem at small size (k·π/10^k = 0.5, 0.504, 0.4916, … → 1/log 10 = 0.4343).
+  - Four slots: 10⁴ − 1 = 9·11·101 with 10 ≡ 1, −1, i. A four-slot number is the Fourier transform of its digits. Among the 5040 no-repeat strings 593 are prime (619 if independent); the rules for 3 and 11 explain the gap.
+  - No connection to the G gate was found.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.

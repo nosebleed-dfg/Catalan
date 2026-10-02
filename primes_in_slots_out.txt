@@ -1,0 +1,61 @@
+﻿1. pi(10^k)
+    k      pi(10^k)   k*pi/10^k   10^k/pi   step    k*log(10) - 1
+    1             4   0.40000      2.5000             1.3026
+    2            25   0.50000      4.0000  1.5000     3.6052
+    3           168   0.50400      5.9524  1.9524     5.9078
+    4          1229   0.49160      8.1367  2.1843     8.2103
+    5          9592   0.47960     10.4254  2.2887    10.5129
+    6         78498   0.47099     12.7392  2.3138    12.8155
+    7        664579   0.46521     15.0471  2.3079    15.1181
+    8       5761455   0.46092     17.3567  2.3096    17.4207
+   limit of k*pi/10^k: 1/log(10) = 0.43429;   it would be 1/2 in base e^2 = 7.3891;   3 * 168 = 504
+   other bases, k*pi(b^k)/b^k at the largest b^k <= 10^8, against 1/log b:
+      b =  2  k = 26  1.5334   1/log b = 1.4427
+      b =  3  k = 16  0.9691   1/log b = 0.9102
+      b =  4  k = 13  0.7667   1/log b = 0.7213
+      b =  5  k = 11  0.6612   1/log b = 0.6213
+      b =  6  k = 10  0.5934   1/log b = 0.5581
+      b =  7  k =  9  0.5473   1/log b = 0.5139
+      b =  8  k =  8  0.5140   1/log b = 0.4809
+      b =  9  k =  8  0.4845   1/log b = 0.4551
+      b = 10  k =  8  0.4609   1/log b = 0.4343
+      b = 11  k =  7  0.4455   1/log b = 0.4170
+      b = 12  k =  7  0.4287   1/log b = 0.4024
+
+2. four slots (strings 0000 .. 9999)
+   primes in all strings: 1229 of 10000 (0.1229)
+   4 different digits: 5040 strings,  593 primes, density 0.1177
+   3 different digits: 4320 strings,  587 primes, density 0.1359
+   2 different digits:  630 strings,   49 primes, density 0.0778
+   1 different digits:   10 strings,    0 primes, density 0.0000
+   multiples of 3: 0.3334 of all strings, 0.3429 of the strings with four different digits
+   0.504 * 1229 = 619.4;  with the multiples-of-3 correction: 610.6;  actual: 593
+   multiples of 11: 4 different: 560 of 5040, 3 different: 160 of 4320, 2 different: 180 of 630, 1 different: 10 of 10
+   predicted primes with four different digits from the rule(s) for 3: 610.6
+   predicted primes with four different digits from the rule(s) for 3 and 11: 597.1
+
+3. structure: 10^4 - 1 = 9 * 11 * 101
+   palindromes abba divisible by 11: True;   multiples of 101 are exactly the strings abab: True
+   10^2 = -1 (mod 101);  n = (d0 - d2) + 10 (d1 - d3) (mod 101) for every string: True
+   reversal: n + rev(n) = 0 (mod 11) and n = rev(n) (mod 9) for every string: True
+   four-slot palindromes that are prime: []
+
+4. arrangements of the same four different digits (210 digit sets, 24 arrangements each)
+   number of prime arrangements -> number of digit sets: {0: 83, 1: 8, 2: 19, 3: 20, 4: 23, 5: 13, 6: 13, 7: 14, 8: 6, 9: 6, 10: 3, 11: 2}
+   sets with digit sum divisible by 3 (no primes possible except 3 itself): 72
+   sets where two pairs of digits have equal sums mod 11 (8 arrangements are multiples of 11): 70
+   most prime arrangements: [(11, '1279'), (11, '1237'), (10, '1789'), (10, '1579'), (10, '0179')]
+   the 11 primes from the digits (1, 2, 7, 9): [1279, 1297, 2179, 2719, 2791, 2917, 2971, 7129, 7219, 9127, 9721]
+
+5. sisters: primes whose four-slot reversal is a different prime
+   102 pairs (204 primes);  e.g. [(1009, 9001), (1021, 1201), (1031, 1301), (1033, 3301), (1061, 1601), (1069, 9601), (9349, 9439), (9479, 9749), (9679, 9769)];  1153 <-> 3511: True
+   expected if reversal were independent of primality, among strings ending and starting in 1, 3, 7, 9: about 70 pairs
+
+6. primes 1 mod 4 against 3 mod 4 up to 10^k
+   k = 2:        11         13   difference     2   sqrt(10^k)/log(10^k) = 2
+   k = 3:        80         87   difference     7   sqrt(10^k)/log(10^k) = 5
+   k = 4:       609        619   difference    10   sqrt(10^k)/log(10^k) = 11
+   k = 5:      4783       4808   difference    25   sqrt(10^k)/log(10^k) = 27
+   k = 6:     39175      39322   difference   147   sqrt(10^k)/log(10^k) = 72
+   k = 7:    332180     332398   difference   218   sqrt(10^k)/log(10^k) = 196
+   k = 8:   2880504    2880950   difference   446   sqrt(10^k)/log(10^k) = 543
