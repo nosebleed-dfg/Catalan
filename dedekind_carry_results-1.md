@@ -3270,3 +3270,46 @@ Notation as in the last two sections: N = π/arcsin(1/√n) lines per turn of ri
 - The square ring's sum G is an exact whole-number mix of the sums on the Pythagorean rings (the 3-4-5 and 7-24-25 triangles for (I)).
 - These are identities. They give no rational approximations to G, and the gate analysis above is unchanged.
 
+# The Fricke lever: a symmetric family on the Hecke group H(√8) with radius 4.217, closed by the second real place of ℚ(√2) (2026-10-02; fricke_lever.py, fricke_bound.py, with their _out.txt files). The user: "Push that. I've already pushed it but I'm out of ideas unless you can open something."
+**Starting point.** Every holonomy bound in Calegari–Dimitrov–Tang has the shape m ≤ (archimedean numerator)/(log|φ′(0)| − τ). Their refinements (Theorems 6.0.2, 7.1.6, 8.0.1) change the numerator, or the denominator term through the structure of the denominators (τ♯ for integrals, τ♭♭ for general shapes); none pushes the denominator term below a single function's own rate. So with log R* = 1.232 against rate 3/2 (pure G) or 4/3 (with π²), no refinement can help. The only lever is the radius: a bigger domain on which the hypothetical rational F is single-valued.
+
+**1. The involution the gate analysis never used.** The harmless group of case E is Γ′ = ⟨T, L₈⟩, two parabolics at the cusps ∞ and 0. The Fricke involution w₈ = (0 −1; 8 0) normalises Γ′ (w₈Tw₈⁻¹ = L₈⁻¹) and swaps those two cusps. If F is also w₈-invariant it lives on X″ = H/⟨T, w₈⟩, the Hecke group H(√8) (free product ℤ ∗ ℤ/2), with the same cusp.
+- Its conformal radius at the cusp is log R″ = 2π²(S_even + S_odd): the even double cosets are Γ′'s, the odd ones are γw₈ with lower-left entry 8d(γ) before normalising the determinant, so S_odd = (1/8)·Σ 1/d² over ⟨T⟩\Γ′/⟨L₈⟩. The transfer operator of radius_transfer.py with the constant term moved (h = Σ_m v²Φ(v), Φ(u) = Σ_k (k+u)⁻²(1 + h(1/(k+u))), S_odd = (1 + h(0))/8) gives
+  - w = 8: S_even = 0.0624267600784562, S_odd = 0.1512136271679948, log R′ = 1.2322548520, **log R″ = 4.2170922124**;
+  - w = 6: 2.6777 → 7.4944; w = 5: 5.1254 → 12.6610 (direct enumeration of S_odd(8) with entries ≤ 2000 gives 0.1495, converging to the same value).
+- Geometrically (Blaschke): R″ = R′/|a| where a is the position of the cusp 0 in the uniformization of X′, and −log|a| = G_{X′}(cusp 0) = 2π·(value of Γ′'s Eisenstein series at the cusp 0) = 2.985.
+
+**2. A Fricke-symmetric G-family exists, over ℚ(√2).** Numerically (fit residual 10⁻⁵¹), w₈ acts on weight 1 by θ² ↦ −i√2·θ(2τ)², θ(2τ)² ↦ −(i/√2)·θ², and on weight 3 by E₁(τ) ↦ −(i/√2)E₂(2τ), E₁(2τ) ↦ −(i/(8√2))E₂(τ), E₂(τ) ↦ −8√2 i·E₁(2τ), E₂(2τ) ↦ −√2 i·E₁(τ) (E₁ = E^{χ₋₄,1}, E₂ = E^{1,χ₋₄} with constant term −¼). Both squares are −1, eigenvalues ±i.
+- Eigenforms: f± = θ² ± √2·θ(2τ)² (eigenvalue ∓i); in weight 3 with zero constant term, exactly one admissible eigenform per eigenvalue: **W± = W_E ± (1/√2)(E₂(τ) − E₂(2τ))**, W_E = E₁(τ) − 8E₁(2τ) being case E's form.
+- For an eigen pair, F = f(g − Λ) with Λ = L(W, 2) is forced to satisfy F∘w₈ = ε_fε_W·F: F∘w₈ − ε_fε_W F equals (Λ − L(W,2))·f up to the Γ′-invariance that both sides have, and f is not Γ′-invariant; the functional equation Λ(W, s) = −iε_W 8^{3/2−s}Λ(W, 3−s) makes L(W,2) the harmless value.
+- Checked: for (f₊, W₊) and (f₋, W₋), F(τ/(8τ+1)) = F(τ) to 10⁻²⁷ and F(−1/(8τ))/F(τ) = 1 to 47 digits at three points; for case E (f = θ², W_E, Λ = G/2) the first holds and the second fails (ratios 0.94 − 0.11i, …).
+- The limits: **Λ± = L(W±, 2) = G/2 ± π²/(16√2) = (G ± L(2, χ₈))/2** = 0.8941618096 and 0.0218037846. These are the same-way and turning-around sums of the square ring of the previous section: Λ₊ = Σ_{k≡1 (8)} k⁻² − Σ_{k≡3 (8)} k⁻², Λ₋ = Σ_{k≡5 (8)} k⁻² − Σ_{k≡7 (8)} k⁻².
+- Denominators: √2W₊(p) ≡ √2χ₋₄(p) + 1 (mod p) for odd p, never 0 modulo a prime above p (its norm is −1), so every prime pays p² at its first multiple: rate exactly 2, no digit saving.
+- So, at one archimedean place: a function on X″ with log R″ = 4.217 against rate 2, and the hypothesis "Λ₊ ∈ ℚ(√2)" would make it a ℚ(√2)-rational series.
+
+**3. The holonomy bound on X″, computed.** The uniformizing map z: X″ → 𝔻 is z = exp(2πi(Z(τ) + C)) with Z(τ) = Σ over cosets of (γτ − γi) = (τ − i) − π·Σ over double cosets of c⁻²[cot π(τ+x) − cot π(i+x)], x = d/c. The double cosets of the free product are the words w₈T^{a₁}w₈⋯ with the ratio u = d/c moving by u ↦ −1/(8(u+a)) inside [−ρ, ρ], ρ = 0.1464, and c ↦ √8·c·(u+a), so Z(τ) = (τ − i) − (π/8)Φ_τ(0) with Φ(u) = K_τ(u) + Σ_{a≠0}(8(u+a)²)⁻¹Φ(−1/(8(u+a))), K_τ(u) = cot π(τ+u) − cot π(i+u); one collocation matrix (100 Chebyshev nodes, exact Hurwitz-zeta sums) serves every τ. Checks: K ≡ 1 returns 8(S_even + S_odd) = 1.70912309797; z(τ+1) = z(−1/(8τ)) = z(τ) exactly; |z| = exp(−2πE_{Γ″}(τ,1)) to 10⁻⁵⁷; z ~ q/R″ at the cusp; z is real on the imaginary axis.
+- Coordinates: u = θ(2τ)²/θ(τ)² has u∘w₈ = 1/(2u); t = (1 − u)/4 is case E's coordinate (f = 1 + 4t + 20t² + ⋯, t(cusp 0) = 1/8, t∘w₈ = (8t − 1)/(32t − 8)); s = −(1 − u)(1 − 2u)/(4u) = t(1 − 8t)/(1 − 4t) is the Hauptmodul of Γ₀(8)⁺. The elliptic points: e₁ = i/√8 with s = (3 − 2√2)/4, fixed by w₈ ∈ Γ″, where X″ → ℙ¹_s is unbranched; e₂ = 1/3 + i√2/12 with s = (3 + 2√2)/4 = 1.4571, over which X″ → ℙ¹_s is branched everywhere. So the principal branch of F(s) is holomorphic on the slit plane ℂ∖[1.4571, ∞) (univalent radius log(4·1.4571) = 1.763), and √(s − s(e₂)) is a single-valued free function on X″.
+- Level curves |z| = r traced by Newton continuation (reduction to the fundamental domain |x| ≤ ½, |τ| ≥ 1/√8), 160 points per half circle; on them the rearrangement integral I_r = ∫₀¹ 2t·(log|s|)*dt and the Bost–Charles integral I_bc:
+
+| r | L = log R″ + log r | I_r | I_bc | max |s| on the circle | lowest Im τ |
+|---|---|---|---|---|---|
+| 0.15 | 2.320 | 3.411 | 3.256 | 217 | 0.079 |
+| 0.25 | 2.831 | 4.656 | 4.594 | 5.0·10³ | 0.057 |
+| 0.35 | 3.167 | 5.738 | 5.695 | 2.0·10⁵ | 0.043 |
+| 0.45 | 3.419 | 6.753 | 6.727 | 2.4·10⁷ | 0.033 |
+| 0.55 | 3.619 | 7.750 | 7.728 | 1.9·10¹⁰ | 0.025 |
+| 0.65 | 3.786 | 8.771 | 8.731 | 5.6·10¹⁴ | 0.018 |
+| 0.75 | 3.929 | 9.885 | 9.875 | 5.0·10²² | 0.012 |
+
+- Bounds m ≤ I_r/(L − τ(b)): with {1, F} (τ(b) = 3/2): minimum 3.44 at r = 0.35, not below 2. With **{1, √(s − s(e₂)), F, F·√(s − s(e₂))}** (τ(b) = 3/2, ℚ(s)-independent): the same 3.44, and the threshold is 4: **a contradiction, at one place**. With the 8 functions {1, √} × {1, F, F′, F″} (τ(b) = 15/8): 4.37 against 8.
+- So if this family were defined over ℚ or over an imaginary quadratic field, the theorem "G + π²/(8√2) is not in the field" would follow from Theorem 2.5.1 (via Corollary 6.0.14) with four functions.
+
+**4. The second real place takes it back.** The family is intrinsically over K = ℚ(√2): the Fricke eigenvectors in weight 1 are θ² ± (1/√2)θ(2τ)² up to scalars, the ratio being irrational.
+- The holonomy bound over a number field averages the archimedean places (product formula: the leading coefficient β of the auxiliary function satisfies 0 ≤ log|σ₁β| + log|σ₂β| + 2 log den β, so the condition reads (L₁ + L₂)/2 > τ with the numerators averaged too).
+- Under the hypothesis Λ₊ = α + β√2, the second embedding of F₊ is f₋(g₋ − (α − β√2)) = F₋ + c·f₋ with c = Λ₋ − (α − β√2) = √2(2β − π²/16) ≠ 0, because π² is irrational. The term c·f₋ is a weight-1 form, single-valued only on the q-disc; its best map has L₂ = 0 and the Bost–Charles integral of the Hauptmodul on |q| → 1 diverges.
+- Averaged: L ≤ (4.217 + 0)/2 = 2.108 against rate 2 (the necessary gate passes by 0.108), but the bound with the best φ₂ is ≈ 16 against 4 with the four functions: no contradiction.
+- Every K-rational combination of F₊, F₋ and the anti-invariant pairs f₊(g₋ − Λ₋), f₋(g₊ − Λ₊) (which become invariant after multiplying by the anti-invariant rational function t − t∘w₈) whose two embeddings are both Γ″-invariant requires Λ₋ = σ(Λ₊), i.e. G/2 ∈ ℚ and π² ∈ ℚ: vacuous. The Fricke involution swaps E^{χ₋₄,1} with E^{1,χ₋₄}, so it ties G to π² with the factor √8, and Galois conjugation flips the π²-part only.
+- A rational Fricke eigenform would need √N rational. Level 16 (w₁₆) gives log R″ ≈ 1.5 against rate ≥ 3/2; level 4 is the forbidden lattice. The χ₋₈ sector has the rational eigenform θ(τ)θ(2τ), but its only admissible eigen-W is the CM cusp form, with limit L(g, 2), a Damerell period.
+
+**Status.** The lost factor 2 reappears as the second real place of ℚ(√2): analytically the Fricke symmetry more than triples the radius (1.232 → 4.217), and at one place four functions would close the problem; arithmetically the family cannot be made rational, and the conjugate place returns the deficit (2.108 against 2 necessary; sufficient fails). What is proved here: the radius formula and its value (25 digits for S, consistency checks to 10⁻⁵⁷), the existence and invariance of the family (numerical to 47 digits with a structural argument), the limits, the rate, and the single-place bound numbers (quadrature, about three digits). What would open it: a Fricke-symmetric G-family over ℚ or an imaginary quadratic field, which level 8 does not have.
+

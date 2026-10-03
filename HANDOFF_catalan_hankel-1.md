@@ -179,6 +179,11 @@
     - Corners weighted by 1/k²: the same way on the square ring is G, turning around is π²/(8√2) (odd character χ₋₄ against even χ₈). Same ÷ turning = 8√2·G/π², the open question itself.
     - Ring identities, W(n) = Cl₂(θ_n): (I) 2W(5) + 6W(10) + W(50) = 9G, proved from four five-term relations; (II) an 11-ring combination with coefficients ±1, ±2, 3 equals G; (III) 36W(5) + 60W(10) + 24W(26) + 12W(65) + 4W(3250) − W(57122) = 129G. (II), (III): rational by Borel–Bloch–Suslin, value from 48 digits.
     - Independent relations by largest prime 5 … 101: 1, 2, 3, 3, 3, 3, 3, 3, 4, 10, 23, 32. Identities only; no approximations to G.
+- The Fricke lever (2026-10-02; results log "The Fricke lever"; fricke_lever.py, fricke_bound.py):
+  - CDT's refined bounds cannot move the denominator term below a function's own rate; only the radius can move. The Fricke involution w₈ normalises ⟨T, L₈⟩ and swaps the harmless cusps; on X″ = H/⟨T, w₈⟩ (Hecke group H(√8)) the radius is log R″ = 2π²(S_even + S_odd) = 4.2170922124 (S_odd = (1/8)Σ1/d² over ⟨T⟩\Γ′/⟨L₈⟩, transfer operator).
+  - A Fricke-symmetric G-family exists over ℚ(√2): f± = θ² ± √2θ(2τ)², W± = W_E ± (E₂(τ) − E₂(2τ))/√2, Λ± = G/2 ± π²/(16√2) = (G ± L(2,χ₈))/2 (the mod-8 split sums of the square ring); F∘w₈ = F to 47 digits; rate 2.
+  - Uniformizer of X″ by the same transfer operator (checks to 10⁻⁵⁷); on |z| = r the rearrangement integral gives m ≤ I/(L − 3/2) = 3.44 at r = 0.35: with {1, √(s − s(e₂)), F, F√} that is < 4, a contradiction AT ONE PLACE.
+  - But the family is over the real quadratic field ℚ(√2) and the number-field bound averages the places; the conjugate embedding is F₋ + c·f₋ with c ≠ 0 (π² irrational), single-valued only on the q-disc: averaged L ≤ 2.108 against 2, bound ≈ 16 against 4. Every ℚ(√2)-rational Γ″-invariant combination needs G and π² both rational. No rational Fricke eigenform at level 8; level 16 gives radius ≈ 1.5. The lost factor 2 is the second real place.
 
 **Also settled.**
 - The 2-adic G (our C) = Calegari's "2-adic Catalan constant": irrational since 2005. In the Kubota–Leopoldt convention it is ζ₂(2) (Beukers 2008, §1); KL's L₂(s,χ₋₄) vanishes identically.
